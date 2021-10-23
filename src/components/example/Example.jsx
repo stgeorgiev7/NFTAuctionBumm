@@ -6,6 +6,7 @@ import classNames from "classnames";
 import Head from "../header/Header";
 import Trending from "../trending/Trending";
 import Auctions from "../auctions/Auctions";
+import Footer from "../footer/Footer";
 import userImage from '../avatar/image/avatar.png'
 import mediaImage from "../card/image/nft.jpg";
 
@@ -46,8 +47,8 @@ export default function Copyright() {
           }
         ]
       } />
-     
-     <Auctions cards={
+
+      <Auctions cards={
         [
           {
             name: "Clock",
@@ -83,7 +84,11 @@ export default function Copyright() {
           }
         ]
       } />
+
+      <Footer />
+
       <Container className={classNames(styles.container)} maxWidth="xl">
+
 
 
         <Paper className={classNames(styles.paper)}>

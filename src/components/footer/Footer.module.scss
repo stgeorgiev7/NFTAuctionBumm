@@ -1,0 +1,15 @@
+@use "../../styles/colors";
+
+.gridContainer {
+    background-color: colors.$background_paper;
+};
+
+.text {
+    color: colors.$text_secondary;
+    justify-content: center;
+};
+
+.searchIcon {
+    color: colors.$text_primary;
+};
+
