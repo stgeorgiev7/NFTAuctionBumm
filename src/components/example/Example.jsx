@@ -5,6 +5,7 @@ import styles from "./Example.module.scss";
 import classNames from "classnames";
 import Head from "../header/Header";
 import Trending from "../trending/Trending";
+import How from "../how/How";
 import Auctions from "../auctions/Auctions";
 import Footer from "../footer/Footer";
 import userImage from '../avatar/image/avatar.png'
@@ -48,6 +49,27 @@ export default function Copyright() {
         ]
       } />
 
+
+      <How
+        description='Discover, collect and sell extraoridanry NFTs on the world`s first and largest NFT marketplace. There are three things you`ll need in place to open your account and start buying or selling NFTs on BUM.'
+        title='HOW IT WORKS'
+        items={[{
+          title: 'digital currency',
+          description: 'You can get ETH, the digital currency that fuels transaction on the Ethereum blockchain, from a digital currency exchange.'
+        },
+        {
+          title: 'crypto wallet',
+          description: 'A crypto wallet, such as MetaMask, stores your ETH and processes transactions on the Ethereum blockchain.'
+        },
+        {
+          title: 'BUM',
+          description: 'Let`s connect your wallet to BUM, edit your profile and begin interacting in the space.'
+        }
+
+        ]}
+        link='https://google.com/'
+      />
+
       <Auctions cards={
         [
           {
@@ -86,18 +108,6 @@ export default function Copyright() {
       } />
 
       <Footer />
-
-      <Container className={classNames(styles.container)} maxWidth="xl">
-
-
-
-        <Paper className={classNames(styles.paper)}>
-
-          <Link href="/about" color="secondary">
-
-          </Link>
-        </Paper>
-      </Container>
     </div>
   );
 }
