@@ -3,37 +3,7 @@ import styles from './How.module.scss';
 import classNames from "classnames";
 import { Button, Grid } from '@mui/material';
 
-function HowStep({ number, title, description }) {
-
-    return (
-        <Grid container columns={{xs:6, sm:6, md:6}}>
-            <div className={classNames(styles.stepContainer)}>
-                <Grid item xs={6} sm={6} md={6} >
-                    <h1 className={classNames(styles.number)}>
-                        {number}
-                    </h1>
-                </Grid>
-
-                <Grid item item xs={6} sm={6} md={6}>
-                    <h3 className={classNames(styles.title)}>
-                        {title}
-                    </h3>
-                </Grid>
-
-                <Grid item xs={6} sm={6} md={6}>
-                    <p className={classNames(styles.description)}>
-                        {description}
-                    </p>
-                </Grid>
-            </div>
-
-        </Grid>
-
-    )
-};
-
-
-export default function How({ description, title, items, link }) {
+export default function How({ description, title, items=[], link }) {
 
     return (
         <Grid container >
@@ -68,10 +38,36 @@ export default function How({ description, title, items, link }) {
                         />)
                         }
                 </Grid>
-
-
-
             </div>
         </Grid>
     );
+};
+
+function HowStep({ number, title, description }) {
+
+    return (
+        <Grid container columns={{xs:6, sm:6, md:6}}>
+            <div className={classNames(styles.stepContainer)}>
+                <Grid item xs={6} sm={6} md={6} >
+                    <h1 className={classNames(styles.number)}>
+                        {number}
+                    </h1>
+                </Grid>
+
+                <Grid item item xs={6} sm={6} md={6}>
+                    <h3 className={classNames(styles.title)}>
+                        {title}
+                    </h3>
+                </Grid>
+
+                <Grid item xs={6} sm={6} md={6}>
+                    <p className={classNames(styles.description)}>
+                        {description}
+                    </p>
+                </Grid>
+            </div>
+
+        </Grid>
+
+    )
 };
