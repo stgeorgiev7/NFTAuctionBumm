@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, ImageList, ImageListItem } from "@mui/material";
 import { useRouter } from "next/router";
-import styles from "./Feature.module.scss";
+import styles from "./Featured.module.scss";
 import classNames from "classnames";
 
 export default function Featured({ items = [] }) {
