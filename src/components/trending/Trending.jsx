@@ -40,7 +40,7 @@ export default function Trending({ cards = [] }) {
 
             <Grid item xs={7} sm={7} md={7} justifyContent='flex-end' style={{display:'flex', padding:0, marginLeft: '30px'}}>
 
-                <Select value={10} className={classNames(styles.select)} style={{border:'none'}} >
+                <Select value={10} className={classNames(styles.select)} sx={{":hover": {border:'none'}}} >
                     <MenuItem value={10}>This Week</MenuItem>
                     <MenuItem value={20}>This Month</MenuItem>
                     <MenuItem value={30}>This Year</MenuItem>
