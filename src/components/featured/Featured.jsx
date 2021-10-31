@@ -1,5 +1,7 @@
 import React from "react";
-import { Container, ImageList, ImageListItem } from "@mui/material";
+import { Container } from "@mui/material";
+import { ImageList } from "@mui/material";
+import { ImageListItem } from "@mui/material";
 import { useRouter } from "next/router";
 import styles from "./Featured.module.scss";
 import classNames from "classnames";
