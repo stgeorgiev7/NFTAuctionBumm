@@ -1,16 +1,15 @@
 import React from "react";
 import User from "../user/User";
 
-export default function Collector({type}) {
-
+export default function Collector({name, nftsCount, avatar, verified, type}) {
     return (
        <div className='container'>
            <User 
-           name={type.name}
-           info={`${type.nftsCount} items`}
-           avatar={type.avatar}
-           verified={type.verified}
-           className={type.className}
+           name={name}
+           info={`${nftsCount} items`}
+           avatar={avatar}
+           verified={verified}
+           className={type}
            />
        </div>
     );
