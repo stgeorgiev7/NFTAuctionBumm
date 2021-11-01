@@ -12,7 +12,7 @@ export default function CollectorColumn({ items }) {
             {items.map((crritem, crrIndex) => {
                 console.log(crritem);
 
-                const background = crrIndex % 2 !== 0 ? 'light' : 'dark';
+                const background = crrIndex % 2 === 0 ? 'light' : '';
                 console.log(background);
 
                 return (
