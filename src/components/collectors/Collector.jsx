@@ -10,6 +10,7 @@ export default function Collector({type}) {
            info={`${type.nftsCount} items`}
            avatar={type.avatar}
            verified={type.verified}
+           className={type.className}
            />
        </div>
     );
