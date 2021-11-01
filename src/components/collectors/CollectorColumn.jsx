@@ -10,17 +10,13 @@ export default function CollectorColumn({ items }) {
     return (
         <Container>
             {items.map((crritem, crrIndex) => {
-                console.log(crritem);
-
-                const background = crrIndex % 2 === 0 ? 'light' : '';
-                console.log(background);
 
                 return (
-                    <div>
+                    <div key={`${crrIndex}_${crritem.name}`}>
                         <p>{crrIndex + 1}</p>
                         <Collector
                             type={crritem}
-                            className={background}
+                            className={crrIndex % 2 === 0 ? 'light' : ''}
                             key={crritem.name}
                         ></Collector>
                     </div>
