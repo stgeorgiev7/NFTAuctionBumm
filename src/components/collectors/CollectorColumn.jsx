@@ -8,21 +8,25 @@ import { style } from "@mui/material/node_modules/@mui/system";
 export default function CollectorColumn({ items }) {
 
     return (
-        <Container>
+        <div>
             {items.map((crritem, crrIndex) => {
-                crrIndex % 2 === 0 ? crritem.className='light' : crritem.className=''
                 return (
                     <div key={`${crrIndex}_${crritem.name}`}>
                         <p>{crrIndex + 1}</p>
                         <Collector
-                            type={crritem}
+                            name={crritem.name}
+                            nftsCount={crritem.nftsCount}
+                            avatar={crritem.avatar}
+                            verified={crritem.verified}
                             key={crritem.name}
+                            type={crrIndex % 2 ===0 ? 'light': ''}
                         ></Collector>
                     </div>
                 );
 
             })}
 
-        </Container>
+        </div>
+
     )
 };
