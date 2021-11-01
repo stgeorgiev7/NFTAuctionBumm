@@ -6,6 +6,7 @@ import classNames from "classnames";
 import Head from "../header/Header";
 import Featured from "../featured/Featured";
 import Trending from "../trending/Trending";
+import CollectorColumn from "../collectors/CollectorColumn";
 import How from "../how/How";
 import Auctions from "../auctions/Auctions";
 import Footer from "../footer/Footer";
@@ -90,6 +91,30 @@ export default function Copyright() {
           }
         ]
       } />
+
+      <CollectorColumn items={[
+        {
+          name: 'Tarikata73',
+          nftsCount: 73,
+          avatar: undefined,
+          verified: true,
+          id: 73407340
+        },
+        {
+          name: 'brendan_1',
+          nftsCount: 52,
+          avatar: undefined,
+          verified: false,
+          id: 121211
+        },
+        {
+          name: 'damiankata',
+          nftsCount: 48,
+          avatar: undefined,
+          verified: true,
+          id: 4848848
+        }
+      ]}/>
 
       <How
         description='Discover, collect and sell extraoridanry NFTs on the world`s first and largest NFT marketplace. There are three things you`ll need in place to open your account and start buying or selling NFTs on BUM.'
