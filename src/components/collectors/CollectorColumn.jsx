@@ -7,7 +7,7 @@ import classNames from "classnames";
 export default function CollectorColumn({ items }) {
 
     return (
-        <div className={classNames(styles.collectorColumn)}>
+        <Container className={classNames(styles.collectorColumn)}>
             {items.map((crritem, crrIndex) => {
                 
                 return (
@@ -18,7 +18,7 @@ export default function CollectorColumn({ items }) {
                             avatar={crritem.avatar}
                             verified={crritem.verified}
                             id={crrIndex}
-                            type={crrIndex % 2 !== 0 ? 'light': ''}
+                            type={crrIndex % 2 != 0 ? 'light': ''}
                             key={crritem.name}
                         ></Collector>
                     </div>
@@ -26,7 +26,7 @@ export default function CollectorColumn({ items }) {
 
             })}
 
-        </div>
+        </Container>
 
     )
 };
