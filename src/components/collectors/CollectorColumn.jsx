@@ -7,11 +7,11 @@ import classNames from "classnames";
 export default function CollectorColumn({ items }) {
 
     return (
-        <Container className={classNames(styles.collectorColumn)}>
+        <div className={classNames(styles.collectorColumn)}>
             {items.map((crritem, crrIndex) => {
                 
                 return (
-                    <div key={`${crrIndex + 1}_${crritem.name}`}>
+                    <div key={`${crrIndex + 1}_${crritem.name}` }>
                         <Collector
                             name={crritem.name}
                             nftsCount={crritem.nftsCount}
@@ -26,7 +26,7 @@ export default function CollectorColumn({ items }) {
 
             })}
 
-        </Container>
+        </div>
 
     )
 };

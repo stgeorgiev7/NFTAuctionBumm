@@ -104,7 +104,7 @@ export default function Copyright() {
           name: 'brendan_1',
           nftsCount: 52,
           avatar: undefined,
-          verified: false,
+          verified: true,
           id: 121211
         },
         {
