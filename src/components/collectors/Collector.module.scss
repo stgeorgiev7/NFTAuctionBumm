@@ -1,6 +1,23 @@
 @use "../../styles/colors";
 
-.light {
-    display: flex;;
-    border: 3px solid green;
+.container {
+    display: flex;
+    border: 3px solid red;
 }
+
+.container > p {
+    background-color: colors.$background_paper;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.container {
+    background-color: colors.$background_default;
+}
+
+.light > div  {
+    
+    border: 3px solid green;
+    background-color: red;
+}
+
