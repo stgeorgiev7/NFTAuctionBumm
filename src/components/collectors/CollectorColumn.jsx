@@ -10,17 +10,17 @@ export default function CollectorColumn({ items }) {
     return (
         <div>
             {items.map((crritem, crrIndex) => {
-                const index = crrIndex + 1;
+                
                 return (
                     <div key={`${crrIndex}_${crritem.name}`}>
-                        <p>{index}</p>
+                        <p>{crrIndex + 1}</p>
                         <Collector
                             name={crritem.name}
                             nftsCount={crritem.nftsCount}
                             avatar={crritem.avatar}
                             verified={crritem.verified}
                             key={crritem.name}
-                            type={index % 2 === 0 ? 'light': ''}
+                            type={crrIndex % 2 !== 0 ? 'light': ''}
                         ></Collector>
                     </div>
                 );
