@@ -10,14 +10,13 @@ export default function Collector({ name, nftsCount, avatar, verified, id, type 
         <div className={classNames([styles.container, styles[type]])} >
             <p>{id + 1}</p>
 
-            <div>
-                <User
-                    name={name}
-                    info={`${nftsCount} items`}
-                    avatar={avatar}
-                    verified={verified}
-                />
-            </div>
+            <User
+                name={name}
+                info={`${nftsCount} items`}
+                avatar={avatar}
+                verified={verified}
+            />
+
         </div>
     );
 };

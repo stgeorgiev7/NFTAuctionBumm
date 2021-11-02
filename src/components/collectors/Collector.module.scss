@@ -1,22 +1,28 @@
 @use "../../styles/colors";
 
 .container {
-   display: flex;
-    
+    display: flex;
+  
 }
 
 .container > p {
     background-color: colors.$background_paper;
     font-weight: 700;
-    font-size: 25px; 
+    font-size: 25px;
+    width: 20%;
+    margin: 0;
+    text-align: center;
+    padding: 15px;
 }
 
 .container > div {
     background-color: colors.$background_default;
+    width: 80%;
+    text-align: center;
 }
 
 .light > p {
-    background-color: rgba(colors.$background_paper, 80%)
+    background-color: rgba(colors.$background_paper, 80%);
 }
 
 .light > div {
