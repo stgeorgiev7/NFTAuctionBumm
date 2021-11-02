@@ -11,7 +11,7 @@ export default function CollectorColumn({ items }) {
             {items.map((crritem, crrIndex) => {
                 
                 return (
-                    <div key={`${crrIndex}_${crritem.name}`}>
+                    <div key={`${crrIndex + 1}_${crritem.name}`}>
                         <Collector
                             name={crritem.name}
                             nftsCount={crritem.nftsCount}
