@@ -18,7 +18,7 @@ export default function CollectorColumn({ items }) {
                             avatar={crritem.avatar}
                             verified={crritem.verified}
                             id={crrIndex}
-                            type={crrIndex === 2 ? 'light' : ''}
+                            type={crrIndex === 1 ? 'light' : ''}
                             key={crritem.name}
                         ></Collector>
                     </div>
