@@ -7,7 +7,7 @@ import classNames from "classnames";
 export default function CollectorColumn({ items }) {
 
     return (
-        <div className={classNames(styles.collectorColumn)}>
+        <div className={classNames(styles.collectorColumn)} key={'columnContainer'}>
             {items.map((crritem, crrIndex) => {
                 
                 return (

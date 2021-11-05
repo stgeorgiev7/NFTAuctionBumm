@@ -36,9 +36,9 @@ export default function TopCollectors({ collectors = [] }) {
             </Grid>
 
             <Grid container justifyContent='center'>
-                {chunkedArray.map((list) => {
+                {chunkedArray.map((list, index) => {
                     return (
-                        <CollectorColumn items={list} key={list.name}/>
+                        <CollectorColumn key={index} items={list}></CollectorColumn>
                     );
                 })}
             </Grid>
