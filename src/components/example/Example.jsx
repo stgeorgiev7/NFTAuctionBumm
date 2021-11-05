@@ -6,7 +6,7 @@ import classNames from "classnames";
 import Head from "../header/Header";
 import Featured from "../featured/Featured";
 import Trending from "../trending/Trending";
-import TopCollectors from "../topcolectors/TopCollectors";
+import TopCollectors from "../collectors/TopCollectors";
 import How from "../how/How";
 import Auctions from "../auctions/Auctions";
 import Footer from "../footer/Footer";
