@@ -6,7 +6,7 @@ import classNames from "classnames";
 import Head from "../header/Header";
 import Featured from "../featured/Featured";
 import Trending from "../trending/Trending";
-import CollectorColumn from "../collectors/CollectorColumn";
+import TopCollectors from "../topcolectors/TopCollectors";
 import How from "../how/How";
 import Auctions from "../auctions/Auctions";
 import Footer from "../footer/Footer";
@@ -92,28 +92,80 @@ export default function Copyright() {
         ]
       } />
 
-      <CollectorColumn items={[
+      <TopCollectors collectors={[
         {
           name: 'Tarikata73',
           nftsCount: 73,
           avatar: undefined,
           verified: true,
-          id: 73407340
         },
         {
           name: 'brendan_1',
           nftsCount: 52,
           avatar: undefined,
           verified: true,
-          id: 121211
         },
         {
           name: 'damiankata',
           nftsCount: 48,
           avatar: undefined,
           verified: true,
-          id: 4848848
-        }
+        },
+        {
+          name: 'JoniDep',
+          nftsCount: 46,
+          avatar: undefined,
+          verified: true,
+        },
+        {
+          name: 'Kondio',
+          nftsCount: 45,
+          avatar: undefined,
+          verified: true,
+        },
+        {
+          name: 'Shtilqn',
+          nftsCount: 43,
+          avatar: undefined,
+          verified: true,
+        },
+        {
+          name: 'Gloriq',
+          nftsCount: 40,
+          avatar: undefined,
+          verified: true,
+        },
+        {
+          name: 'Sofia Vergara',
+          nftsCount: 38,
+          avatar: undefined,
+          verified: true,
+        },
+        {
+          name: 'Toni_montana',
+          nftsCount: 36,
+          avatar: undefined,
+          verified: true,
+        },
+        {
+          name: 'LeoMessi10',
+          nftsCount: 35,
+          avatar: undefined,
+          verified: true,
+        },
+        {
+          name: 'Ivan_3',
+          nftsCount: 34,
+          avatar: undefined,
+          verified: true,
+        },
+        {
+          name: 'Lal',
+          nftsCount: 33,
+          avatar: undefined,
+          verified: true,
+        },
+        
       ]}/>
 
       <How

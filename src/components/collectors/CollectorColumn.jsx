@@ -17,7 +17,7 @@ export default function CollectorColumn({ items }) {
                             nftsCount={crritem.nftsCount}
                             avatar={crritem.avatar}
                             verified={crritem.verified}
-                            id={crrIndex}
+                            id={crritem.id}
                             type={crrIndex === 1 ? 'light' : ''}
                             key={crritem.name}
                         ></Collector>
