@@ -9,7 +9,7 @@ export default function Collector({ name, nftsCount, avatar, verified, id, type 
     return (
         <div className={classNames([styles.container, styles[type]])} >
 
-            <p>{id + 1}</p>
+            <p>{id}</p>
 
             <User
                 name={name}

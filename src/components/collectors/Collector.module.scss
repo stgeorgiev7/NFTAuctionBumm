@@ -1,29 +1,37 @@
-@use "../../styles/colors";
-
+@use '../../styles/colors';
+@font-face {
+    font-family: Monsterrat;
+    src: url('../../styles/Montserrat/Montserrat-Black.ttf');
+}
 .container {
     display: flex;
+    
 }
 
 .container > p {
-    background-color: colors.$background_paper;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(colors.$primary_main, 20%);
     font-weight: 700;
     font-size: 25px;
     width: 20%;
     margin: 0;
-    text-align: center;
-    padding: 15px;
+    padding: 25px 35px;
 }
 
 .container > div {
-    background-color: colors.$background_default;
+    background-color: rgba(colors.$primary_main, 10%);
     width: 80%;
     text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
 }
 
 .light > p {
-    background-color: rgba(colors.$background_paper, 80%);
+    background-color: rgba(colors.$primary_main, 50%);
 }
 
 .light > div {
-    background-color: rgba(colors.$background_default, 80%)
+    background-color: rgba(colors.$primary_main, 30%)
 }

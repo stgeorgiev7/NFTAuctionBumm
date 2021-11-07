@@ -1,4 +1,8 @@
-@use "../../styles/colors";
+@use '../../styles/colors';
+@font-face {
+    font-family: Monsterrat;
+    src: url('../../styles/Montserrat/Montserrat-Light.ttf');
+}
 
 .gridContainer {
     background-color: colors.$background_paper;
@@ -9,9 +13,18 @@
     padding-left: 10px;
     color: colors.$text_secondary;
     border-radius: 20px;
+    font-family: 'Monsterrat';
 };
+
+.search[placeholder] {
+    font-family: 'Monsterrat';
+}
 
 .searchIcon {
     color: colors.$text_primary;
 };
+
+.whiteButton {
+    font-family: 'Monsterrat';
+} 
 

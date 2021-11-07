@@ -1,9 +1,13 @@
-@use "../../styles/colors";
-
+@use '../../styles/colors';
+@font-face {
+    font-family: Monsterrat;
+    src: url('../../styles/Montserrat/Montserrat-Black.ttf');
+}
 .collectorColumn {
     border-radius: 15px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:'Monsterrat';
     display: flex;
     flex-direction: column;
+    margin: 5px;
     overflow-x: auto;
 }
