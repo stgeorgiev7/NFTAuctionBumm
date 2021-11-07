@@ -10,36 +10,39 @@ import { Grid } from '@mui/material';
 
 export default function Footer() {
     return (
-            <Grid container spacing={5} className={classNames(styles.footContainer)} style={{ margin: '0px' }}
+        
+            <Grid container className={classNames(styles.footContainer)} style={{ margin: '0px' }}
                 flexDirection='row'
-                justifyContent="center"
                 alignItems="center"
+                justifyContent='center'
             >
-
                 <Grid item
-                    xs={4} sm={4} md={4}
+                    xs={3} sm={3} md={3}
                     className={classNames(styles.logo)}
-                    style={{display:'flex', justifyContent:'center', padding: '0' }}>
+                    style={{ display: 'flex', justifyContent: 'center' }}
+                    >
                     <Logo type='muted' />
                 </Grid>
 
-                <Grid item xs={4} sm={4} md={4} justifySelf='center' style={{ padding: '0' }}>
+                <Grid item xs={3} sm={3} md={5} justifySelf='center' style={{ padding: '0' }}>
                     <p className={classNames(styles.text)}>Bum All Rights Reserved 2021</p>
                 </Grid>
 
-                <Grid item xs={4} sm={4} md={4} style={{padding:'0'}}>
+                <Grid item xs={3} sm={3} md={1} >
                     <ButtonBase size='large'
                         color='secondary'
                         className={classNames(styles.whiteButton)}
-                        style={{marginLeft: '50px'}}
                         >Privacy Policy
                     </ButtonBase>
+                </Grid>
+                <Grid item xs={3} sm={3} md={2} alignSelf='center'>
                     <ButtonBase size='large'
                         className={classNames(styles.whiteButton)}
-                        style={{marginLeft: '50px'}}
+                        style={{marginLeft: '30px'}}
                         >Cookie Policy
                     </ButtonBase>
                 </Grid>
             </Grid>
+            
     )
 };

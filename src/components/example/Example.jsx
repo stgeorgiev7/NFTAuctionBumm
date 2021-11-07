@@ -115,7 +115,7 @@ export default function Copyright() {
           name: 'JoniDep',
           nftsCount: 46,
           avatar: undefined,
-          verified: true,
+          verified: false,
         },
         {
           name: 'Kondio',
@@ -139,7 +139,7 @@ export default function Copyright() {
           name: 'Sofia Vergara',
           nftsCount: 38,
           avatar: undefined,
-          verified: true,
+          verified: false,
         },
         {
           name: 'Toni_montana',
@@ -157,7 +157,7 @@ export default function Copyright() {
           name: 'Ivan_3',
           nftsCount: 34,
           avatar: undefined,
-          verified: true,
+          verified: false,
         },
         {
           name: 'Lal',

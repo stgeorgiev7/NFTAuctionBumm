@@ -6,8 +6,7 @@ import { useRouter } from "next/router";
 import styles from "./Featured.module.scss";
 import classNames from "classnames";
 
-export default function Featured({ items = [] }) {
-
+export default function Featured({ items =[] }) {
     const router = useRouter();
 
     return (
@@ -18,20 +17,21 @@ export default function Featured({ items = [] }) {
                 cols={6}
                 gap={10}
             >
-                {items.map((item) => (
+                {items.map((item, index) => (
+
                     <ImageListItem
-                        key={item.image}
-                        cols={item.cols || 1}
-                        rows={item.rows || 1}
+                        key={item.id}
+                        cols={index === 0? 3 : 1}
+                        rows={index === 0? 3 : 1}
                     >
                         <img
-                            src={item.image}
+                            src={item.source.url}
                             srcSet={item.image}
                             alt={item.title}
                             loading="lazy"
-                            onClick={() => { router.push(item.href) }}
+                            onClick={() => { router.push(item.source.url) }}
                             style={{ borderRadius: '10px'}}
-
+                            
                         />
                     </ImageListItem>
                 ))}

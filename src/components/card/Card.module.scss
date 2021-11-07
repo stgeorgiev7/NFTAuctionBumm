@@ -1,10 +1,8 @@
-@use "../../styles/colors";
-
-
-.infoContainer {
-    display: flex;
-    justify-content: space-between;
-};
+@use '../../styles/colors';
+@font-face {
+    font-family: Monsterrat;
+    src: url('../../styles/Montserrat/Montserrat-Black.ttf');
+}
 
 .cardImage {
     border-radius: 10%;
@@ -13,38 +11,43 @@
 
 .Card_title{
     flex: 1;
-    padding-left: 15px;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 1000;
+    font-family: Monsterrat;
+    font-size: 14px;
 };
+
+.likes {
+    display:flex;
+    background: rgba(36, 242, 94, 0.1);
+    border: 2px solid #24F25E;
+    box-sizing: border-box;
+    border-radius: 17px;
+    width: 70px;
+    justify-content: space-evenly;
+    align-items: baseline;
+    color: #24F25E;
+    height: 33px;
+    margin: 0px;
+    flex: 0 0 30%; 
+    font-family: 'Monsterrat';
+    font-weight: 1000;
+}
 
 
 .price {
     flex: 1;
-    padding-left: 15px;
-    padding-bottom: 10px;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 800;
+    font-family: 'Monsterrat';
+    font-weight: 1000;
     color: colors.$info_main;
+
 };
 
-
-.likes { 
-    height: 30px;
-    flex: 0 0 30%; 
-    padding-left: 5px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 800;
-    color: colors.$info_main;
-    border: 3px solid colors.$info_main;
-    width: 30%;
-    border-radius: 20px;
-    background-color: #0b411a;
-};
+.infoContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 45px;
+}
 
 .trendingCards{
     padding:0px;
