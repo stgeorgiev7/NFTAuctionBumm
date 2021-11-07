@@ -20,7 +20,6 @@ export default function Index() {
     setFeaturedCards(dataFeatured);
   }, []);
 
-
   const [trendingCards, setTrendingCards] = useState([]);
   useEffect(() => {
     setTrendingCards(dataTrending);
@@ -34,14 +33,14 @@ export default function Index() {
   const [auctionData, setAuctionData] = useState([]);
   useEffect(() => {
     setAuctionData(dataNfts);
-  }, [])
+  }, []);
 
   return (
     <div>
       <Header />
       <Featured items={trendingCards} />
       <Trending cards={featuredCards} />
-      <TopCollectors collectors={usersData} />
+      <TopCollectors collectors={usersData.sort((a, b) => b.nfts.length - a.nfts.length)} />
       <div style={{backgroundColor: '#4E24F2', paddingTop: 10}}>
       <How
         description='Discover, collect and sell extraoridanry NFTs on the world`s first and largest NFT marketplace. There are three things you`ll need in place to open your account and start buying or selling NFTs on BUM.'
@@ -63,6 +62,7 @@ export default function Index() {
         link='https://google.com/'
       />
       </div>
+
       
       <Auctions cards={auctionData} />
       <Footer />

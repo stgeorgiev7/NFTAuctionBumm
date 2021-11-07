@@ -11,7 +11,7 @@ import _ from 'lodash';
 export default function TopCollectors({ collectors = [] }) {
 
     const collectorsData = collectors.sort((a, b) =>  b.nfts.length - a.nfts.length);
-    collectorsData.map((crrColector, crrIndex) => {
+    collectors.map((crrColector, crrIndex) => {
         if (crrIndex < 12) {
             crrColector.id = crrIndex + 1;
         };
