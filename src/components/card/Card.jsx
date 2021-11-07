@@ -11,6 +11,7 @@ import mediaImage from './image/nft.jpg';
 import millify from "millify";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Timer from '../timer/Timer';
+import ProductImage from '../product/ProductImage';
 
 export default function Card({ name, user, likes = 0, mediaUrl, price, currency, timeLeft = 0 }) {
 
@@ -18,6 +19,10 @@ export default function Card({ name, user, likes = 0, mediaUrl, price, currency,
     const [millifiedLikes, setLikes] = useState(millify(likes));
     const [countDownTime, setCountDownTimer] = useState(timeLeft !== 0 || timeLeft === undefined ? <Timer time={timeLeft} /> : null);
     const badgeLabel = <p className={classNames(styles.likes)}> <FavoriteIcon /> {millifiedLikes}</p>;
+
+    function showImage() {
+        return <ProductImage url={mediaUrl}/>
+    };
 
     return (
 
@@ -30,7 +35,8 @@ export default function Card({ name, user, likes = 0, mediaUrl, price, currency,
                 image={img}
                 height={270}
                 width={270}
-                className={classNames(styles.cardImage)}>
+                className={classNames(styles.cardImage)}
+                onClick={showImage}>
 
             </CardMedia>
             {countDownTime}
