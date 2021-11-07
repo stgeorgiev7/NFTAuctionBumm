@@ -6,7 +6,7 @@ import Footer from "../footer/Footer";
 import { CardMedia } from "@mui/material";
 
 export default function ProductImage({url}) {
-
+    console.log(url);
     return(
         <div className={classNames(styles.product-image)}>
             <Head />
