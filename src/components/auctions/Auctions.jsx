@@ -13,7 +13,7 @@ export default function Auctions({ cards = [] }) {
     const cardsData = cards.map(function (nft, index) {
         if (index <= 3) {
             return (
-                <Grid item key={index} columns={{ xs: 4, sm: 4, md: 4 }}>
+                <Grid item key={index} columns={{ xs: 3, sm: 3, md: 4 }}>
                     <Container style={{padding:'10px'}}>
                         <Card
                             name={nft.name}
