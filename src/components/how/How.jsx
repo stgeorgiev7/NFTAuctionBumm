@@ -4,6 +4,8 @@ import classNames from "classnames";
 import { Button, Grid } from '@mui/material';
 import HowStep from "./HowStep";
 import { Container } from "@mui/material";
+import Link from "next/link";
+
 
 export default function How({ description, title, items = [], link }) {
 
@@ -20,6 +22,7 @@ export default function How({ description, title, items = [], link }) {
                     className={classNames(styles.textContainer)}
                     alignContent='center'
                 >
+                  
                     <h1 className={classNames(styles.CardTitle)}>
                         {title}
                     </h1>
