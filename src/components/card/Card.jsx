@@ -20,8 +20,9 @@ export default function Card({ name, user, likes = 0, mediaUrl, price, currency,
     const [countDownTime, setCountDownTimer] = useState(timeLeft !== 0 || timeLeft === undefined ? <Timer time={timeLeft} /> : null);
     const badgeLabel = <p className={classNames(styles.likes)}> <FavoriteIcon /> {millifiedLikes}</p>;
 
-    function showImage() {
-        return <ProductImage url={mediaUrl}/>
+    function showImage(e) {
+        console.log(e.target.src);
+        return <ProductImage url={e.target.src}/>
     };
 
     return (

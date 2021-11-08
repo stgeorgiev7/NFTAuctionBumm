@@ -12,6 +12,8 @@ import Auctions from "../auctions/Auctions";
 import Footer from "../footer/Footer";
 import userImage from '../avatar/image/avatar.png'
 import mediaImage from "../card/image/nft.jpg";
+import ProductImage from "../src/components/product/ProductImage";
+
 
 
 export default function Copyright() {

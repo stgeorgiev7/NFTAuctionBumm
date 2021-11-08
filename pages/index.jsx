@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Container } from "@mui/material";
-import Example from "../src/components/example/Example";
 import Header from "../src/components/header/Header";
 import Featured from "../src/components/featured/Featured";
 import Trending from "../src/components/trending/Trending";
@@ -14,7 +13,6 @@ import dataTrending from "./data/trending.json";
 import dataUsers from "./data/users.json";
 import dataNfts from "./data/nfts.json";
 import ProductImage from "../src/components/product/ProductImage";
-
 
 export default function Index() {
   const [featuredCards, setFeaturedCards] = useState([]);
@@ -36,6 +34,7 @@ export default function Index() {
   useEffect(() => {
     setAuctionData(dataNfts);
   }, []);
+
 
   return (
     <div>
@@ -65,7 +64,6 @@ export default function Index() {
       />
       </div>
 
-      
       <Auctions cards={auctionData} />
       <Footer />
     </div>
