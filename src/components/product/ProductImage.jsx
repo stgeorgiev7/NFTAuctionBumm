@@ -1,24 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from './ProductImage.module.scss';
 import classNames from "classnames";
 import Head from "../header/Header";
 import Footer from "../footer/Footer";
 import { CardMedia } from "@mui/material";
+import { CardContent } from "@mui/material";
+import Image from "next/image"
 
-export default function ProductImage({url}) {
+export default function ProductImage({ url }) {
     console.log(url);
-    return(
-        <div className={classNames(styles.product-image)}>
-            <Head />
-                <img src={url} className={classNames(styles.image)}/>
+
+    const [img, setImage] = useState(url);
+
+    return (
+        <div className={classNames(styles.productImage)}>
+       
+            <CardContent>
                 <CardMedia
-                component='img'
-                image={url}
-                className={classNames(styles.image)}>
+                    component='img'
+                    image={img}
+                    className={classNames(styles.image)}>
 
                 </CardMedia>
+            </CardContent>
 
-            <Footer />
         </div>
     );
 };
