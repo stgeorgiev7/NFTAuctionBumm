@@ -14,12 +14,7 @@ export default function ProductImage({ url }) {
 
     return (
         <div className='product-image'>
-       
-            <Image
-            src={url}
-            className='image'>
-
-            </Image>
+            <img src={url} className='image'></img>
 
         </div>
     );
