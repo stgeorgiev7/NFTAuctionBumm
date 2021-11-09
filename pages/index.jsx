@@ -14,6 +14,7 @@ import dataUsers from "./data/users.json";
 import dataNfts from "./data/nfts.json";
 import ProductImage from "../src/components/product/ProductImage";
 import ProductInfoTitle from "../src/components/product/ProductInfoTitle";
+import ProductInfoPrice from "../src/components/product/ProductInfoPrice";
 import Link from "next/link";
 
 export default function Index() {
