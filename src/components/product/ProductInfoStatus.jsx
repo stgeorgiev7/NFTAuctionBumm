@@ -5,11 +5,10 @@ import classNames from "classnames";
 export default function ProductInfoStatus() {
 
     return (
-        <div className={classNames(styles["product-info-status"])}>
-            <p className={classNames(styles.status)}>
-                <span>•</span> LIVE
+    
+            <p className={classNames(styles["product-info-status"])} >
+                <span className={classNames(styles.status)}>•</span> LIVE
             </p>
-        </div>
 
     )
 };
