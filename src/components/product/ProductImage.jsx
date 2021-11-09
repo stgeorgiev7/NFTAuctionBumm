@@ -13,8 +13,8 @@ export default function ProductImage({ url }) {
     const [img, setImage] = useState(url);
 
     return (
-        <div className='product-image'>
-            <img src={url} className='image'></img>
+        <div className={classNames(styles['product-image'])}>
+            <img src={url} className={classNames(styles.image)}></img>
 
         </div>
     );
