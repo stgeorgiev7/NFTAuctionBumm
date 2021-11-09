@@ -1,0 +1,28 @@
+@use '../../styles/colors';
+@font-face {
+    font-family: Monsterrat;
+    src: url('../../styles/Montserrat/Montserrat-Black.ttf');
+}
+
+.product-info-likes {
+    
+        display:flex;
+        background: rgba(36, 242, 94, 0.1);
+        border: 2px solid #24F25E;
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 70px;
+        justify-content: space-evenly;
+        align-items: baseline;
+        color: #24F25E;
+        height: 33px;
+        margin: 0px;
+        flex: 0 0 30%; 
+        font-family: 'Monsterrat';
+        font-weight: 1000;
+    
+}
+
+.likes {
+    margin: 1px;
+}

@@ -16,6 +16,7 @@ import ProductImage from "../src/components/product/ProductImage";
 import ProductInfoTitle from "../src/components/product/ProductInfoTitle";
 import ProductInfoPrice from "../src/components/product/ProductInfoPrice";
 import ProductInfoStatus from "../src/components/product/ProductInfoStatus";
+import ProductInfoLikes from "../src/components/product/ProductInfoLikes";
 import Link from "next/link";
 
 export default function Index() {
