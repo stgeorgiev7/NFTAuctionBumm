@@ -23,7 +23,6 @@ export default function Product() {
         <Head />
         <ProductInfoTitle text={'Wooden pants'} />
         <ProductImage 
-        className='product-image'
         url={'https://nft-auction.herokuapp.com/uploads/0xa5192c2be7bf2603bbbae09c340dfeac07275a7a_93a8d3aa6f.jpg'} />
         <Footer />
         </>
