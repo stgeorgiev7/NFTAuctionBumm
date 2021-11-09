@@ -13,16 +13,13 @@ export default function ProductImage({ url }) {
     const [img, setImage] = useState(url);
 
     return (
-        <div className={classNames(styles.productImage)}>
+        <div className='product-image'>
        
-            <CardContent>
-                <CardMedia
-                    component='img'
-                    image={img}
-                    className={classNames(styles.image)}>
+            <Image
+            src={url}
+            className='image'>
 
-                </CardMedia>
-            </CardContent>
+            </Image>
 
         </div>
     );
