@@ -13,9 +13,18 @@ export default function ProductImage({ url }) {
     const [img, setImage] = useState(url.toString());
 
     return (
-        <div className={classNames(styles['product-image'])}>
-            <img src={img} className={classNames(styles.image)}></img>
 
-        </div>
+        <CardContent className={classNames(styles.product)} className={classNames(styles.image)}>
+            <CardMedia
+            component='img'
+            image={img}
+            className={classNames(styles.image)}>
+
+            </CardMedia>
+        </CardContent>
+        // <div className={classNames(styles.product)} className={classNames(styles.image)}>
+        //     <img src={img} className={classNames(styles.image)}></img>
+
+        // </div>
     );
 };
