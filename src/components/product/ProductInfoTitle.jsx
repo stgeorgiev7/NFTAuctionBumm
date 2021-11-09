@@ -4,9 +4,9 @@ import styles from './ProductInfoTitle.module.scss'
 import classNames from "classnames";
 import { Typography } from "@mui/material";
 
-export default function ProductInfoTitle({title}) {
+export default function ProductInfoTitle ({text}) {
 
-    const [crrTitle, setTitle] = useState(title.toString());
+    const [crrTitle, setTitle] = useState(text.toString());
 
     return (
         <div className={classNames(styles["product-info-title"])}>
@@ -14,5 +14,5 @@ export default function ProductInfoTitle({title}) {
                 {crrTitle}    
             </Typography>
         </div>
-    )
+    );
 };
