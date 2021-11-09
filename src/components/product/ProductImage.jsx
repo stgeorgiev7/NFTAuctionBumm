@@ -14,7 +14,7 @@ export default function ProductImage({ url }) {
 
     return (
 
-        <CardContent className={classNames(styles.product)} className={classNames(styles.image)}>
+        <CardContent className={classNames("product-image")} className={classNames(styles.image)}>
             <img src={img} className={classNames(styles.image)}></img>
         </CardContent>
         // <div className={classNames(styles.product)} className={classNames(styles.image)}>
