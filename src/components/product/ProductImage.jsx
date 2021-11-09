@@ -17,9 +17,5 @@ export default function ProductImage({ url }) {
         <div className={classNames(styles["product-image"])}>
             <img src={img} className={classNames(styles.image)}></img>
         </div>
-        // <div className={classNames(styles.product)} className={classNames(styles.image)}>
-        //     <img src={img} className={classNames(styles.image)}></img>
-
-        // </div>
     );
 };

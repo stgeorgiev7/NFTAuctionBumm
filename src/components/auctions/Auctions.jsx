@@ -9,7 +9,6 @@ import { MenuItem } from '@mui/material';
 
 export default function Auctions({ cards = [] }) {
     const [data, setData] = useState(cards);
-    console.log(cards);
     const cardsData = cards.map(function (nft, index) {
         if (index <= 3) {
             return (
