@@ -1,0 +1,18 @@
+@use '../../styles/colors';
+@font-face {
+    font-family: Monsterrat;
+    src: url('../../styles/Montserrat/Montserrat-Black.ttf');
+}
+
+.status {
+    width: 25%;
+    height: 20%;
+    font-family:'Monsterrat';
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 800;
+    color: colors.$background_paper;
+    background-color: colors.$secondary_main;
+    position: relative;
+    left: 20px;
+}
