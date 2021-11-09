@@ -10,11 +10,11 @@ import Image from "next/image"
 export default function ProductImage({ url }) {
     console.log(url);
 
-    const [img, setImage] = useState(url);
+    const [img, setImage] = useState(url.toString());
 
     return (
         <div className={classNames(styles['product-image'])}>
-            <img src={url} className={classNames(styles.image)}></img>
+            <img src={img} className={classNames(styles.image)}></img>
 
         </div>
     );
