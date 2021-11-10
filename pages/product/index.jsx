@@ -30,7 +30,7 @@ export default function Product() {
         <ProductInfoPrice amount={3} currency={'ETH'} />
         <ProductInfoStatus />
         <ProductInfoLikes amount={2500}/>
-        <ProductInfoTimer timeEnd={"2022-10-11T12:04:48.511Z"} onTimeEnd={"auction ended"}/>
+        <ProductInfoTimer onTimeEnd={"auction ended"}/>
         
         <ProductInfoCreator name={'Stoyan'} />
         <ProductImage 
