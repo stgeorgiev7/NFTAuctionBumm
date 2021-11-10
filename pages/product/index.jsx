@@ -30,8 +30,8 @@ export default function Product() {
         <ProductInfoPrice amount={3} currency={'ETH'} />
         <ProductInfoStatus />
         <ProductInfoLikes amount={2500}/>
-        <ProductInfoTimer timeEnd={"2022-10-11T12:04:48.511Z"}/>
-
+        <ProductInfoTimer timeEnd={"2022-10-11T12:04:48.511Z"} onTimeEnd={"auction ended"}/>
+        
         <ProductInfoCreator name={'Stoyan'} />
         <ProductImage 
         url={'https://nft-auction.herokuapp.com/uploads/0xa5192c2be7bf2603bbbae09c340dfeac07275a7a_93a8d3aa6f.jpg'} />

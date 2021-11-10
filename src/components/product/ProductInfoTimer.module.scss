@@ -3,3 +3,26 @@
     font-family: Monsterrat;
     src: url('../../styles/Montserrat/Montserrat-Black.ttf');
 }
+
+.title {
+    background: rgba(#24F25E, 50%);
+    font-family: 'Monsterrat';
+}
+
+.active {
+    background: #24F25E;
+}
+
+.inactive {
+    display: none;
+}
+
+.product-info-timer {
+    background: #24F25E;
+    font-family: 'Monsterrat';
+    color: black;
+};
+
+.timer {
+    font-family: 'Monsterrat';
+}
