@@ -8,7 +8,7 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
     const Completionist = () => <span>Live Auction finished</span>;
 
     const renderer = ({year, month, days, hours, minutes, seconds }) => {
-        if (onTimeEnd) {
+        if ( timeEnd === 0) {
             return <Completionist />;
         } else {
             return <span> {hours}:{minutes}:{seconds}</span>;
@@ -18,10 +18,10 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
     const timer = <Countdown date={timeEnd} className={classNames(styles["timer"])}/>
 
     return (
-        <div className={classNames(styles["product-info-timer"])}>
+        <div className={classNames(styles["product-info-timer"])} >
             <label className={classNames(styles["title"])}>Ends in</label>
             <div className={classNames(styles["timer"])}>
-            {timeEnd !== null ? timer : <Completionist /> }
+            {timeEnd !== null || timeEnd === undefiend ? timer : '' }
 
             </div>
 
