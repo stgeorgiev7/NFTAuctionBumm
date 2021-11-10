@@ -10,7 +10,8 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
     <Countdown 
     date={timeEnd} 
     className={classNames(styles["active"])} 
-    onComplete={() => onTimeEnd}/>
+    children={<div>{onTimeEnd}</div>}
+    /> 
 
     return (
         <div className={classNames(styles["product-info-timer"])} >
