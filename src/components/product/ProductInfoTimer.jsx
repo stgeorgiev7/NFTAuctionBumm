@@ -13,16 +13,20 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
             children={<div>{onTimeEnd}</div>}
         />
 
-    return (
-        <div className={classNames(styles["product-info-timer"])} >
-
-            {timeEnd !== null && timeEnd !== undefined ?
-                <div className={classNames(styles["timer"])}>
-                    <label className={classNames(styles["title"])}>Ends in</label>
-                    {timer}
-                </div>
-                : <div></div>}
-
+    const timerComponent = 
+    <div className={classNames(styles["product-info-timer"])}>
+        <div className={classNames(styles["timer"])}>
+            <label className={classNames(styles["title"])}>Ends in</label>
+            {timer}
         </div>
+    </div>
+
+
+
+    return (
+        <>
+            {timeEnd !== null && timeEnd !== undefined ? timerComponent : <div></div>}
+        </>
+        
     )
 };
