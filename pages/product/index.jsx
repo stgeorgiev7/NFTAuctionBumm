@@ -26,7 +26,7 @@ import Footer from '../../src/components/footer/Footer';
 export default function Product() {
 
     return (
-        <>
+        <div>
             <Head />
             <ProductInfo
                 title={'Wooden pants'}
@@ -37,6 +37,6 @@ export default function Product() {
                 timeEnd={"2022-10-11T12:04:48.511Z"}
                 isLive={true} />
             <Footer />
-        </>
+        </div>
     );
 }
