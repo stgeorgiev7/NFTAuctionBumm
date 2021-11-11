@@ -20,9 +20,6 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
             {timer}
         </div>
 
-
-
-
     return (
         <div className={classNames(styles["product-info-timer"])}>
             {timeEnd ? timerComponent : <div className={classNames(styles["timer"])}></div>}
