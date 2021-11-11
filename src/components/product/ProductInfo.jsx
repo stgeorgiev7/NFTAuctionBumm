@@ -11,7 +11,7 @@ import ProductInfoCreator from "./ProductInfoCreator";
 import ProductInfoLikes from "./ProductInfoLikes";
 import ProductInfoTimer from "./ProductInfoTimer";
 
-export default function ProductInfo({ title, creator, price, currency, likes, onTimeEnd, timeEnd, isLive }) {
+export default function ProductInfo ({ title, creator, price, currency, likes, onTimeEnd, timeEnd, isLive }) {
 
     return (
         <div className={classNames(styles["product-info"])}>
