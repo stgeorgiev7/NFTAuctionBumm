@@ -19,7 +19,7 @@ import ProductInfoStatus from "../src/components/product/ProductInfoStatus";
 import ProductInfoLikes from "../src/components/product/ProductInfoLikes";
 import ProductInfoCreator from "../src/components/product/ProductInfoCreator";
 import ProductInfoTimer from "../src/components/product/ProductInfoTimer";
-import ProductInfo from  "./../src/components/product/ProductInfo"
+import ProductInfo from "../src/components/product/ProductInfo";
 import Link from "next/link";
 
 export default function Index() {
