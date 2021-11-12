@@ -9,10 +9,8 @@ export default function ProductInfoStatus({isLive}) {
     </p>
 
     return (
-    
             <div>
                 {isLive? liveBadge: <div></div>}
             </div>
-
     )
 };
