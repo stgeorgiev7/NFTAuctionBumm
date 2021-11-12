@@ -28,8 +28,8 @@ export default function ProductInfo ({ title, creator, price, currency, likes, o
                         <ProductInfoLikes amount={likes}/>
                         <ProductInfoStatus isLive={isLive}/>
                         <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={"auction ended"}/>
-                        <ProductInfoCreator name={creator} />
-                        <ProductInfoStatus />
+                        <ProductInfoCreator />
+                        <ProductInfoStatus isLive={isLive}/>
 
                     </Stack>
                 </Grid>
