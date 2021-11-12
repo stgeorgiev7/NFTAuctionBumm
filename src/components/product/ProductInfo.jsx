@@ -16,7 +16,7 @@ export default function ProductInfo ({ title, creator, price, currency, likes, o
     return (
         <div className={classNames(styles["product-info"])}>
             <Grid container spacing={3}>
-                <Grid item xs={6} sm={6} md={7}>
+                <Grid item xs={6} sm={7} md={7}>
                     <ProductImage
                         url={'https://nft-auction.herokuapp.com/uploads/0xa5192c2be7bf2603bbbae09c340dfeac07275a7a_93a8d3aa6f.jpg'} />
                 </Grid>
@@ -29,7 +29,7 @@ export default function ProductInfo ({ title, creator, price, currency, likes, o
                         <ProductInfoStatus isLive={isLive}/>
                         <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={"auction ended"}/>
                         <ProductInfoCreator />
-                        <ProductInfoStatus isLive={isLive}/>
+                        <ProductInfoStatus />
 
                     </Stack>
                 </Grid>
