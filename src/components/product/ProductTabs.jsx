@@ -32,8 +32,8 @@ export default function ProductTabs({ text, bids }) {
             <Table>
                 <TableBody>
                     {
-                        bids.map((crrBid, index) => {
-                            return <TableRow key={`${crrBid.user.name} bid`} className={classNames(styles[`table-row-${index}`])}>
+                        bids.map((crrBid, i) => {
+                            return <TableRow className={classNames(styles[`table-row-${i}`])} key={`${crrBid.user.name} bid`} >
                                 <TableCell component='th' scope='row'>
                                     <User name={crrBid.user.name} avatar={crrBid.user.avatar} verified={crrBid.user.verified} />
                                 </TableCell>
@@ -54,10 +54,10 @@ export default function ProductTabs({ text, bids }) {
         </TableContainer>
 
     return (
-        <TabContext className={classNames(styles["product-tabs"])} value={value}>
-            <TabList onChange={handleChange}>
-                <Tab label='DETAILS' value="1" />
-                <Tab label='BIDS' value="2" />
+        <TabContext  value={value}>
+            <TabList onChange={handleChange} className={classNames(styles["product-tabs"])}>
+                <Tab label='DETAILS' value="1" className={classNames(styles["tab-details"])} />
+                <Tab label='BIDS' value="2" className={classNames(styles["tab-bids"])}/>
             </TabList>
             <TabPanel value="1">{text}</TabPanel>
             <TabPanel value="2">{currentBids}</TabPanel>
