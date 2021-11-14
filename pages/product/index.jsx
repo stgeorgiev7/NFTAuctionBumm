@@ -7,6 +7,7 @@ import ProductInfoLikes from "../../src/components/product/ProductInfoLikes";
 import ProductInfoCreator from "../../src/components/product/ProductInfoCreator";
 import ProductInfoTimer from "../../src/components/product/ProductInfoTimer";
 import ProductInfo from "../../src/components/product/ProductInfo";
+import ProductTabs from "../../src/components/product/ProductTabs";
 import dataNft from '../data/nfts.json';
 import Head from '../../src/components/header/Header';
 import Footer from '../../src/components/footer/Footer';
