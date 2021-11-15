@@ -6,14 +6,18 @@
 
 .product-tabs {
     font-family: 'Monsterrat';
-}
-
-.table-row-0 {
+    background-color: red;
     border: 3px solid red;
-}
+};
 
-.table-row-1 {
-    border: 3px solid rgb(114, 109, 109);
+.table-row {
+    &-0 {
+        border: 3px solid grey;
+    }
+
+    &-1 {
+        border: 3px solid green;
+    }
 }
 
 .tab-details {
