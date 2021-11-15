@@ -34,7 +34,7 @@ export default function ProductTabs({ text, bids }) {
                     {
                         bids.map((crrBid, i) => {
                             return (
-                                <TableRow className={classNames(styles[`table-row-${i}`])} key={`${crrBid.user.name} bid`}>
+                                <TableRow className={`table-row-${i}`} key={`${crrBid.user.name} bid`}>
                                     <TableCell component='th' scope='row'>
                                         <User name={crrBid.user.name} avatar={crrBid.user.avatar} verified={crrBid.user.verified} />
                                     </TableCell>
