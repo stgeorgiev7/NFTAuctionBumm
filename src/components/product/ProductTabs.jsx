@@ -33,28 +33,33 @@ export default function ProductTabs({ text, bids }) {
                 <TableBody>
                     {
                         bids.map((crrBid, i) => {
-                            return <TableRow className={classNames(styles[`table-row-${i}`])} key={`${crrBid.user.name} bid`}>
-                                <TableCell component='th' scope='row'>
-                                    <User name={crrBid.user.name} avatar={crrBid.user.avatar} verified={crrBid.user.verified} />
-                                </TableCell>
+                            return (
+                                <TableRow className={classNames(styles[`table-row-${i}`])} key={`${crrBid.user.name} bid`}>
+                                    <TableCell component='th' scope='row'>
+                                        <User name={crrBid.user.name} avatar={crrBid.user.avatar} verified={crrBid.user.verified} />
+                                    </TableCell>
 
-                                <TableCell>
-                                    <p>{`${crrBid.amount} ETH`}</p>
-                                </TableCell>
+                                    <TableCell>
+                                        <p>{`${crrBid.amount} ETH`}</p>
+                                    </TableCell>
 
-                                <TableCell>
-                                    {formatDate(crrBid.date)}
-                                </TableCell>
+                                    <TableCell>
+                                        {formatDate(crrBid.date)}
+                                    </TableCell>
 
-                            </TableRow>
+                                </TableRow>
+
+                            )
+
                         })
                     }
-                </TableBody>
+                    </TableBody>
             </Table>
         </TableContainer>
 
     return (
-            <TabContext  className={styles["product-tabs"]} value={value} >
+        <div className={classNames(styles['tab-bids'])} >
+            <TabContext value={value}>
                 <TabList onChange={handleChange} >
                     <Tab label='DETAILS' value="1" className={classNames(styles["tab-details"])} />
                     <Tab label='BIDS' value="2" className={classNames(styles["tab-bids"])} />
@@ -63,7 +68,7 @@ export default function ProductTabs({ text, bids }) {
                 <TabPanel value="2">{currentBids}</TabPanel>
 
             </TabContext>
+        </div>
 
-        
     )
 }

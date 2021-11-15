@@ -15,7 +15,7 @@ import ProductTabs from "./ProductTabs";
 export default function ProductInfo ({ title, creator, price, currency, likes, onTimeEnd, timeEnd, isLive }) {
 
     return (
-        <div className={classNames(styles["product-info"])}>
+        <div clases={classNames(styles["product-info"])}>
             <Grid container spacing={3}>
                 <Grid item xs={7} sm={7} md={7}>
                     <ProductImage
