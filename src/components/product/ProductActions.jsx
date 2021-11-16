@@ -6,8 +6,8 @@ import classNames from 'classnames';
 
 export default function ProductAuction({ isLive, currency, buyAmount, bidAmount, onBuy, onBid }) {
 
-    const auctionBtns =
-        <div>
+    return (
+        <div className={classNames(styles["product-action"])} variant="contained" color="success" onClick={onBid}>
             <Grid container>
                 <Grid item xs={7} sm={7} md={7}>
                     <Button className={classNames(styles['button'])} variant='contained'>
@@ -22,11 +22,7 @@ export default function ProductAuction({ isLive, currency, buyAmount, bidAmount,
                 </Grid>
 
             </Grid>
-        </div>
 
-    return (
-        <div className={classNames(styles["product-action"])} variant="contained" color="success" onClick={onBid}>
-            {isLive ? auctionBtns : <div></div>}
         </div>
     )
 };
