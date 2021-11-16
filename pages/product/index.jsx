@@ -38,6 +38,9 @@ export default function Product() {
                 likes={3500}
                 timeEnd={"2022-10-11T12:04:48.511Z"}
                 isLive={true} />
+
+            <ProductActions isLive={true} buyAmount={3} bidAmount={1} currency={'ETH'} />
+
             <Footer />
         </div>
     );
