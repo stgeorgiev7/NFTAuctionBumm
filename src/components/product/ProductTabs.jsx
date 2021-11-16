@@ -58,7 +58,7 @@ export default function ProductTabs({ text, bids }) {
         </TableContainer>
 
     return (
-        <div className={classNames(styles['tab-bids'])} >
+        <div className={classNames(styles["product-tabs"])} >
             <TabContext value={value}>
                 <TabList onChange={handleChange} >
                     <Tab label='DETAILS' value="1" className={classNames(styles["tab-details"])} />

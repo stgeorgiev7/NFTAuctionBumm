@@ -11,6 +11,7 @@ import ProductInfoCreator from "./ProductInfoCreator";
 import ProductInfoLikes from "./ProductInfoLikes";
 import ProductInfoTimer from "./ProductInfoTimer";
 import ProductTabs from "./ProductTabs";
+import ProductAuction from "./ProductAuction";
 
 export default function ProductInfo ({ title, creator, price, currency, likes, onTimeEnd, timeEnd, isLive }) {
 
@@ -31,7 +32,8 @@ export default function ProductInfo ({ title, creator, price, currency, likes, o
                         <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={"auction ended"}/>
                         <ProductTabs text={'nqkyv text'} bids={[{"user":{"avatar":"/images/avatar.png","name":"hrisi","verified":true},"amount":30,"date":"2021-10-22T08:29:23.382Z"},{"user":{"avatar":"/images/avatar.png","name":"maxi","verified":true},"amount":1000,"date":"2021-10-22T08:29:23.382Z"}]} />
                         <ProductInfoCreator />
-
+                        <ProductAuction isLive={true} buyAmount={3} bidAmount={1} currency={'ETH'}/>
+                        
                     </Stack>
                 </Grid>
 
