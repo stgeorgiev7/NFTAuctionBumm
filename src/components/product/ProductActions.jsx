@@ -25,7 +25,7 @@ export default function ProductAuction({ isLive, currency, buyAmount, bidAmount,
         </div>
 
     return (
-        <div className={classNames(styles["product-auctions"])} variant="contained" color="success" onClick={onBid}>
+        <div className={classNames(styles["product-action"])} variant="contained" color="success" onClick={onBid}>
             {isLive ? auctionBtns : <div></div>}
         </div>
     )
