@@ -26,7 +26,7 @@ export default function ProductActions({ isLive, currency, buyAmount, bidAmount,
                         variant="outlined"
                         color="success"
                         onClick={onBid}>
-                        Place bid for {bidAmount} {currency} {onTimeEnd}
+                        Place bid for {bidAmount} {currency}
                     </Button>
                 </Grid>
 
