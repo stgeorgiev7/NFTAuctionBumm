@@ -4,7 +4,7 @@ import { Grid } from '@mui/material';
 import styles from "./ProductActions.module.scss";
 import classNames from 'classnames';
 
-export default function ProductAction({ isLive, currency, buyAmount, bidAmount, onBuy, onBid }) {
+export default function ProductActions({ isLive, currency, buyAmount, bidAmount, onBuy, onBid }) {
 
     return (
         <div className={'product-actions'}>
