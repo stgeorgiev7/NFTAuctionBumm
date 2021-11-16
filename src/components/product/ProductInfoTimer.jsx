@@ -1,11 +1,13 @@
 import React from "react";
-import Countdown, { calcTimeDelta } from "react-countdown";
+import Countdown from "react-countdown";
 import styles from './ProductInfoTimer.module.scss';
 import classNames from "classnames";
+import { formatDistance } from "date-fns";
+import { parseISO } from "date-fns";
 
 
 export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
-
+    
     const timer =
         <Countdown
             date={timeEnd}

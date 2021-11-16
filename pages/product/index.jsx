@@ -1,14 +1,5 @@
 import React from "react";
-import ProductImage from "../../src/components/product/ProductImage";
-import ProductInfoTitle from "../../src/components/product/ProductInfoTitle";
-import ProductInfoPrice from "../../src/components/product/ProductInfoPrice";
-import ProductInfoStatus from "../../src/components/product/ProductInfoStatus";
-import ProductInfoLikes from "../../src/components/product/ProductInfoLikes";
-import ProductInfoCreator from "../../src/components/product/ProductInfoCreator";
-import ProductInfoTimer from "../../src/components/product/ProductInfoTimer";
-import ProductInfo from "../../src/components/product/ProductInfo";
-import ProductTabs from "../../src/components/product/ProductTabs";
-import ProductActions from "../../src/components/product/ProductActions";
+import ProductContainer from "../../src/components/product/ProductContainer";
 import dataNft from '../data/nfts.json';
 import Head from '../../src/components/header/Header';
 import Footer from '../../src/components/footer/Footer';
@@ -30,7 +21,7 @@ export default function Product() {
     return (
         <div>
             <Head />
-            <ProductInfo
+            {/* <ProductInfo
                 title={'Wooden pants'}
                 creator={'Stoyan'}
                 price={3}
@@ -39,9 +30,22 @@ export default function Product() {
                 timeEnd={"2022-10-11T12:04:48.511Z"}
                 isLive={true} />
             <ProductTabs text={'nqkyv text'} bids={[{ "user": { "avatar": "/images/avatar.png", "name": "hrisi", "verified": true }, "amount": 30, "date": "2021-10-22T08:29:23.382Z" }, { "user": { "avatar": "/images/avatar.png", "name": "maxi", "verified": true }, "amount": 1000, "date": "2021-10-22T08:29:23.382Z" }]} />
-            <ProductActions isLive={false} buyAmount={3} bidAmount={1} currency={'ETH'} />
+            <ProductActions isLive={false} buyAmount={3} bidAmount={1} currency={'ETH'} /> */}
+
+            <ProductContainer
+                name={"Ergonomic Concrete Tuna"}
+                owner={{ "username": "Justen_King18", "verified": true, "avatar": { "url": "https://nft-auction.herokuapp.com/uploads/thumbnail_0x7d9debcf75a71bbb5c533804c9845d313fe3f6aa_ec98dd79b9.jpg" } }}
+                price={20} currency={"ETH"}
+                likes={25}
+                auction_end={"2022-09-02T20:43:19.149Z"}
+                details={"asdasdads"}
+                source={{ "url": "https://nft-auction.herokuapp.com/uploads/thumbnail_0x7d9debcf75a71bbb5c533804c9845d313fe3f6aa_ec98dd79b9.jpg" }}
+                bids={[{ "user": { "info": 20, "name": "John", "verified": true, "avatar": "https://nft-auction.herokuapp.com/uploads/thumbnail_0xa6dbe6b4f8e2905c26e123ec6fd08a8f7200dbc1_64120a76f4.jpg" }, "date": "2021-10-22T08:29:23.382Z", "amount": 20 }]}
+            />
 
             <Footer />
+
+
         </div>
     );
 }

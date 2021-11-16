@@ -6,7 +6,7 @@ import { Typography } from "@mui/material";
 
 export default function ProductInfoTitle ({text}) {
 
-    const [crrTitle, setTitle] = useState(text.toString());
+    const [crrTitle, setTitle] = useState(text);
 
     return (
         <div className={classNames(styles["product-info-title"])}>
