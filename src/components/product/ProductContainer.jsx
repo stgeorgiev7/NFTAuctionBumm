@@ -37,7 +37,7 @@ export default function ProductContainer({ name, owner, price, currency, likes, 
                         bidAmount={price}
                         onBid={price}
                         onBuy={price}
-                        onTimeEnd={auction_end}
+                        onTimeEnd={details}
                     />
 
                 </Grid>
