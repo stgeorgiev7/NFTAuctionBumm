@@ -4,10 +4,10 @@ import { Grid } from '@mui/material';
 import styles from "./ProductActions.module.scss";
 import classNames from 'classnames';
 
-export default function ProductAuction({ isLive, currency, buyAmount, bidAmount, onBuy, onBid }) {
+export default function ProductAction({ isLive, currency, buyAmount, bidAmount, onBuy, onBid }) {
 
     return (
-        <div className={styles["product-action"]}>
+        <div className={'product-action'}>
             <Grid container>
                 <Grid item xs={7} sm={7} md={7}>
                     <Button className={styles['button']} variant='contained' onClick={onBuy}>
