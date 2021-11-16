@@ -7,7 +7,7 @@ import classNames from 'classnames';
 export default function ProductAction({ isLive, currency, buyAmount, bidAmount, onBuy, onBid }) {
 
     return (
-        <div className={'product-action'}>
+        <div className={'product-actions'}>
             <Grid container>
                 <Grid item xs={7} sm={7} md={7}>
                     <Button className={styles['button']} variant='contained' onClick={onBuy}>
