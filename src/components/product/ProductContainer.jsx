@@ -35,9 +35,9 @@ export default function ProductContainer({ name, owner, price, currency, likes, 
                         currency={currency}
                         buyAmount={price}
                         bidAmount={price}
-                        onBid={price}
-                        onBuy={price}
-                        onTimeEnd={price}
+                        onBid={() => {alert('auction ended')}}
+                        onBuy={() => {alert('auction ended')}}
+                        onTimeEnd={'auction ended'}
                     />
 
                 </Grid>

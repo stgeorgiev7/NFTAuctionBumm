@@ -23,7 +23,7 @@ export default function ProductInfo({ title, creator, price, currency, likes, on
                         <ProductInfoStatus isLive={isLive} />
                         <ProductInfoLikes amount={likes} />
                         <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={"auction ended"} />
-                        <ProductInfoCreator name={creator.username} avatar={creator.avatar} verified={creator.verified}/>
+                        <ProductInfoCreator name={creator.username} avatar={creator.avatar.url} verified={creator.verified}/>
 
                     </Stack>
 
