@@ -5,10 +5,13 @@
 }
 
 .product-info-title {
-    border: 3px solid green;
+    border-bottom: 3px solid #4E24F2;
+    padding-bottom: 30px;
+    justify-self: start;
 }
 
 .title {
-    font-family: "Monsterrat";
     font-size: 50px;
+    font-family: 'Monsterrat';
+    
 }

@@ -12,16 +12,7 @@ import dataFeatured from "./data/featured.json";
 import dataTrending from "./data/trending.json";
 import dataUsers from "./data/users.json";
 import dataNfts from "./data/nfts.json";
-import ProductImage from "../src/components/product/ProductImage";
-import ProductInfoTitle from "../src/components/product/ProductInfoTitle";
-import ProductInfoPrice from "../src/components/product/ProductInfoPrice";
-import ProductInfoStatus from "../src/components/product/ProductInfoStatus";
-import ProductInfoLikes from "../src/components/product/ProductInfoLikes";
-import ProductInfoCreator from "../src/components/product/ProductInfoCreator";
-import ProductInfoTimer from "../src/components/product/ProductInfoTimer";
-import ProductInfo from "../src/components/product/ProductInfo";
-import ProductTabs from "../src/components/product/ProductTabs";
-import ProductActions from "../src/components/product/ProductActions";
+import ProductContainer from "../src/components/product/ProductContainer";
 import Link from "next/link";
 
 export default function Index() {
