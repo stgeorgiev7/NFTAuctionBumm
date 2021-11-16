@@ -13,7 +13,7 @@ import ProductInfoTimer from "./ProductInfoTimer";
 import ProductTabs from "./ProductTabs";
 import ProductActions from "./ProductActions";
 
-export default function ProductInfo ({ title, creator, price, currency, likes, onTimeEnd, timeEnd, isLive }) {
+export default function ProductInfo({ title, creator, price, currency, likes, onTimeEnd, timeEnd, isLive }) {
 
     return (
         <div clases={classNames(styles["product-info"])}>
@@ -27,12 +27,11 @@ export default function ProductInfo ({ title, creator, price, currency, likes, o
                     <Stack className={classNames(styles["stats"])}>
                         <ProductInfoTitle text={title} />
                         <ProductInfoPrice amount={price} currency={currency} />
-                        <ProductInfoLikes amount={likes}/>
-                        <ProductInfoStatus isLive={isLive}/>
-                        <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={"auction ended"}/>
-                        <ProductTabs text={'nqkyv text'} bids={[{"user":{"avatar":"/images/avatar.png","name":"hrisi","verified":true},"amount":30,"date":"2021-10-22T08:29:23.382Z"},{"user":{"avatar":"/images/avatar.png","name":"maxi","verified":true},"amount":1000,"date":"2021-10-22T08:29:23.382Z"}]} />
+                        <ProductInfoLikes amount={likes} />
+                        <ProductInfoStatus isLive={isLive} />
+                        <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={"auction ended"} />
                         <ProductInfoCreator />
-                        
+
                     </Stack>
                 </Grid>
 

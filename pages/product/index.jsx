@@ -38,7 +38,7 @@ export default function Product() {
                 likes={3500}
                 timeEnd={"2022-10-11T12:04:48.511Z"}
                 isLive={true} />
-
+            <ProductTabs text={'nqkyv text'} bids={[{ "user": { "avatar": "/images/avatar.png", "name": "hrisi", "verified": true }, "amount": 30, "date": "2021-10-22T08:29:23.382Z" }, { "user": { "avatar": "/images/avatar.png", "name": "maxi", "verified": true }, "amount": 1000, "date": "2021-10-22T08:29:23.382Z" }]} />
             <ProductActions isLive={true} buyAmount={3} bidAmount={1} currency={'ETH'} />
 
             <Footer />
