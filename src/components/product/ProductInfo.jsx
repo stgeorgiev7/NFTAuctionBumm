@@ -11,7 +11,7 @@ import ProductInfoCreator from "./ProductInfoCreator";
 import ProductInfoLikes from "./ProductInfoLikes";
 import ProductInfoTimer from "./ProductInfoTimer";
 import ProductTabs from "./ProductTabs";
-import ProductAuction from "./ProductAuction";
+import ProductAuction from "./ProductActions";
 
 export default function ProductInfo ({ title, creator, price, currency, likes, onTimeEnd, timeEnd, isLive }) {
 
