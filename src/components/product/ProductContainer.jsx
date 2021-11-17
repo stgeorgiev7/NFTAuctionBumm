@@ -6,6 +6,7 @@ import ProductImage from "./ProductImage";
 import ProductActions from "./ProductActions";
 import ProductTabs from "./ProductTabs";
 import { Grid } from "@mui/material";
+import { Container } from "@mui/material"
 
 
 export default function ProductContainer({ name, owner, price, currency, likes, auction_end, details, bids, source }) {
@@ -37,7 +38,7 @@ export default function ProductContainer({ name, owner, price, currency, likes, 
                         bidAmount={price}
                         onBid={() => {alert('auction ended')}}
                         onBuy={() => {alert('auction ended')}}
-                        onTimeEnd={'auction ended'}
+                        onTimeEnd={()=> {alert('auction ended')}}
                     />
 
                 </Grid>
