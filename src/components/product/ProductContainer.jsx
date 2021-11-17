@@ -13,7 +13,7 @@ export default function ProductContainer({ name, owner, price, currency, likes, 
 
     return (
         <div className={classNames(styles["product-container"])}>
-            <Grid container>
+            <Grid container spacing={1}>
 
                 <Grid item xs={6}>
                     <ProductImage url={source.url} />
@@ -36,9 +36,9 @@ export default function ProductContainer({ name, owner, price, currency, likes, 
                         currency={currency}
                         buyAmount={price}
                         bidAmount={price}
-                        onBid={() => {alert('auction ended')}}
-                        onBuy={() => {alert('auction ended')}}
-                        onTimeEnd={()=> {alert('auction ended')}}
+                        onBid
+                        onBuy
+                        
                     />
 
                 </Grid>
