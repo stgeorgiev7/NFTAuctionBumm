@@ -28,6 +28,8 @@ export default function ProductContainer({ name, owner, price, currency, likes, 
                         likes={likes}
                         timeEnd={auction_end}
                         creator={owner}
+                        onTimeEnd
+                        
                     />
 
                     <ProductTabs text={details} bids={bids} />
