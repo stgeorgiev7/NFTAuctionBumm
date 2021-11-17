@@ -36,8 +36,8 @@ export default function ProductContainer({ name, owner, price, currency, likes, 
                         currency={currency}
                         buyAmount={price}
                         bidAmount={price}
-                        onBid={() => {alert('auction ended')}}
-                        onBuy={() => {alert('auction ended')}}
+                        onBid={() => {alert(`You have placed a bid on ${name} for ${price} ${currency}!`)}}
+                        onBuy={() => {alert(`You have bought ${name} for ${price} ${currency}`)}}
                         onTimeEnd={()=> {alert('auction ended')}}
                     />
 
