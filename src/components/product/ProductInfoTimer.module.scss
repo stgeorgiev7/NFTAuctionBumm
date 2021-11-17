@@ -12,15 +12,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
     border-radius: 10px;
     margin: 10px
 };
 
 .title {    
+    text-align: center;
     display: flex;
     padding: 10px;
-    
 }
 
 .active {
