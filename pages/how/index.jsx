@@ -8,7 +8,7 @@ export default function HowPage() {
     return (
         <div>
             <Header />
-                <Hero text={"HOW IT WORKS"}/>
+                <Hero text={"how it works"}/>
             <Footer />
         </div>
     )
