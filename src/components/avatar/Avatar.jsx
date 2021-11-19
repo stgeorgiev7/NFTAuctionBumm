@@ -21,7 +21,7 @@ export default function Avatar({ url, size = 20, verified = false }) {
             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
             style={{padding: '5px 10px 5px'}}
         >   
-            <AvatarComp src={url ? url : defaultImg.src} />
+            <AvatarComp src={url ? url : defaultImg.src} sx={size}/>
 
         </Badge>
     )
