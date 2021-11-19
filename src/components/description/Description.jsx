@@ -9,11 +9,8 @@ export default function Description({text, image}) {
 
     return (
         <div className={classNames(styles.description)}>
-            <Typography variant={"body1"} className={classNames(styles.text)}>
-                {description}
-                <img src={describedImage}></img>
-            </Typography>
-
+            <Typography variant={"body1"} className={classNames(styles.text)} children={description} />
+            <img src={describedImage} className={classNames(styles.image)}></img>
         </div>
     )
 }
