@@ -7,58 +7,27 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useEffect } from "react";
 
-// export const getStaticPaths = () => {
-//     const paths = data.map(crrNft => {
-//         return {
-//             params: {id: crrNft.id.toString()}
-//         }
-//     });
-
-//     return {
-//         paths,
-//         fallback: false
-//     }
-// }
-
-// export const getStaticProps= () => {
-//     const router = useRouter();
-//     const crrid = Number(router.query.id);
-
-//     const [nftData, setNftData] = useState([]);
-//     useEffect(() => {
-//         setNftData(data);
-//     }, []);
-
-//     const obj = nftData.filter(element => {
-//         if (element.id === crrid) {
-//             return element
-//         };
-//     });
-
-//     return {
-//         props: {nft: obj[0]}
-//     }
-    
-// }
-
-export default function ProductPage({ nft }) {
+export default function ProductPage() {
     const router = useRouter();
     const crrid = Number(router.query.id);
+
+    let nft;
+    let nftId;
 
     const [nftData, setNftData] = useState([]);
     useEffect(() => {
         setNftData(data);
     }, []);
 
-    const obj = nftData.filter(element => {
-        if (element.id === crrid) {
-            return element
-        };
-    });
+    for(let i=0; i < nftData.length; i++) {
+        if(crrid === nftData[i].id) {
+            nftId = nftData[i].id;
+            nft = nftData[i];
+        }
+    }
 
-    console.log(obj[0]);
-    
-
+    console.log(nft);
+   
     return (
         <div>
             <Head />

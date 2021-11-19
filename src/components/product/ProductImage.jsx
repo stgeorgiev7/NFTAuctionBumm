@@ -5,7 +5,7 @@ import classNames from "classnames";
 
 export default function ProductImage({ url }) {
 
-    const [img, setImage] = useState(url.toString());
+    const [img, setImage] = useState(url);
 
     return (
 
