@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import styles from './Card.module.scss';
 import classNames from 'classnames';
 import Avatar from '../avatar/Avatar';
@@ -28,20 +29,18 @@ export default function Card({ name, user, likes = 0, mediaUrl, price, currency,
             sx={{ width: 270, height: 420 }}
             style={countDownTime ? { backgroundColor: '#1A2E2D', borderRadius: '25px', paddingBottom: '30px' } : { backgroundColor: '#181828', borderRadius: '25px' }}>
             <Avatar url={user.avatar.url} size={50} verified={user.verified} />
-            <Link href={'/product/'}>
-
+            <Link href={'/product/' + id}>
                 <CardMedia
                     component="img"
                     image={img}
                     height={270}
                     width={270}
                     className={classNames(styles.cardImage)}
-                   
+
                 >
-
                 </CardMedia>
+            </Link>
 
-            </Link >
             {countDownTime}
 
             <CardContent style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '20px', paddingTop: 5 }}>
@@ -63,6 +62,6 @@ export default function Card({ name, user, likes = 0, mediaUrl, price, currency,
                     {millifiedLikes}</p>
             </div> */}
 
-        </CardContainer>
+        </CardContainer >
     )
 }

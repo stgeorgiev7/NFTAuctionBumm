@@ -1,6 +1,6 @@
 import React from "react";
 import ProductContainer from "../../src/components/product/ProductContainer";
-import dataNft from '../data/nfts.json';
+import nfts from "../data/nfts.json";
 import Head from '../../src/components/header/Header';
 import Footer from '../../src/components/footer/Footer';
 
@@ -21,16 +21,6 @@ export default function Product() {
     return (
         <div>
             <Head />
-            {/* <ProductInfo
-                title={'Wooden pants'}
-                creator={'Stoyan'}
-                price={3}
-                currency={'ETH'}
-                likes={3500}
-                timeEnd={"2022-10-11T12:04:48.511Z"}
-                isLive={true} />
-            <ProductTabs text={'nqkyv text'} bids={[{ "user": { "avatar": "/images/avatar.png", "name": "hrisi", "verified": true }, "amount": 30, "date": "2021-10-22T08:29:23.382Z" }, { "user": { "avatar": "/images/avatar.png", "name": "maxi", "verified": true }, "amount": 1000, "date": "2021-10-22T08:29:23.382Z" }]} />
-            <ProductActions isLive={false} buyAmount={3} bidAmount={1} currency={'ETH'} /> */}
 
             <ProductContainer
                 name={"Ergonomic Concrete Tuna"}
