@@ -1,5 +1,5 @@
 import React from "react";
-import {Head as Header} from "../../../src/components/header/Header";
+import Head from "../../../src/components/header/Header";
 import ProductContainer from "../../../src/components/product/ProductContainer";
 import Footer from "../../../src/components/footer/Footer";
 import data from "../../data/nfts.json";
@@ -61,7 +61,7 @@ export default function ProductPage({ nft }) {
 
     return (
         <div>
-            <Header />
+            <Head />
             <ProductContainer
                 name={"Ergonomic Concrete Tuna"}
                 owner={{ "username": "Justen_King18", "verified": true, "avatar": { "url": "https://nft-auction.herokuapp.com/uploads/thumbnail_0x7d9debcf75a71bbb5c533804c9845d313fe3f6aa_ec98dd79b9.jpg" } }}

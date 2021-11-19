@@ -10,7 +10,7 @@ import { ButtonBase } from '@mui/material';
 import { Grid } from '@mui/material';
 
 
-export default function Head() {
+export default function Header() {
     return (
         <Grid container spacing={5} className={classNames(styles.gridContainer)}
             flexDirection='row'
