@@ -1,0 +1,15 @@
+@use '../../styles/colors';
+@font-face {
+    font-family: Monsterrat;
+    src: url('../../styles/Montserrat/Montserrat-Black.ttf');
+}
+
+.hero {
+   background-color: colors.$primary_main;
+   text-align: center;
+}
+
+.text {
+    font-family: 'Monsterrat';
+    text-transform: uppercase;
+}

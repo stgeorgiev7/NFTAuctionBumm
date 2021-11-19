@@ -10,7 +10,7 @@ import { Container } from "@mui/material"
 
 
 export default function ProductContainer({ name, owner, price, currency, likes, auction_end, details, bids, source }) {
-
+    
     return (
         <div className={classNames(styles["product-container"])}>
             <Grid container spacing={1}>

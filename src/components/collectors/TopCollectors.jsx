@@ -3,7 +3,6 @@ import styles from './TopCollectors.module.scss';
 import classNames from 'classnames';
 import CollectorColumn from './CollectorColumn';
 import { Grid } from '@mui/material';
-import { Container } from '@mui/material';
 import { Select } from '@mui/material';
 import { MenuItem } from '@mui/material';
 import _ from 'lodash';
