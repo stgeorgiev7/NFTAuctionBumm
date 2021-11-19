@@ -1,0 +1,16 @@
+@use '../../styles/colors';
+@font-face {
+    font-family: Monsterrat;
+    src: url('../../styles/Montserrat/Montserrat-Light.ttf');
+}
+
+.profile-hero {
+    font-family: 'Monsterrat';
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.image {
+    font-family: 'Monsterrat';
+}

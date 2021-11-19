@@ -4,6 +4,7 @@ import Footer from "../../src/components/footer/Footer";
 import Hero from "../../src/components/hero/Hero";
 import Description from "../../src/components/description/Description";
 
+ 
 export default function HowPage() {
 
     return (
