@@ -13,7 +13,7 @@ export default function Profile() {
                 <ProfileUser 
                 name={"StoyankataMnogoBesen"} 
                 info={"Gotov sym da umra no ne i da spra..."}
-                avatar
+                avatar={"https://nft-auction.herokuapp.com/uploads/0x97c2d00637d45ab7bc6094a5ac78d6bca8f3bd5d_c425edc659.jpg"}
                 verified={true}
                 />
             <Footer />
