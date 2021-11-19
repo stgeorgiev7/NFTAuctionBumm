@@ -5,11 +5,9 @@ import { Typography } from "@mui/material";
 
 export default function Hero({ text }) {
 
-    const [heroLabel, setLabel] = useState(text);
-
     return (
         <div className={classNames(styles.hero)}>
-            <Typography variant={"h1"} className={classNames(styles.text)}>{ heroLabel } </Typography> 
+            <Typography variant={"h1"} className={classNames(styles.text)} children={text} />
         </div>
     )
 };
