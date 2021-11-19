@@ -8,9 +8,10 @@ export default function Description({text, image}) {
     const [describedImage, setImage] = useState(image);
 
     return (
-        <div>
+        <div className={classNames(styles.description)}>
             <Typography variant={"body1"} className={classNames(styles.text)}>
                 {description}
+                <img src={describedImage}></img>
             </Typography>
 
         </div>
