@@ -21,6 +21,7 @@ export default function Trending({ cards = [] }) {
                         mediaUrl={nft.source.url}
                         price={nft.price}
                         currency={nft.currency}
+                        id={nft.id}
                     >
                     </Card>
                 </Container >
