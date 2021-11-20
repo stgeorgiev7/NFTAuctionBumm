@@ -43,8 +43,8 @@ export default function ProfileCollectionFilters({ filters }) {
                     </FormControl>
 
                     <FormControl>
-                        <TextField variant='standard' type='search'  InputProps={{variant:'standard'}}>
-                            <InputAdornment position='start' >
+                        <TextField type='search'  InputProps={{variant:'standard'}} variant="standard">
+                            <InputAdornment position='start' variant="standard" >
                                 <Search className={classNames(styles.searchIcon)}></Search>
                             </InputAdornment>
                         </TextField>
