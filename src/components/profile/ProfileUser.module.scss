@@ -1,9 +1,33 @@
 @use '../../styles/colors';
 @font-face {
     font-family: Monsterrat;
-    src: url('../../styles/Montserrat/Montserrat-Light.ttf');
+    src: url('../../styles/Montserrat/Montserrat-Black.ttf');
 }
 
 .profile-user {
     font-family: 'Monsterrat';
+    display: flex;
+    justify-self: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-top: -100px;
+    border: 3px solid red;
+}
+
+.profile-user > h3 {
+    font-family: 'Monsterrat';
+    padding: 20px;
+    font-weight: 900;
+    font-size: 36px;
+}
+
+.profile-user > body {
+    font-family: 'Monsterrat';
+    padding: 20px;
+    font-weight: 200;
+    font-size: 14px;
+    text-align: center;
 }

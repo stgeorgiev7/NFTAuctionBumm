@@ -1,0 +1,22 @@
+@use '../../styles/colors';
+@font-face {
+    font-family: Monsterrat;
+    src: url('../../styles/Montserrat/Montserrat-Black.ttf');
+}
+
+.profile-collection-filters {
+    font-family: 'Monsterrat';
+
+}
+
+.stack {
+    font-family: 'Monsterrat';
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.title {
+    font-family: 'Monsterrat';
+    font-size: 36px;
+}
