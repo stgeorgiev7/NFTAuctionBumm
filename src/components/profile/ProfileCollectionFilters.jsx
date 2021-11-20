@@ -4,7 +4,6 @@ import classNames from "classnames";
 import { Container } from "@mui/material";
 import { FormControl } from "@mui/material";
 import { Select } from "@mui/material";
-import { InputLabel } from "@mui/material";
 import { MenuItem } from "@mui/material";
 import { Stack } from "@mui/material";
 import { TextField } from "@mui/material";
@@ -24,8 +23,6 @@ export default function ProfileCollectionFilters({ filters }) {
         <div className={classNames(styles["profile-collection-filters"])}>
             <Container>
                 <Stack direction={"row"} className={classNames(styles["stack"])}>
-                    <h1 className={classNames(styles["title"])}>Collection</h1>
-
                     <FormControl>
 
                         <Select value={0}>
@@ -46,7 +43,7 @@ export default function ProfileCollectionFilters({ filters }) {
                     </FormControl>
 
                     <FormControl>
-                        <TextField type='search' variant="standard" InputProps={{variant:'standard'}}>
+                        <TextField variant='standard' type='search'  InputProps={{variant:'standard'}}>
                             <InputAdornment position='start' >
                                 <Search className={classNames(styles.searchIcon)}></Search>
                             </InputAdornment>
