@@ -22,8 +22,6 @@ export default function Card({ name, user, likes = 0, mediaUrl, price, currency,
     const [countDownTime, setCountDownTimer] = useState(timeLeft !== 0 || timeLeft === undefined ? <Timer time={timeLeft} /> : null);
     const [currentId, setId] = useState(String(id));
 
-
-    console.log(currentId);
     return (
         <CardContainer
             sx={{ width: 270, height: 420 }}
