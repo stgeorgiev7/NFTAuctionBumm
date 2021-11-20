@@ -15,10 +15,6 @@ export default function ProfileCollectionFilters({ filters }) {
     const [sortValues, setSortValues] = useState(filters.sort);
     const [priceValues, setPriceValues] = useState(filters.price);
 
-    console.log(sortValues);
-
-    console.log(filters);
-
     return (
         <div className={classNames(styles["profile-collection-filters"])}>
             <Container>
@@ -43,7 +39,7 @@ export default function ProfileCollectionFilters({ filters }) {
                     </FormControl>
 
                     <FormControl variant="standard">
-                        <TextField type='search' variant="standard">
+                        <TextField variant="standard" InputProps={{variant:"standard"}}>
                             <InputAdornment position='start' variant="standard" >
                                 <Search className={classNames(styles.searchIcon)}></Search>
                             </InputAdornment>
