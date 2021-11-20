@@ -3,7 +3,6 @@ import styles from "./ProductInfo.module.scss";
 import classNames from "classnames";
 import { Grid } from "@mui/material";
 import { Stack } from "@mui/material";
-import ProductImage from "./ProductImage";
 import ProductInfoTitle from "./ProductInfoTitle";
 import ProductInfoStatus from "./ProductInfoStatus";
 import ProductInfoPrice from "./ProductInfoPrice";

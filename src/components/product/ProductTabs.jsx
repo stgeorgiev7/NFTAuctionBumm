@@ -24,7 +24,6 @@ export default function ProductTabs({ text, bids }) {
     const formatDate = (crrDate) => {
         const data = parseISO(crrDate)
         return formatDistance(data, new Date())
-
     };
 
     const currentBids =

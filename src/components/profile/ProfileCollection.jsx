@@ -35,7 +35,7 @@ export default function ProfileCollection({ user, filters, items }) {
         <div className={classNames(styles["profile-collection"])}>
             <ProfileHero image={'https://nft-auction.herokuapp.com/uploads/0x72abed3186b65b29e4da3faaa926e74d1f763cc5_c3e6697515.jpg'} />
             <Container>
-                <ProfileUser name={user.name} info={user.info} avatar={user.avatar} verified={user.verified} size={150} />
+                <ProfileUser name={user.name} info={user.info} avatar={user.avatar} verified={user.verified} size={100} />
 
                 <Grid container>
                     <Grid item xs={3}>
