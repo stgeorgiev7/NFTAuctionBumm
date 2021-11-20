@@ -14,6 +14,7 @@ import dataUsers from "./data/users.json";
 import dataNfts from "./data/nfts.json";
 import ProductContainer from "../src/components/product/ProductContainer";
 import ProfileCollection from "../src/components/profile/ProfileCollection";
+import ActivityFilters from "../src/components/activity/ActivityFilters";
 import Link from "next/link";
 
 export default function Index() {
