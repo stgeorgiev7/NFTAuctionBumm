@@ -10,7 +10,7 @@ import { TextField } from "@mui/material";
 import { InputAdornment } from "@mui/material";
 import { Search } from "@mui/icons-material";
 
-export default function ProfileCollectionFilters({ filters }) {
+export default function ActivityFilters({ filters }) {
 
     const [sortValues, setSortValues] = useState(filters.sort);
     const [priceValues, setPriceValues] = useState(filters.price);
