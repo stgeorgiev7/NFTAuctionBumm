@@ -26,9 +26,9 @@ export default function Index() {
 
   console.log(process.env.apiUrl);
 
+
   const [trendingCards, setTrendingCards] = useState([]);
   const [trendingFilters, setTrendingFilters] = useState([]);
-  const [valueSort, setValueSort] = useState('');
 
   useEffect(async () => {
     const dataTrending = await fetch(process.env.apiUrl + "/" + "trending")
@@ -38,11 +38,20 @@ export default function Index() {
     setTrendingFilters(dataTrending?.filters?.sort);
   }, []);
   
+
   const [usersData, setUsersData] = useState([]);
-  useEffect(() => {
-    setUsersData(dataUsers);
+  const [usersFilters, setFilters] = useState([]);
+  useEffect(async () => {
+    const dataUsers = await fetch(process.env.apiUrl + "/" + "top-collectors")
+    .then((response) => response.json());
+
+    console.log(dataUsers)
+
+    setUsersData(dataUsers?.users);
+    setFilters(dataUsers?.filters?.sort);
   }, []);
 
+  
   const [auctionData, setAuctionData] = useState([]);
   useEffect(() => {
     setAuctionData(dataNfts);
@@ -53,7 +62,7 @@ export default function Index() {
       <Header />
       <Featured items={featuredCards?.nfts} />
       <Trending trendingCards={trendingCards} trendingFilters={trendingFilters}/>
-      <TopCollectors collectors={usersData.sort((a, b) => b.nfts.length - a.nfts.length)} />
+      <TopCollectors collectors={usersData} filters={usersFilters}/>
       <div style={{backgroundColor: '#4E24F2', paddingTop: 10}}>
       <How
         description='Discover, collect and sell extraoridanry NFTs on the world`s first and largest NFT marketplace. There are three things you`ll need in place to open your account and start buying or selling NFTs on BUM.'

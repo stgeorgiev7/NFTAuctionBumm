@@ -9,25 +9,18 @@ import { useEffect } from "react";
 
 export default function ProductPage() {
     const router = useRouter();
-    const crrid = Number(router.query.id);
+    const crrid = router.query.id;
 
-    let nft;
-    let nftId;
+    const [productData, setProduct] = useState([]);
 
-    const [nftData, setNftData] = useState([]);
-    useEffect(() => {
-        setNftData(data);
-    }, []);
+    useEffect(async () => {
+        const data = await fetch(process.env.apiUrl + "/nfts/" + crrid)
+        .then((response) => response.json());
 
-    for(let i=0; i < nftData.length; i++) {
-        if(crrid === nftData[i].id) {
-            nftId = nftData[i].id;
-            nft = nftData[i];
-        }
-    }
+        setProduct(data);
+    }, [])
 
-    console.log(nft);
-   
+   console.log(productData);
     return (
         <div>
             <Head />

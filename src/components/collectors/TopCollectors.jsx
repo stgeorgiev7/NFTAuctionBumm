@@ -7,7 +7,13 @@ import { Select } from '@mui/material';
 import { MenuItem } from '@mui/material';
 import _ from 'lodash';
 
-export default function TopCollectors({ collectors = [] }) {
+export default function TopCollectors({ collectors = [], filters }) {
+    
+    const [valueSort, setValueSort] = useState('');
+
+    function handleSort(e) {
+        setValueSort(e.target.value);
+    };
 
     const collectorsData = collectors.sort((a, b) =>  b.nfts.length - a.nfts.length);
     collectors.map((crrColector, crrIndex) => {
@@ -30,11 +36,17 @@ export default function TopCollectors({ collectors = [] }) {
 
             <Grid item xs={7} sm={7} md={7} justifyContent='flex-end' style={{display:'flex', alignSelf:'center'}}>
 
-                <Select value={10} className={classNames(styles.select)} >
-                    <MenuItem value={10}>This Week</MenuItem>
-                    <MenuItem value={20}>This Month</MenuItem>
-                    <MenuItem value={30}>This Year</MenuItem>
-                </Select>
+                    <Select
+                        value={0}
+                        onChange={handleSort}
+                        className={classNames(styles.select)}
+                        sx={{ ":hover": { border: 'none' } }}
+                    >
+                        <MenuItem value={0} style={{ display: 'none' }}>Sort By</MenuItem>
+                        {filters?.map((item, i) => {
+                            return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
+                        })}
+                    </Select>
             </Grid>
         
             <Grid container justifyContent='center' style={{borderRadius:'50px'}}>
