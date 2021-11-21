@@ -12,10 +12,6 @@ import dataFeatured from "./data/featured.json";
 import dataTrending from "./data/trending.json";
 import dataUsers from "./data/users.json";
 import dataNfts from "./data/nfts.json";
-import ProductContainer from "../src/components/product/ProductContainer";
-import ProfileCollection from "../src/components/profile/ProfileCollection";
-import ActivityFilters from "../src/components/activity/ActivityFilters";
-import ActivityList from "../src/components/activity/ActivityList";
 import Link from "next/link";
 
 export default function Index() {
