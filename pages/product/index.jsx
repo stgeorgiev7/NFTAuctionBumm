@@ -1,20 +1,8 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import ProductContainer from "../../src/components/product/ProductContainer";
 import nfts from "../data/nfts.json";
 import Header from '../../src/components/header/Header';
 import Footer from '../../src/components/footer/Footer';
-
-
-
-// export const getStaticProps = () => {
-
-//     const data = dataNft;
-
-//     return {
-//         props: {nfts: data}
-//     }
-// };
-
 
 export default function Product() {
 
