@@ -27,13 +27,15 @@ export default function Index() {
   console.log(process.env.apiUrl);
 
   const [trendingCards, setTrendingCards] = useState([]);
+  const [trendingFilters, setTrendingFilters] = useState([])
   useEffect(async () => {
     const dataTrending = await fetch(process.env.apiUrl + "/trending")
     .then((response) => response.json());
 
-    setTrendingCards(dataTrending);
+    setTrendingCards(dataTrending?.nfts);
+    setTrendingFilters(dataTrending?.filters);
   }, []);
-
+  
   console.log(trendingCards);
 
   const [usersData, setUsersData] = useState([]);
@@ -51,7 +53,7 @@ export default function Index() {
     <div>
       <Header />
       <Featured items={featuredCards?.nfts} />
-      <Trending cards={trendingCards?.nfts} filters={trendingCards?.filters}/>
+      <Trending cards={trendingCards} filters={trendingFilters}/>
       <TopCollectors collectors={usersData.sort((a, b) => b.nfts.length - a.nfts.length)} />
       <div style={{backgroundColor: '#4E24F2', paddingTop: 10}}>
       <How
