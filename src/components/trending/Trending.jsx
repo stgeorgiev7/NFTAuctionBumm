@@ -7,9 +7,7 @@ import { Container } from '@mui/material';
 import { Select } from '@mui/material';
 import { MenuItem } from '@mui/material';
 
-export default function Trending({ cards = [], filters }) {
-    const [data, setData] = useState(cards);
-    const [valueSort, setValueSort] = useState('');
+export default function Trending({ trendingCards = [], trendingFilters }) {
 
     function handleSort(e) {
         setValueSort(e.target.value);
@@ -31,14 +29,14 @@ export default function Trending({ cards = [], filters }) {
                     sx={{ ":hover": { border: 'none' } }}
                 >
                     <MenuItem value={0} style={{ display: 'none' }}>This Week</MenuItem>
-                    {filters?.map((item, i) => {
+                    {trendingFilters?.map((item, i) => {
                         return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
                     })}
                 </Select>
             </Grid>
 
             <Grid container justifyContent='center'>
-                {cards.map(function (nft, index) {
+                {trendingCards.map(function (nft, index) {
                     return (
                         <Grid item key={index} columns={{ xs: 4, sm: 4, md: 4 }}>
                             <Container style={{ padding: '10px' }}>
