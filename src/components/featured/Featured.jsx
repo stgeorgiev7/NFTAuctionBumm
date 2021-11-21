@@ -5,13 +5,13 @@ import { ImageListItem } from "@mui/material";
 import { useRouter } from "next/router";
 import styles from "./Featured.module.scss";
 import classNames from "classnames";
+import Link from "next/link";
 
-export default function Featured({ items =[] }) {
+export default function Featured({ items = [] }) {
     const router = useRouter();
 
     return (
         <Container className={classNames(styles.FeaturedContainer)}>
-
             <ImageList
                 variant="quilted"
                 cols={6}
@@ -21,22 +21,23 @@ export default function Featured({ items =[] }) {
 
                     <ImageListItem
                         key={item.id}
-                        cols={index === 0? 3 : 1}
-                        rows={index === 0? 2 : 1}
+                        cols={index === 0 ? 3 : 1}
+                        rows={index === 0 ? 2 : 1}
                     >
                         <img
                             src={item.source.url}
                             srcSet={item.image}
                             alt={item.title}
                             loading="lazy"
-                            onClick={() => { router.push(item.source.url) }}
-                            style={{ borderRadius: '10px'}}
-                            
+                            onClick={() => { router.push("/product/" + item.id) }}
+                            style={{ borderRadius: '10px' }}
+
                         />
                     </ImageListItem>
-                ))}
-            </ImageList>
 
-        </Container>
+                ))}
+        </ImageList>
+
+        </Container >
     )
 }

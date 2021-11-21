@@ -18,20 +18,23 @@ export default function Index() {
   const [featuredCards, setFeaturedCards] = useState([]);
 
   useEffect(async () => {
-    const dataFeatured = await fetch(process.env.apiUrl + '/' + 'featured')
+    const dataFeatured = await fetch(process.env.apiUrl + '/featured')
     .then((response) => response.json());
 
     setFeaturedCards(dataFeatured);
   }, []);
 
-  console.log(featuredCards);
-
   console.log(process.env.apiUrl);
 
   const [trendingCards, setTrendingCards] = useState([]);
-  useEffect(() => {
+  useEffect(async () => {
+    const dataTrending = await fetch(process.env.apiUrl + "/trending")
+    .then((response) => response.json());
+
     setTrendingCards(dataTrending);
   }, []);
+
+  console.log(trendingCards);
 
   const [usersData, setUsersData] = useState([]);
   useEffect(() => {
@@ -48,7 +51,7 @@ export default function Index() {
     <div>
       <Header />
       <Featured items={featuredCards?.nfts} />
-      <Trending />
+      <Trending cards={trendingCards?.nfts} filters={trendingCards?.filters}/>
       <TopCollectors collectors={usersData.sort((a, b) => b.nfts.length - a.nfts.length)} />
       <div style={{backgroundColor: '#4E24F2', paddingTop: 10}}>
       <How
