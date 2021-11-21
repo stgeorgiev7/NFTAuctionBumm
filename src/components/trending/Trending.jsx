@@ -15,15 +15,6 @@ export default function Trending({ cards = [], filters }) {
         setValueSort(e.target.value);
     };
 
-    console.log(filters);
-
-    const [crrFilters, setFilters]= useState([]);
-    useEffect(() => {
-        setFilters(filters)
-    }, []);
-
-    console.log(crrFilters);
-
     return (
         <Grid container className={classNames(styles.gridContainer)} className={classNames(styles.main)}>
 
@@ -40,7 +31,7 @@ export default function Trending({ cards = [], filters }) {
                     sx={{ ":hover": { border: 'none' } }}
                 >
                     <MenuItem value={0} style={{ display: 'none' }}>This Week</MenuItem>
-                    {crrFilters.map((item, i) => {
+                    {filters?.map((item, i) => {
                         return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
                     })}
                 </Select>
