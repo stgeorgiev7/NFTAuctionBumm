@@ -32,11 +32,13 @@ export default function Index() {
     const dataTrending = await fetch(process.env.apiUrl + "/trending")
     .then((response) => response.json());
 
+    console.log(dataTrending)
+
     setTrendingCards(dataTrending?.nfts);
-    setTrendingFilters(dataTrending?.filters);
+    setTrendingFilters(dataTrending?.filters?.sort);
   }, []);
   
-  console.log(trendingCards);
+  console.log(trendingFilters);
 
   const [usersData, setUsersData] = useState([]);
   useEffect(() => {
