@@ -40,8 +40,7 @@ export default function Trending({ cards = [], filters }) {
             <Grid container justifyContent='center'>
                 {cards.map(function (nft, index) {
                     return (
-                        <Grid item key={index} columns={{ xs: 4, sm: 4, md: 4 }}>
-                            <Container style={{ padding: '10px' }}>
+                       
                                 <Card
                                     name={nft.name}
                                     user={nft.owner}
@@ -50,10 +49,9 @@ export default function Trending({ cards = [], filters }) {
                                     price={nft.price}
                                     currency={nft.currency}
                                     id={nft.id}
-                                >
-                                </Card>
-                            </Container >
-                        </Grid>
+                                    key={index}
+                                />
+                 
 
                     );
                 })}
