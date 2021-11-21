@@ -16,9 +16,17 @@ import Link from "next/link";
 
 export default function Index() {
   const [featuredCards, setFeaturedCards] = useState([]);
-  useEffect(() => {
+
+  useEffect(async () => {
+    const dataFeatured = await fetch(process.env.apiUrl + '/' + 'featured')
+    .then((response) => response.json());
+
     setFeaturedCards(dataFeatured);
   }, []);
+
+  console.log(featuredCards);
+
+  console.log(process.env.apiUrl);
 
   const [trendingCards, setTrendingCards] = useState([]);
   useEffect(() => {
@@ -39,8 +47,8 @@ export default function Index() {
   return (
     <div>
       <Header />
-      <Featured items={trendingCards} />
-      <Trending cards={featuredCards} />
+      <Featured items={featuredCards?.nfts} />
+      <Trending />
       <TopCollectors collectors={usersData.sort((a, b) => b.nfts.length - a.nfts.length)} />
       <div style={{backgroundColor: '#4E24F2', paddingTop: 10}}>
       <How
