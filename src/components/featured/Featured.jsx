@@ -22,7 +22,7 @@ export default function Featured({ items =[] }) {
                     <ImageListItem
                         key={item.id}
                         cols={index === 0? 3 : 1}
-                        rows={index === 0? 3 : 1}
+                        rows={index === 0? 2 : 1}
                     >
                         <img
                             src={item.source.url}
