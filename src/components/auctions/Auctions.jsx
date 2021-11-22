@@ -7,50 +7,49 @@ import { Container } from '@mui/material';
 import { Select } from '@mui/material';
 import { MenuItem } from '@mui/material';
 
-export default function Auctions({ cards = [] }) {
+export default function Auctions({ cards = [], filters }) {
     const [data, setData] = useState(cards);
-    const cardsData = cards.map(function (nft, index) {
-        if (index <= 3) {
-            return (
-                <Grid item key={index} columns={{ xs: 3, sm: 3, md: 4 }}>
-                    <Container style={{padding:'10px'}}>
-                        <Card
-                            name={nft.name}
-                            user={nft.owner}
-                            likes={nft.likes}
-                            mediaUrl={nft.source.url}
-                            price={nft.price}
-                            currency={nft.currency}
-                            timeLeft={nft.auction_end}
-                            id={nft.id}
-                        >
-                        </Card>
-                    </Container >
-                </Grid>
-            );
-        }
-
-    });
 
     return (
-        <Grid container  className={classNames(styles.gridContainer)} className={classNames(styles.main)}>
+        <Grid container className={classNames(styles.gridContainer)} className={classNames(styles.main)}>
 
             <Grid item xs={3} sm={3} md={3} justifyContent='flex-end'
-                style={{ display: 'flex', alignSelf: 'flex-end', marginRight: 60}}>
+                style={{ display: 'flex', alignSelf: 'flex-end', marginRight: 60 }}>
                 <h1 className={classNames(styles.heading)}>🔥 Live Auctions</h1>
             </Grid>
 
-            <Grid item xs={7} sm={7} md={7} justifyContent='flex-end' style={{display:'flex', padding:0, alignSelf:'center'}}>
+            <Grid item xs={7} sm={7} md={7} justifyContent='flex-end' style={{ display: 'flex', padding: 0, alignSelf: 'center' }}>
 
-                <Select value={10} className={classNames(styles.select)} style={{border:'none'}} >
-                    <MenuItem value={10}>This Week</MenuItem>
-                    <MenuItem value={20}>This Month</MenuItem>
-                    <MenuItem value={30}>This Year</MenuItem>
+                <Select value={0} className={classNames(styles.select)} style={{ border: 'none' }} >
+                    <MenuItem value={0} style={{ display: 'none' }}>Price range</MenuItem>
+                    {filters?.map((item, i) => {
+                        return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
+                    })}
                 </Select>
             </Grid>
 
             <Grid container justifyContent='center'>
-                {cardsData}
+                {cards.map(function (nft, index) {
+                    if (index <= 3) {
+                        return (
+                            <Grid item key={index} columns={{ xs: 3, sm: 3, md: 4 }}>
+                                <Container style={{ padding: '10px' }}>
+                                    <Card
+                                        name={nft.name}
+                                        user={nft.owner}
+                                        likes={nft.likes}
+                                        mediaUrl={nft.source.url}
+                                        price={nft.price}
+                                        currency={nft.currency}
+                                        timeLeft={nft.auction_end}
+                                        id={nft.id}
+                                    >
+                                    </Card>
+                                </Container >
+                            </Grid>
+                        );
+                    }
+                })}
             </Grid>
 
         </Grid>

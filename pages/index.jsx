@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Container } from "@mui/material";
 import Header from "../src/components/header/Header";
 import Featured from "../src/components/featured/Featured";
 import Trending from "../src/components/trending/Trending";
@@ -8,11 +7,6 @@ import TopCollectors from "../src/components/collectors/TopCollectors";
 import How from "../src/components/how/How";
 import Auctions from "../src/components/auctions/Auctions";
 import Footer from "../src/components/footer/Footer";
-import dataFeatured from "./data/featured.json";
-import dataTrending from "./data/trending.json";
-import dataUsers from "./data/users.json";
-import dataNfts from "./data/nfts.json";
-import Link from "next/link";
 
 export default function Index() {
   const [featuredCards, setFeaturedCards] = useState([]);
@@ -23,8 +17,6 @@ export default function Index() {
 
     setFeaturedCards(dataFeatured);
   }, []);
-
-  console.log(process.env.apiUrl);
 
 
   const [trendingCards, setTrendingCards] = useState([]);
@@ -40,24 +32,26 @@ export default function Index() {
   
 
   const [usersData, setUsersData] = useState([]);
-  const [usersFilters, setFilters] = useState([]);
+  const [usersFilters, setUsersFilters] = useState([]);
+  
   useEffect(async () => {
     const dataUsers = await fetch(process.env.apiUrl + "/" + "top-collectors")
     .then((response) => response.json());
 
-    console.log(dataUsers)
-
     setUsersData(dataUsers?.users);
-    setFilters(dataUsers?.filters?.sort);
+    setUsersFilters(dataUsers?.filters?.sort);
   }, []);
 
-  
+
   const [auctionData, setAuctionData] = useState([]);
+  const [auctionFilters, setAuctionFilters] = useState([]);
+
   useEffect(async () => {
     const dataNfts = await fetch(process.env.apiUrl + "/" + "live-auctions")
     .then((response) => response.json());
     
-    setAuctionData(dataNfts);
+    setAuctionData(dataNfts?.nfts);
+    setAuctionFilters(dataNfts?.filters?.price);
   }, []);
 
   return (
@@ -88,7 +82,7 @@ export default function Index() {
       />
       </div>
 
-      <Auctions cards={auctionData} />
+      <Auctions cards={auctionData} filters={auctionFilters}/> 
       <Footer />
     </div>
   );
