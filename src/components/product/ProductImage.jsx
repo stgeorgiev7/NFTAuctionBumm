@@ -5,12 +5,9 @@ import classNames from "classnames";
 
 export default function ProductImage({ url }) {
 
-    const [img, setImage] = useState(url);
-
     return (
-
         <div className={classNames(styles["product-image"])}>
-            <img src={img} className={classNames(styles.image)}></img>
+            <img src={url} className={classNames(styles.image)}></img>
         </div>
     );
 };

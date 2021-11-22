@@ -13,8 +13,6 @@ import ProductInfoTimer from "./ProductInfoTimer";
 
 export default function ProductInfo({ title, creator, price, currency, likes, onTimeEnd, timeEnd, isLive }) {
 
-    console.log(creator);
-
     return (
         <div clases={classNames(styles["product-info"])}>
             <Grid container>
@@ -41,7 +39,7 @@ export default function ProductInfo({ title, creator, price, currency, likes, on
                 <Grid container>
 
                     <Grid item xs={7} sm={7} md={7}>
-                        <ProductInfoCreator name={creator.username} avatar={creator.avatar.url} verified={creator.verified} />
+                        <ProductInfoCreator name={creator?.username} avatar={creator?.avatar.url} verified={creator?.verified} />
 
                     </Grid>
 
