@@ -11,7 +11,7 @@ export default function ProductPage() {
     const [product, setProduct] = useState([]);
 
     useEffect(async () => {
-        const data = await fetch(process.env.apiUrl + "/" + "nfts" + "/" + crrid)
+        const data = await fetch(process.env.apiUrl + "/nfts/" + crrid)
         .then((response) => response.json());
 
         setProduct(data);
