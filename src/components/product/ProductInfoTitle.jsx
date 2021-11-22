@@ -6,12 +6,10 @@ import { Typography } from "@mui/material";
 
 export default function ProductInfoTitle ({text}) {
 
-    const [crrTitle, setTitle] = useState(text);
-
     return (
         <div className={classNames(styles["product-info-title"])}>
             <Typography className={classNames(styles.title)} variant='h1'>
-                {crrTitle}    
+                {text}    
             </Typography>
         </div>
     );

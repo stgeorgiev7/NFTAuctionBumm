@@ -31,7 +31,7 @@ export default function ProductTabs({ text, bids }) {
             <Table>
                 <TableBody>
                     {
-                        bids.map((crrBid, i) => {
+                        bids?.map((crrBid, i) => {
                             return (
                                 <TableRow className={`table-row-${i}`} key={`${crrBid.user.name} bid`}>
                                     <TableCell component='th' scope='row'>
