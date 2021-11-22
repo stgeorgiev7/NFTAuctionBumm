@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import { useRouter } from "next/router";
 import ProductContainer from "../../src/components/product/ProductContainer";
 import Header from '../../src/components/header/Header';
 import Footer from '../../src/components/footer/Footer';
@@ -6,6 +7,8 @@ import Footer from '../../src/components/footer/Footer';
 export default function Product() {
     const router = useRouter();
     const crrid = router.query.id;
+
+    console.log(crrid);
 
     const [product, setProduct] = useState([]);
 
