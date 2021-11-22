@@ -5,19 +5,6 @@ import Header from '../../src/components/header/Header';
 import Footer from '../../src/components/footer/Footer';
 
 export default function Product() {
-    const router = useRouter();
-    const crrid = router.query.id;
-
-    console.log(crrid);
-
-    const [product, setProduct] = useState([]);
-
-    useEffect(async () => {
-        const data = await fetch(process.env.apiUrl + "/nfts/" + crrid)
-        .then((response) => response.json());
-
-        setProduct(data);
-    }, [])
 
     return (
         <div>
