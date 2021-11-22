@@ -13,6 +13,8 @@ import ProductInfoTimer from "./ProductInfoTimer";
 
 export default function ProductInfo({ title, creator, price, currency, likes, onTimeEnd, timeEnd, isLive }) {
 
+    console.log(creator);
+
     return (
         <div clases={classNames(styles["product-info"])}>
             <Grid container>
