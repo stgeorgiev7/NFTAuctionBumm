@@ -4,26 +4,37 @@ import ProductContainer from "../../src/components/product/ProductContainer";
 import Header from '../../src/components/header/Header';
 import Footer from '../../src/components/footer/Footer';
 
-export default function Product() {
+export default function ProductPage() {
+    const router = useRouter();
+    const crrid = router.query.id;
 
+    const [product, setProduct] = useState([]);
+
+    useEffect(async () => {
+        const data = await fetch(process.env.apiUrl + "/nfts/" + crrid)
+        .then((response) => response.json());
+
+        setProduct(data);
+    }, [])
+
+    const productData = 
+        <ProductContainer
+         name={product?.name}
+         owner={{ "username": "Justen_King18", "verified": true, "avatar": { "url": "https://nft-auction.herokuapp.com/uploads/thumbnail_0x7d9debcf75a71bbb5c533804c9845d313fe3f6aa_ec98dd79b9.jpg" } }}
+         price={product?.price}
+         currency={product?.currency}
+         details={product?.details}
+         source={product?.source?.url}
+         bids={[{ "user": { "info": 20, "name": "John", "verified": true, "avatar": "https://nft-auction.herokuapp.com/uploads/thumbnail_0xa6dbe6b4f8e2905c26e123ec6fd08a8f7200dbc1_64120a76f4.jpg" }, "date": "2021-10-22T08:29:23.382Z", "amount": 20 }]}
+         />;
+
+
+   console.log(product);
     return (
         <div>
             <Header />
-
-            <ProductContainer
-                name={"Ergonomic Concrete Tuna"}
-                owner={{ "username": "Justen_King18", "verified": true, "avatar": { "url": "https://nft-auction.herokuapp.com/uploads/thumbnail_0x7d9debcf75a71bbb5c533804c9845d313fe3f6aa_ec98dd79b9.jpg" } }}
-                price={20} currency={"ETH"}
-                likes={25}
-                auction_end={"2022-09-02T20:43:19.149Z"}
-                details={"asdasdads"}
-                source={{ "url": "https://nft-auction.herokuapp.com/uploads/thumbnail_0x7d9debcf75a71bbb5c533804c9845d313fe3f6aa_ec98dd79b9.jpg" }}
-                bids={[{ "user": { "info": 20, "name": "John", "verified": true, "avatar": "https://nft-auction.herokuapp.com/uploads/thumbnail_0xa6dbe6b4f8e2905c26e123ec6fd08a8f7200dbc1_64120a76f4.jpg" }, "date": "2021-10-22T08:29:23.382Z", "amount": 20 }]}
-            />
-
+            {productData}
             <Footer />
-
-
         </div>
-    );
+    )
 }
