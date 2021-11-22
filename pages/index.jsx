@@ -53,7 +53,10 @@ export default function Index() {
 
   
   const [auctionData, setAuctionData] = useState([]);
-  useEffect(() => {
+  useEffect(async () => {
+    const dataNfts = await fetch(process.env.apiUrl + "/" + "live-auctions")
+    .then((response) => response.json());
+    
     setAuctionData(dataNfts);
   }, []);
 
