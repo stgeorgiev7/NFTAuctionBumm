@@ -18,6 +18,7 @@ export default function ProductPage() {
         setProduct(data);
     }, [crrid])
 
+    console.log(product);
 
     const productData = 
         <ProductContainer

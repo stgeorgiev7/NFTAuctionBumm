@@ -10,7 +10,6 @@ import { Container } from "@mui/material"
 
 
 export default function ProductContainer({ name, owner, price, currency, likes, auction_end, details, bids, source }) {
-    console.log(source);
     return (
         <div className={classNames(styles["product-container"])}>
             <Grid container spacing={1}>
@@ -29,6 +28,7 @@ export default function ProductContainer({ name, owner, price, currency, likes, 
                         timeEnd={auction_end}
                         creator={owner}
                         onTimeEnd
+                        
                         
                     />
 
