@@ -1,4 +1,5 @@
 import React from "react";
+import {useState, useEffect} from "react";
 import Header from "../../src/components/header/Header";
 import Footer from "../../src/components/footer/Footer";
 import ExploreTitle from "../../src/components/explore/ExploreTitle";
@@ -9,6 +10,20 @@ import Card from "../../src/components/card/Card";
 import data from "../data/nfts.json";
 
 export default function Explore() {
+
+    const [exploreData, setExplore] = useState([]);
+    const [exploreFilters, setFilters] = useState([]);
+
+    useEffect( async() => {
+        const data = await fetch(process.env.apiUrl + "/" + 'explore')
+        .then((response) => response.json());
+
+        setExplore(data.nfts);
+        setFilters(data.filters);
+        
+    }, []);
+
+    console.log(exploreData);
 
     return (
         <div>
@@ -26,7 +41,7 @@ export default function Explore() {
                 </Grid>
 
                 <Grid container>
-                    {data.map(function (nft, index) {
+                    {exploreData.map(function (nft, index) {
                         return (
                             <Grid item key={index} xs={3}>
                                 <Card
