@@ -6,12 +6,14 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
 export default function ProductPage() {
-    const router = useRouter();
-    const crrid = router.query.id;
+   
 
     const [product, setProduct] = useState([]);
+    const router = useRouter();
+
 
     useEffect(async () => {
+        const crrid = router.query.id;
         const data = await fetch(process.env.apiUrl + "/nfts/" + crrid)
         .then((response) => response.json());
 
