@@ -3,7 +3,6 @@ import Header from "../../src/components/header/Header";
 import Footer from "../../src/components/footer/Footer";
 import ProfileCollection from "../../src/components/profile/ProfileCollection";
 
-
 export default function Profile() {
 
     return (
