@@ -1,4 +1,5 @@
 import React from "react";
+import {useState, useEffect} from "react";
 import Header from "../../src/components/header/Header";
 import Footer from "../../src/components/footer/Footer";
 import Hero from "../../src/components/hero/Hero";
@@ -8,14 +9,30 @@ import ActivityList from "../../src/components/activity/ActivityList";
 
 export default function Activity() {
 
+    const [activityData, setActivity] = useState([]);
+    const [activityFilters, setFilters] = useState([]);
+
+    useEffect( async() => {
+        const data = await fetch(process.env.apiUrl + "/" + "activities")
+        .then((response) => response.json());
+
+        setActivity(data.activities);
+        setFilters(data.filters);
+
+
+    }, []);
+
+    console.log(activityFilters);
+
     return (
         <div>
             <Header />
             <Hero text={"Activity"}/>
-            <ActivityFilters filters={{ "sort": [{ "label": "Name (Ascending)", "value": 1 }, { "label": "Name (Descending)", "value": 2 }, { "label": "Price (Ascending)", "value": 4 }, { "label": "Price (Descending)", "value": 5 }], "price": [{ "label": "0.3 - 0.5 ETH", "value": 6 }, { "label": "0.5 - 2 ETH", "value": 7 }, { "label": "2- 3 ETH", "value": 8 }] }} />
+            <ActivityFilters filters={activityFilters} />
             <ActivityList 
-            items={[{"created_at":"2021-10-22T08:29:23.382Z","user":{"avatar":{"url":"/images/avatar.png"},"confirmed":false,"name":"Antonio Banderas"},"nft":{"name":"BTC","owner":{"username":"John Travolta","avatar":{"url":"/images/avatar.png"},"confirmed":true}},"type":"buy"},
-            {"created_at":"2021-10-22T08:29:23.382Z","user":{"avatar":{"url":"/images/avatar.png"},"confirmed":false,"name":"Steven Seagal"},"nft":{"name":"BTC","owner":{"username":"John Wick","avatar":{"url":"/images/avatar.png"},"confirmed":true}},"type":"buy"}]} />
+            items={activityData}
+            />
+        
 
             <Footer />
         </div>
