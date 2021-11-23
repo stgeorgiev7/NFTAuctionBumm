@@ -7,10 +7,11 @@ import Footer from '../../src/components/footer/Footer';
 export default function ProductPage() {
    
     const [product, setProduct] = useState([]);
+    const router = useRouter();
+
 
     useEffect(async () => {
 
-        const router = useRouter();
         const crrid = router.query.id;
         const data = await fetch(process.env.apiUrl + "/nfts/" + crrid)
         .then((response) => response.json());
