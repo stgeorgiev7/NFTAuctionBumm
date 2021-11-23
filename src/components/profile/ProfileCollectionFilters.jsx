@@ -14,6 +14,8 @@ import SearchIcon from '@mui/icons-material/Search';
 
 export default function ProfileCollectionFilters({ filters }) {
 
+    console.log(filters)
+
     const [valueSort, setValueSort] = useState('');
     const [priceValues, setPriceValues] = useState(filters.price);
 
@@ -43,7 +45,7 @@ export default function ProfileCollectionFilters({ filters }) {
                             color="primary"
                             value={valueSort}
                             onChange={handleSort}>
-                            {filters?.sort?.map((item, i) => {
+                            {Object.values(filters)[0]?.map((item, i) => {
                                 return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
                             })}
                         </Select>
@@ -51,7 +53,7 @@ export default function ProfileCollectionFilters({ filters }) {
                     <FormControl>
                         <Select value={0} onChange={handlePrice}>
                             <MenuItem value={0} style={{ display: 'none' }}>Price range</MenuItem>
-                            {filters?.sort?.map((el, i) => {
+                            {filters?.price?.map((el, i) => {
                                 return <MenuItem key={i} value={el.value}>{el.label}</MenuItem>
                             })}
                         </Select>
