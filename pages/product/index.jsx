@@ -5,19 +5,17 @@ import Header from '../../src/components/header/Header';
 import Footer from '../../src/components/footer/Footer';
 
 export default function ProductPage() {
-   
-    const [product, setProduct] = useState([]);
     const router = useRouter();
+    const crrid = router.query.id;
 
+    const [product, setProduct] = useState([]);
 
     useEffect(async () => {
-
-        const crrid = router.query.id;
         const data = await fetch(process.env.apiUrl + "/nfts/" + crrid)
         .then((response) => response.json());
 
         setProduct(data);
-    }, [])
+    }, [crrid])
 
     const productData = 
         <ProductContainer
