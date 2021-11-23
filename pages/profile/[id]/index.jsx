@@ -13,7 +13,6 @@ export default function Profile() {
     const [nftsData, setNfts] = useState([]);
     const [profileFilters, setFilters] = useState([]);
 
-
     useEffect(async () => {
         const data = await fetch(process.env.apiUrl + "/users/" + crrid)
             .then((response) => response.json());
@@ -24,20 +23,14 @@ export default function Profile() {
 
     }, [crrid])
 
-    const profile =
-        <ProfileCollection
+    return (
+        <div>
+            <Header />
+            <ProfileCollection
             user={profileData}
             filters={profileFilters}
             items={nftsData}
         />
-
-
-    return (
-        <div>
-            <Header />
-
-                {profile}
-
             <Footer />
         </div>
 
