@@ -1,8 +1,10 @@
 import React from 'react';
 
-export default function Logo ({ type }){
-    
+export default function Logo ({ type="default" }){
+    const defaultLogo = "/images/logo.svg";
+    const mutedLogo = "/images/logo-muted.svg"
+
     return (
-        <img src={type !== "muted"? './images/logo.svg' :'./images/logo-muted.svg'}/>
+        <img src={type !== "muted"? defaultLogo : mutedLogo}/>
     );
 }
