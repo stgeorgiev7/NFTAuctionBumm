@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './ActivityFilters.module.scss'
 import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdornment } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
@@ -7,6 +7,8 @@ export default function ActivityFilters({ filters }) {
     const [input, setInput] = useState('');
     const [valueSort, setValueSort] = useState('');
     const [priceValues, setPriceValues] = useState(filters.price);
+
+    console.log(filters)
 
     function handleChange(e) {
         setInput(e.target.value);
@@ -33,7 +35,7 @@ export default function ActivityFilters({ filters }) {
                         color="primary"
                         value={valueSort}
                         onChange={handleSort}>
-                        {filters?.sort?.map((item, i) => {
+                        {filters?.type?.map((item, i) => {
                             return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
                         })}
                     </Select>
@@ -41,7 +43,7 @@ export default function ActivityFilters({ filters }) {
                 <FormControl>
                     <Select value={0} onChange={handlePrice}>
                         <MenuItem value={0} style={{ display: 'none' }}>Price range</MenuItem>
-                        {filters?.sort?.map((el, i )=> {
+                        {Object.values(filters)[0]?.map((el, i )=> {
                             return <MenuItem key={i} value={el.value}>{el.label}</MenuItem>
                         })}
                     </Select>
