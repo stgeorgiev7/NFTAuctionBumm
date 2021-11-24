@@ -9,7 +9,7 @@ export default function Profile() {
     const router = useRouter();
     const crrid = router.query.id;
 
-    const [profileData, setProfile] = useState([]);
+    const [profile, setProfile] = useState([]);
     const [nftsData, setNfts] = useState([]);
     const [profileFilters, setFilters] = useState([]);
 
@@ -27,7 +27,7 @@ export default function Profile() {
         <div>
             <Header />
             <ProfileCollection
-            user={profileData}
+            user={profile}
             filters={profileFilters}
             items={nftsData}
         />
