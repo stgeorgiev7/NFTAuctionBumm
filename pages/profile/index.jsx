@@ -15,7 +15,7 @@ export default function Profile() {
 
     useEffect(async () => {
         const data = await fetch(process.env.apiUrl + "/users/" + crrid)
-            .then((response) => response.json());
+        .then((response) => response.json());
 
         setProfile(data?.user);
         setNfts(data?.user?.nfts);
