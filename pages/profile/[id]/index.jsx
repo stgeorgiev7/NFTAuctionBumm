@@ -14,7 +14,7 @@ export default function Profile() {
     const [profileFilters, setFilters] = useState([]);
 
     useEffect(async () => {
-        const data = await fetch(process.env.apiUrl + "/users/" + crrid)
+        const data = await fetch(process.env.apiUrl + "/" + "users" + "/" + crrid)
         .then((response) => response.json());
 
         setProfile(data?.user);
