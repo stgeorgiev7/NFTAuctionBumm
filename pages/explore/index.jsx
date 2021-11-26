@@ -31,10 +31,7 @@ export default function Explore() {
     }, []);
 
     useEffect(() => {
-
         async function fetchFilters(path) {
-            console.log(path)
-
             const response = await fetch(`${process.env.apiUrl}${path}`);
             if (response.status === 200) {
                 const data = await response.json();
@@ -43,11 +40,11 @@ export default function Explore() {
         };
 
         if (sortFilter !== 0 && priceFilter !== 0) {
-            fetchFilters(`/explore?sort${sortFilter}&price=${priceFilter}`);
+            fetchFilters(`/explore?sort=${sortFilter}&price=${priceFilter}`);
         } else if (sortFilter !== 0) {
-            fetchFilters(`/explore?sort${sortFilter}`);
+            fetchFilters(`/explore?sort=${sortFilter}`);
         } else if (priceFilter !== 0) {
-            fetchFilters(`/explore?price${priceFilter}`);
+            fetchFilters(`/explore?price=${priceFilter}`);
         };
     }, [sortFilter, priceFilter]);
 
