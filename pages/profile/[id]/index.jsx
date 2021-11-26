@@ -26,7 +26,6 @@ export default function Profile() {
                 setProfile(data?.user);
                 setNfts(data?.user?.nfts);
                 setFilters(data?.filters);
-
             }
 
         }
