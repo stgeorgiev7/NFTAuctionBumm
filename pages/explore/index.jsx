@@ -23,7 +23,18 @@ export default function Explore() {
         
     }, []);
 
-    console.log(exploreData);
+
+    const [input, setInput] = useState('');
+    const [valueSort, setValueSort] = useState('');
+
+    function handleChange(e) {
+        setInput(e.target.value);
+        setValueSort(e.target.value);
+        console.log('q da widim dali stawa');
+    }
+
+    console.log(input)
+
 
     return (
         <div>
@@ -35,8 +46,7 @@ export default function Explore() {
                     </Grid>
 
                     <Grid item xs={9}>
-                        <ExploreFilters filters={{ "sort": [{ "label": "Name (Ascending)", "value": 1 }, { "label": "Name (Descending)", "value": 2 }, { "label": "Price (Ascending)", "value": 4 }, { "label": "Price (Descending)", "value": 5 }], "price": [{ "label": "0.3 - 0.5 ETH", "value": 6 }, { "label": "0.5 - 2 ETH", "value": 7 }, { "label": "2- 3 ETH", "value": 8 }] }} />
-
+                        <ExploreFilters filters={exploreFilters} sortChange={handleChange}/>
                     </Grid>
                 </Grid>
 

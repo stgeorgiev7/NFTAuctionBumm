@@ -1,24 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './ExploreFilters.module.scss'
 import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdornment } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 
-export default function ExploreFilters({ filters }) {
-    const [input, setInput] = useState('');
+export default function ExploreFilters({ filters, sortChange }) {
     const [valueSort, setValueSort] = useState('');
     const [priceValues, setPriceValues] = useState(filters.price);
 
-    function handleChange(e) {
-        setInput(e.target.value);
-    }
 
     function handleSort(e) {
         setValueSort(e.target.value);
+        console.log(e.target.value);
     };
 
     function handlePrice(e) {
         setPriceValues(e.target.value);
     };
+ // da mahna handlerite i da gi naprawq s prosti stoinosti, posle 6e podawam change metodi ot index-a
+ 
+    function handleChange(e) {
+        setInput(e.target.value);
+    
+    }
+
 
     return (
         <div className={styles['explore-filters']}>
@@ -33,7 +37,7 @@ export default function ExploreFilters({ filters }) {
                         color="primary"
                         value={valueSort}
                         onChange={handleSort}>
-                        {filters?.sort?.map((item, i) => {
+                        {Object.values(filters)[0]?.map((item, i) => {
                             return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
                         })}
                     </Select>
@@ -41,7 +45,7 @@ export default function ExploreFilters({ filters }) {
                 <FormControl>
                     <Select value={0} onChange={handlePrice}>
                         <MenuItem value={0} style={{ display: 'none' }}>Price range</MenuItem>
-                        {filters?.sort?.map((el, i )=> {
+                        {filters?.price?.map((el, i )=> {
                             return <MenuItem key={i} value={el.value}>{el.label}</MenuItem>
                         })}
                     </Select>

@@ -6,20 +6,30 @@ import Footer from "../../../src/components/footer/Footer";
 import ProfileCollection from "../../../src/components/profile/ProfileCollection";
 
 export default function Profile() {
-    const router = useRouter();
-    const crrid = router.query.id;
+
 
     const [profile, setProfile] = useState([]);
     const [nftsData, setNfts] = useState([]);
     const [profileFilters, setFilters] = useState([]);
 
-    useEffect(async () => {
-        const data = await fetch(process.env.apiUrl + "/" + "users" + "/" + crrid)
-        .then((response) => response.json());
+    const router = useRouter();
+    const crrid = router.query.id;
 
-        setProfile(data?.user);
-        setNfts(data?.user?.nfts);
-        setFilters(data?.filters);
+    useEffect(() => {
+
+        fetchProfileData();
+
+        async function fetchProfileData() {
+            const res = await fetch(`${process.env.apiUrl}/users/${crrid}`)
+            const data = await res.json();
+            if (res.status === 200) {
+                setProfile(data?.user);
+                setNfts(data?.user?.nfts);
+                setFilters(data?.filters);
+
+            }
+
+        }
 
     }, [crrid])
 
@@ -27,10 +37,10 @@ export default function Profile() {
         <div>
             <Header />
             <ProfileCollection
-            user={profile}
-            filters={profileFilters}
-            items={nftsData}
-        />
+                user={profile}
+                filters={profileFilters}
+                items={nftsData}
+            />
             <Footer />
         </div>
 
