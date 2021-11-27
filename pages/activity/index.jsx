@@ -4,7 +4,6 @@ import Header from "../../src/components/header/Header";
 import Footer from "../../src/components/footer/Footer";
 import Hero from "../../src/components/hero/Hero";
 import ActivityFilters from "../../src/components/activity/ActivityFilters";
-import ActivityListItem from "../../src/components/activity/ActivityListItem";
 import ActivityList from "../../src/components/activity/ActivityList";
 
 export default function Activity() {
