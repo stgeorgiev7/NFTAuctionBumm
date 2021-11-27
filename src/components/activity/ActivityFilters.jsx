@@ -7,15 +7,16 @@ export default function ActivityFilters({ filters, setSort, setType }) {
     const [sortValues, setSortValue] = useState(0);
     const [typeValues, setTypeValues] = useState(0);
 
+
     function handleSortChange(e) {
         setSort(e.target.value);
         setSortValue(e.target.value);
-    }
+    };
 
     function handleTypeChange(e) {
-       setType(e.target.value);
        setTypeValues(e.target.value);
-    }
+       setType(e.target.value);
+    };
 
     return (
         <div className={styles['activity-filters']}>
@@ -24,7 +25,6 @@ export default function ActivityFilters({ filters, setSort, setType }) {
                     <Select
                         className={styles.select}
                         labelId="sort-select"
-                        id="demo-simple-select"
                         variant="outlined"
                         color="primary"
                         value={sortValues}

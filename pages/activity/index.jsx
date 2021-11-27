@@ -35,21 +35,24 @@ export default function Activity() {
             if (res.status === 200) {
                 const data = await res.json();
                 setActivity(data.activities);
+                
             }
         };
 
-        if (sortFilter !== 0) {
+        if (sortFilter !== 0 && typeFilter !== 0 ) {
+            fetchFilters(`/activities?sort=${sortFilter}&type=${typeFilter}`);
+        } else if (sortFilter !== 0) {
             fetchFilters(`/activities?sort=${sortFilter}`);
         } else if (typeFilter !== 0) {
             fetchFilters(`/activities?type=${typeFilter}`)
         }
-    }, [sortFilter, typeFilter])
+    }, [sortFilter, typeFilter]);
 
     return (
         <div>
             <Header />
             <Hero text={"Activity"} />
-            <ActivityFilters filters={activityFilters} setSort={setSortFilter} setType={setTypeFilter} />
+            <ActivityFilters filters={activityFilters} setSort={setSortFilter} setType={setTypeFilter}/>
             <ActivityList
                 items={activityData}
             />

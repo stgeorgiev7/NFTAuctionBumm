@@ -24,7 +24,6 @@ export default function ExploreFilters({ filters, setSort, setPrice }) {
                     <Select
                         className={styles.select}
                         labelId="sort-select"
-                        id="demo-simple-select"
                         variant="outlined"
                         color="primary"
                         value={sortValues}
