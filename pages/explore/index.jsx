@@ -6,7 +6,6 @@ import ExploreTitle from "../../src/components/explore/ExploreTitle";
 import ExploreFilters from "../../src/components/explore/ExploreFilters";
 import { Container, Grid } from "@mui/material";
 import Card from "../../src/components/card/Card";
-import data from "../data/nfts.json";
 
 export default function Explore() {
 
@@ -16,7 +15,7 @@ export default function Explore() {
     const [sortFilter, setSortFilter] = useState(0);
     const [priceFilter, setPriceFilter] = useState(0);
 
-    useEffect(async () => {
+    useEffect( () => {
         getExploreData();
 
         async function getExploreData() {

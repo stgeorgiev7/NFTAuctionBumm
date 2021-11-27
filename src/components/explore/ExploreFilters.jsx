@@ -4,9 +4,8 @@ import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdorn
 import SearchIcon from '@mui/icons-material/Search';
 
 export default function ExploreFilters({ filters, setSort, setPrice }) {
-    const [sortValues, setSortValue] = useState('');
-    const [priceValues, setPriceValue] = useState('');
-
+    const [sortValues, setSortValue] = useState(0);
+    const [priceValues, setPriceValue] = useState(0);
 
     function handleSortChange(e) {
         setSort(e.target.value);
@@ -18,12 +17,10 @@ export default function ExploreFilters({ filters, setSort, setPrice }) {
         setPrice(e.target.value);
     };
 
-
     return (
         <div className={styles['explore-filters']}>
             <Stack direction="row" spacing={2}>
                 <FormControl sx={{ minWidth: 220 }}>
-                    <InputLabel id="sort-select" shrink={false}>{'Sort by'}</InputLabel>
                     <Select
                         className={styles.select}
                         labelId="sort-select"
@@ -32,6 +29,7 @@ export default function ExploreFilters({ filters, setSort, setPrice }) {
                         color="primary"
                         value={sortValues}
                         onChange={handleSortChange}>
+                            <MenuItem value={0} style={{display:"none"}}>Sort by</MenuItem>
                         {filters && filters.sort.map((item, i) => {
                             return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
                         })}
@@ -43,6 +41,7 @@ export default function ExploreFilters({ filters, setSort, setPrice }) {
                      onChange={handlePriceChange}
                      className={styles.select}  
                      >
+                        <MenuItem value={0} style={{display:"none"}}>Price</MenuItem>
                         {filters?.price?.map((el, i )=> {
                             return <MenuItem key={i} value={el.value}>{el.label}</MenuItem>
                         })}
@@ -50,7 +49,6 @@ export default function ExploreFilters({ filters, setSort, setPrice }) {
                 </FormControl>
                 <FormControl size="medium">
                     <TextField
-        
                         sx={{ minWidth: 340, background: "#181828", padding: "0.7rem 1.2rem", borderRadius: "30px" }}
                         InputProps={{
                             disableUnderline: true,
