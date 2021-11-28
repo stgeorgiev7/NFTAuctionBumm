@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./ProfileCollection.module.scss";
 import classNames from "classnames";
 import ProfileHero from "./ProfileHero";
@@ -9,14 +9,13 @@ import { Grid } from "@mui/material";
 import { Container } from "@mui/material";
 import { Typography } from "@mui/material";
 
-export default function ProfileCollection({ user, filters, items}) {
-    console.log(user)
+export default function ProfileCollection({ user, filters, items, setSort, setPrice}) {
 
     return (
         <div className={classNames(styles["profile-collection"])}>
             <ProfileHero image={'https://nft-auction.herokuapp.com/uploads/0x72abed3186b65b29e4da3faaa926e74d1f763cc5_c3e6697515.jpg'} />
             <Container>
-                <ProfileUser name={user.username} info={user.info} avatar={user.avatar?.url} verified={user.verified} size={100} />
+                <ProfileUser name={user?.username} info={user?.info} avatar={user?.avatar?.url} verified={user?.verified} size={100} />
 
                 <Grid container>
                     <Grid item xs={3}>
@@ -24,7 +23,7 @@ export default function ProfileCollection({ user, filters, items}) {
                     </Grid>
 
                     <Grid item xs={9}>
-                        <ProfileCollectionFilters filters={filters} />
+                        <ProfileCollectionFilters filters={filters} setSort={setSort} setPrice={setPrice} />
                     </Grid>
                 </Grid>
 

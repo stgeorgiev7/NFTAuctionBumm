@@ -27,7 +27,7 @@ export default function Card({ name, user, likes = 0, mediaUrl, price, currency,
             sx={{ width: 270, height: 420 }}
             style={countDownTime ? { backgroundColor: '#1A2E2D', borderRadius: '25px', paddingBottom: '30px' } : { backgroundColor: '#181828', borderRadius: '25px' }}
             className={timeLeft !== 0 && timeLeft !== undefined? classNames(styles.live) : ''}>
-            <Avatar url={user.avatar.url} size={40} verified={user.verified} />
+            <Avatar url={user?.avatar?.url} size={40} verified={user?.verified} />
             <Link href={'/product/' + id}>
                 <CardMedia
                     component="img"

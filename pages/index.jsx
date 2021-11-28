@@ -63,7 +63,6 @@ export default function Index() {
       const res = await fetch(`${process.env.apiUrl}/top-collectors`);
       if (res.status === 200) {
         const data = await res.json();
-        console.log(data);
         setUsersData(data.users);
         setUsersFilters(data.filters);
       }
@@ -99,9 +98,7 @@ export default function Index() {
         setAuctionData(data.nfts);
         setAuctionFilters(data.filters);
       }
-
     }
-
   }, []);
 
   useEffect(() => {
