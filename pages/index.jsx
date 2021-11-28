@@ -23,7 +23,7 @@ export default function Index() {
   const [trendingFilters, setTrendingFilters] = useState();
   const [trendingSortFilter, setTrendingFilter] = useState(0);
 
-  useEffect( () => {
+  useEffect(() => {
     getTrendingData();
 
     async function getTrendingData() {
@@ -46,7 +46,7 @@ export default function Index() {
       };
     }
 
-    if(trendingSortFilter !== 0) {
+    if (trendingSortFilter !== 0) {
       fetchTrendingFilters(`/trending?sort=${trendingSortFilter}`);
     }
   }, [trendingSortFilter]);
@@ -60,13 +60,13 @@ export default function Index() {
     getTopCollectorsData();
 
     async function getTopCollectorsData() {
-        const res = await fetch(`${process.env.apiUrl}/top-collectors`);
-        if (res.status === 200) {
-          const data= await res.json();
-          console.log(data);
-          setUsersData(data.users);
-          setUsersFilters(data.filters);
-        }
+      const res = await fetch(`${process.env.apiUrl}/top-collectors`);
+      if (res.status === 200) {
+        const data = await res.json();
+        console.log(data);
+        setUsersData(data.users);
+        setUsersFilters(data.filters);
+      }
     }
   }, []);
 
@@ -79,28 +79,51 @@ export default function Index() {
       }
     }
 
-    if(sortUsers !== 0 ){
+    if (sortUsers !== 0) {
       fetchTopCollectorsData(`/top-collectors?sort=${sortUsers}`);
     }
   }, [sortUsers]);
 
 
   const [auctionData, setAuctionData] = useState([]);
-  const [auctionFilters, setAuctionFilters] = useState([]);
+  const [auctionFilters, setAuctionFilters] = useState();
+  const [priceFilter, setPriceFilter] = useState();
 
-  useEffect(async () => {
-    const dataNfts = await fetch(process.env.apiUrl + "/" + "live-auctions")
-      .then((response) => response.json());
+  useEffect( () => {
+    getAuctionData();
 
-    setAuctionData(dataNfts?.nfts);
-    setAuctionFilters(dataNfts?.filters?.price);
+    async function getAuctionData() {
+      const res = await fetch(`${process.env.apiUrl}/live-auctions`);
+      if (res.status === 200) {
+        const data = await res.json();
+        setAuctionData(data.nfts);
+        setAuctionFilters(data.filters);
+      }
+
+    }
+
   }, []);
+
+  useEffect(() => {
+    async function fetchAuctionData(path) {
+      const res = await fetch(`${process.env.apiUrl}${path}`);
+      if (res.status === 200) {
+        const data = await res.json();
+        setAuctionData(data.nfts);
+      }
+    } 
+
+    if (priceFilter !== 0) {
+      fetchAuctionData(`/live-auctions?price=${priceFilter}`);
+    };
+
+  }, [priceFilter] )
 
   return (
     <div>
       <Header />
       <Featured items={featuredCards?.nfts} />
-      <Trending trendingCards={trendingCards} trendingFilters={trendingFilters} setFilters={setTrendingFilter}/>
+      <Trending trendingCards={trendingCards} trendingFilters={trendingFilters} setFilters={setTrendingFilter} />
       <TopCollectors collectors={usersData} filters={usersFilters} setFilters={setUsersSort} />
       <div style={{ backgroundColor: '#4E24F2', paddingTop: 10 }}>
         <How
@@ -124,7 +147,7 @@ export default function Index() {
         />
       </div>
 
-      <Auctions cards={auctionData} filters={auctionFilters} />
+      <Auctions cards={auctionData} filters={auctionFilters} setPrice={setPriceFilter}/>
       <Footer />
     </div>
   );
