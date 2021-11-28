@@ -9,21 +9,22 @@ export default function ProductActions({ isLive, currency, buyAmount, bidAmount,
     return (
         <div className={styles['product-action']}>
             <Grid container>
-                <Grid item xs={7} sm={7} md={7}>
+                <Grid item xs={7} pr={1}>
                     <Button
                         className={styles['button']}
                         variant='contained'
+                        sx={{width: "100%"}}
                         disabled={isLive ? false : true}
-                        onClick={onBuy}>
-                        Buy for {buyAmount} {currency}
+                        onClick={onBuy}>Buy for {buyAmount} {currency}
                     </Button>
                 </Grid>
 
-                <Grid item xs={5} sm={5} md={5}>
+                <Grid item xs={5} pl={1}>
                     <Button
                         className={styles['button']}
                         disabled={isLive ? false : true}
                         variant="outlined"
+                        sx={{width: "100%", right: "15px"}}
                         color="success"
                         onClick={onBid}>
                         Place bid for {bidAmount} {currency}

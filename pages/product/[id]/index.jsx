@@ -26,6 +26,7 @@ export default function ProductPage() {
          owner={product?.owner}
          price={product?.price}
          currency={product?.currency}
+         auction_end={product?.auction_end}
          details={product?.details}
          source={product?.source?.url}
          likes={product?.likes}

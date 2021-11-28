@@ -2,12 +2,9 @@ import React from "react";
 import Countdown from "react-countdown";
 import styles from './ProductInfoTimer.module.scss';
 import classNames from "classnames";
-import { formatDistance } from "date-fns";
-import { parseISO } from "date-fns";
-
 
 export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
-    
+
     const timer =
         <Countdown
             date={timeEnd}
@@ -18,8 +15,12 @@ export default function ProductInfoTimer({ timeEnd, onTimeEnd }) {
     const timerComponent =
 
         <div className={classNames(styles["timer"])}>
-            <label className={classNames(styles["title"])}>Ends in</label>
-            {timer}
+            <div className={classNames(styles["title"])}>
+                <label>ENDS IN</label>
+            </div>
+            <div className={classNames(styles["countDownWrapper"])}>
+                {timer}
+            </div>
         </div>
 
     return (

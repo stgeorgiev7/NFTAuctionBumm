@@ -2,17 +2,9 @@ import React from "react";
 import * as styles from "./ProductTabs.module.scss";
 import classNames from "classnames";
 import User from "../user/User";
-import { formatDistance } from "date-fns";
-import { parseISO } from "date-fns";
-import { TabContext } from "@mui/lab";
-import { Tab } from "@mui/material";
-import { TabList } from "@mui/lab";
-import { TabPanel } from "@mui/lab";
-import { TableContainer } from "@mui/material";
-import { Table } from "@mui/material";
-import { TableBody } from "@mui/material";
-import { TableRow } from "@mui/material";
-import { TableCell } from "@mui/material";
+import { formatDistance, parseISO } from "date-fns";
+import { TabContext, TabList, TabPanel } from "@mui/lab";
+import { Tab, TableContainer, Table, TableBody, TableRow, TableCell } from "@mui/material";
 
 export default function ProductTabs({ text, bids }) {
     const [value, setValue] = React.useState('1');
@@ -45,20 +37,17 @@ export default function ProductTabs({ text, bids }) {
                                     <TableCell>
                                         {formatDate(crrBid.date)}
                                     </TableCell>
-
                                 </TableRow>
-
                             )
-
                         })
                     }
-                    </TableBody>
+                </TableBody>
             </Table>
         </TableContainer>
 
     return (
         <div className={classNames(styles["product-tabs"])} >
-            <TabContext value={value}>
+            <TabContext value={value} sx={{borderBottom: 1, width: "100%"}}>
                 <TabList onChange={handleChange} >
                     <Tab label='DETAILS' value="1" className={classNames(styles["tab-details"])} />
                     <Tab label='BIDS' value="2" className={classNames(styles["tab-bids"])} />
@@ -68,6 +57,5 @@ export default function ProductTabs({ text, bids }) {
 
             </TabContext>
         </div>
-
     )
 }
