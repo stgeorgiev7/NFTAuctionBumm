@@ -45,7 +45,7 @@ export default function Index() {
         console.log(trendingCards);
       };
     }
-    
+
     if(trendingSortFilter !== 0) {
       fetchTrendingFilters(`/trending?sort=${trendingSortFilter}`);
     }
@@ -53,15 +53,36 @@ export default function Index() {
 
 
   const [usersData, setUsersData] = useState([]);
-  const [usersFilters, setUsersFilters] = useState([]);
+  const [usersFilters, setUsersFilters] = useState();
+  const [sortUsers, setUsersSort] = useState(0)
 
-  useEffect(async () => {
-    const dataUsers = await fetch(process.env.apiUrl + "/" + "top-collectors")
-      .then((response) => response.json());
+  useEffect(() => {
+    getTopCollectorsData();
 
-    setUsersData(dataUsers?.users);
-    setUsersFilters(dataUsers?.filters?.sort);
+    async function getTopCollectorsData() {
+        const res = await fetch(`${process.env.apiUrl}/top-collectors`);
+        if (res.status === 200) {
+          const data= await res.json();
+          console.log(data);
+          setUsersData(data.users);
+          setUsersFilters(data.filters);
+        }
+    }
   }, []);
+
+  useEffect(() => {
+    async function fetchTopCollectorsData(path) {
+      const res = await fetch(`${process.env.apiUrl}${path}`);
+      if (res.status === 200) {
+        const data = await res.json();
+        setUsersData(data.users);
+      }
+    }
+
+    if(sortUsers !== 0 ){
+      fetchTopCollectorsData(`/top-collectors?sort=${sortUsers}`);
+    }
+  }, [sortUsers]);
 
 
   const [auctionData, setAuctionData] = useState([]);
@@ -80,7 +101,7 @@ export default function Index() {
       <Header />
       <Featured items={featuredCards?.nfts} />
       <Trending trendingCards={trendingCards} trendingFilters={trendingFilters} setFilters={setTrendingFilter}/>
-      <TopCollectors collectors={usersData} filters={usersFilters} />
+      <TopCollectors collectors={usersData} filters={usersFilters} setFilters={setUsersSort} />
       <div style={{ backgroundColor: '#4E24F2', paddingTop: 10 }}>
         <How
           description='Discover, collect and sell extraoridanry NFTs on the world`s first and largest NFT marketplace. There are three things you`ll need in place to open your account and start buying or selling NFTs on BUM.'

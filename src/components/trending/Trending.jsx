@@ -9,7 +9,7 @@ import { MenuItem } from '@mui/material';
 
 export default function Trending({ trendingCards = [], trendingFilters, setFilters }) {
 
-    const [sortValues, setSortValue] = useState(0);
+    const [sortValues, setSortValue] = useState('');
 
     function handleSortChange(e) {
         setFilters(e.target.value);
