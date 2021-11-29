@@ -25,9 +25,19 @@ export default function ProductTabs({ text, bids }) {
                     {
                         bids?.map((crrBid, i) => {
                             return (
-                                <TableRow className={`table-row-${i}`} key={`${crrBid.user.name} bid`}>
+                                <TableRow
+                                 className={`table-row-${i}`}
+                                 key={`${crrBid.user.name} bid`}
+                                 sx={
+                                     {
+                                         border:0,
+                                         padding: "0 2rpx",
+                                         backgroundColor: i % 2 === 0 ? "rgb(78, 36, 242,0.05)" : "rgb(78, 36, 242,0.15"
+                                     }
+                                 }
+                                 >
                                     <TableCell component='th' scope='row'>
-                                        <User name={crrBid.user.name} avatar={crrBid.user.avatar} verified={crrBid.user.verified} />
+                                        <User name={crrBid.user.name} avatar={crrBid.user.avatar} verified={crrBid.user.verified} size={34} />
                                     </TableCell>
 
                                     <TableCell>
@@ -47,13 +57,13 @@ export default function ProductTabs({ text, bids }) {
 
     return (
         <div className={classNames(styles["product-tabs"])} >
-            <TabContext value={value} sx={{borderBottom: 1, width: "100%"}}>
+            <TabContext value={value} sx={{ width: "100%"}}>
                 <TabList onChange={handleChange} >
                     <Tab label='DETAILS' value="1" className={classNames(styles["tab-details"])} />
                     <Tab label='BIDS' value="2" className={classNames(styles["tab-bids"])} />
                 </TabList>
-                <TabPanel value="1">{text}</TabPanel>
-                <TabPanel value="2">{currentBids}</TabPanel>
+                <TabPanel sx={{paddingX: 0}} value="1">{text}</TabPanel>
+                <TabPanel sx={{paddingX: 0}} value="2">{currentBids}</TabPanel>
 
             </TabContext>
         </div>

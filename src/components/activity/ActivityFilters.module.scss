@@ -6,8 +6,10 @@
 
 
 .activity-filters {
-    font-family: 'Monsterrat';
-
+    display: flex;
+    justify-content: center;
+    margin-top: -200px;
+    margin-bottom: 40px;
 }
 
 .stack {

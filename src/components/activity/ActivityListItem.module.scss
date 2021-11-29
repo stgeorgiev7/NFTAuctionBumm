@@ -6,4 +6,33 @@
 
 .activityList {
     display: flex;
+    width: 950px;
+    height: 110px;
+    background-color: colors.$background_paper;
+    border-radius: 15px;
+    margin-top: -20px;
+    margin-bottom: 15px !important;
+}
+
+.avatar {
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    display: grid;
+    align-content: center;
+}   
+
+.action-info {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.time {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 200;
 }

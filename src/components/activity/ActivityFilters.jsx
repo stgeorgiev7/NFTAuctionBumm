@@ -20,7 +20,7 @@ export default function ActivityFilters({ filters, setSort, setType }) {
 
     return (
         <div className={styles['activity-filters']}>
-            <Stack direction="row" spacing={2}>
+            <Stack direction="row" spacing={2} alignItems="center">
                 <FormControl sx={{ minWidth: 220 }}>
                     <Select
                         className={styles.select}
@@ -37,11 +37,11 @@ export default function ActivityFilters({ filters, setSort, setType }) {
                 </FormControl>
                 <FormControl>
                     <Select
-                     value={typeValues} 
+                     value={typeValues}
                      onChange={handleTypeChange}
                      className={styles.select}
                      >
-                        <MenuItem value={0} style={{ display: 'none' }}>Price range</MenuItem>
+                        <MenuItem value={0} style={{ display: 'none'}}>Type</MenuItem>
                         {filters?.type.map((el, i )=> {
                             return <MenuItem key={i} value={el.value}>{el.label}</MenuItem>
                         })}

@@ -34,7 +34,7 @@ export default function ProductInfo({ title, creator, price, currency, likes, on
 
                 <Grid container sx={{paddingTop:2}}>
 
-                    <Grid sx={{pr:1}} xs={7} sm={12} md={7}>
+                    <Grid item sx={{pr:1}} xs={7} sm={12} md={7}>
                         <ProductInfoCreator
                             name={creator?.username}
                             avatar={creator?.avatar.url}
