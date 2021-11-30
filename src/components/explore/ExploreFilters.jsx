@@ -19,11 +19,16 @@ export default function ExploreFilters({ filters, setSort, setPrice }) {
 
     return (
         <div className={styles['explore-filters']}>
-            <Stack direction="row" spacing={2}>
-                <FormControl sx={{ minWidth: 220 }}>
+            <Stack 
+            direction="row" 
+            spacing={2} 
+            justifyContent="flex-end"
+            alignItems="center">
+                <FormControl sx={{ width: "220px" }}>
                     <Select
                         className={styles.select}
                         labelId="sort-select"
+                        sx={{minWidth: "150px"}}
                         variant="outlined"
                         color="primary"
                         value={sortValues}
@@ -34,7 +39,7 @@ export default function ExploreFilters({ filters, setSort, setPrice }) {
                         })}
                     </Select>
                 </FormControl>
-                <FormControl>
+                <FormControl  sx={{width: "220px"}} >
                     <Select
                      value={priceValues} 
                      onChange={handlePriceChange}
@@ -46,7 +51,7 @@ export default function ExploreFilters({ filters, setSort, setPrice }) {
                         })}
                     </Select>
                 </FormControl>
-                <FormControl size="medium">
+                <FormControl >
                     <TextField
                         sx={{ minWidth: 340, background: "#181828", padding: "0.7rem 1.2rem", borderRadius: "30px" }}
                         InputProps={{

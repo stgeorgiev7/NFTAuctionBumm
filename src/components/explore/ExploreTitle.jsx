@@ -7,7 +7,7 @@ export default function ExploreTitle({text}) {
 
     return (
         <div className={classNames(styles["explore-title"])}>
-            <Typography variant={"h3"} className={classNames(styles.text)} children={text} />
+            <Typography variant={"h1"} className={classNames(styles.text)} children={text} />
         </div> 
     )
 };

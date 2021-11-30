@@ -51,8 +51,8 @@ export default function Explore() {
     return (
         <div>
             <Header />
-            <Container maxWidth={"xl"}>
-                <Grid container>
+            <Container>
+                <Grid container sx={{marginTop: "50px"}}>
                     <Grid item xs={3}>
                         <ExploreTitle text={"Explore"} />
                     </Grid>
@@ -62,7 +62,11 @@ export default function Explore() {
                     </Grid>
                 </Grid>
 
-                <Grid container>
+                <Grid container
+                justifyContent="space-between"
+                rowSpacing={2}
+                maxWidth="xl"
+                sx={{margin: "30px 0 30px"}}>
                     {exploreData.map(function (nft, index) {
                         return (
                             <Grid item key={index} xs={3}>
