@@ -22,7 +22,7 @@ export default function ProfileCollectionFilters({ filters, setSort, setPrice })
     return (
         <div className={classNames(styles["profile-collection-filters"])}>
             <Container>
-                <Stack direction="row" spacing={2}>
+                <Stack direction="row" spacing={2} alignItems="center">
                     <FormControl sx={{ minWidth: 220 }}>
                         <Select
                             value={sortValue}
@@ -36,7 +36,7 @@ export default function ProfileCollectionFilters({ filters, setSort, setPrice })
                             })}
                         </Select>
                     </FormControl>
-                    <FormControl>
+                    <FormControl sx={{ minWidth: 220 }}>
                         <Select
                             value={priceValue}
                             onChange={handlePriceChange}
@@ -51,7 +51,7 @@ export default function ProfileCollectionFilters({ filters, setSort, setPrice })
                     </FormControl>
                     <FormControl size="medium">
                         <TextField
-                            sx={{ minWidth: 340, background: "#181828", padding: "0.7rem 1.2rem", borderRadius: "30px" }}
+                            sx={{ minWidth: 300, background: "#181828", padding: "0.7rem 1.2rem", borderRadius: "30px" }}
                             id="input-with-icon-textfield"
                             InputProps={{
                                 disableUnderline: true,

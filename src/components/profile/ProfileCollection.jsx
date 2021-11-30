@@ -13,13 +13,13 @@ export default function ProfileCollection({ user, filters, items, setSort, setPr
 
     return (
         <div className={classNames(styles["profile-collection"])}>
-            <ProfileHero image={'https://nft-auction.herokuapp.com/uploads/0x72abed3186b65b29e4da3faaa926e74d1f763cc5_c3e6697515.jpg'} />
+            <ProfileHero image={user?.avatar?.backgroundUrl} />
             <Container>
                 <ProfileUser name={user?.username} info={user?.info} avatar={user?.avatar?.url} verified={user?.verified} size={100} />
 
-                <Grid container>
+                <Grid container alignItems="baseline">
                     <Grid item xs={3}>
-                        <Typography variant={"h3"} children={"Collection"} />
+                        <Typography variant={"h3"} children={"Collection"} className={classNames(styles["title"])}/>
                     </Grid>
 
                     <Grid item xs={9}>
@@ -27,7 +27,13 @@ export default function ProfileCollection({ user, filters, items, setSort, setPr
                     </Grid>
                 </Grid>
 
-                <Grid container justifyContent='center'>
+                <Grid
+                 container 
+                 justifyContent='center'
+                 alignItems="center"
+                 direction="row"
+                 spacing={2}
+                 sx={{marginTop: "50px", marginBottom: "60px"}}>
                     {items.map(function (nft, index) {
                         if (index <= 3) {
                             return (
