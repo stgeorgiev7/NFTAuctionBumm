@@ -18,25 +18,27 @@ export default function Featured({ items = [] }) {
                 gap={10}
             >
                 {items.map((item, index) => (
+                    <Link href={"/product/" + item.id} key={item.id}>
+                        <ImageListItem
+                            cols={index === 0 ? 3 : 1}
+                            rows={index === 0 ? 2 : 1}
+                        >
 
-                    <ImageListItem
-                        key={item.id}
-                        cols={index === 0 ? 3 : 1}
-                        rows={index === 0 ? 2 : 1}
-                    >
-                        <img
-                            src={item.source.url}
-                            srcSet={item.image}
-                            alt={item.title}
-                            loading="lazy"
-                            onClick={() => { router.push("/product/" + item.id) }}
-                            style={{ borderRadius: '10px' }}
+                            <img
+                                src={item.source.url}
+                                srcSet={item.image}
+                                alt={item.title}
+                                loading="lazy"
+                                onClick={() => { router.push("/product/" + item.id) }}
+                                className={classNames(styles.featuredImage)}
 
-                        />
-                    </ImageListItem>
+                            />
+                        </ImageListItem>
+                    </Link>
+
 
                 ))}
-        </ImageList>
+            </ImageList>
 
         </Container >
     )

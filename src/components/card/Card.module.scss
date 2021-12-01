@@ -9,8 +9,23 @@
     padding: 10px;
 };
 
+.card {
+    transition: 1s;
+    animation: card-load 1s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
 .live {
+    transition: transform .2s;
     font-family: 'Monsterrat';
+    animation: card-load 1s;
+}
+
+.live:hover {
+    transform: scale(1.1);
 }
 
 .Card_title{
@@ -37,7 +52,6 @@
     font-weight: 1000;
 }
 
-
 .price {
     flex: 1;
     margin: 0;
@@ -57,3 +71,12 @@
     padding:0px;
 }
 
+@keyframes card-load {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

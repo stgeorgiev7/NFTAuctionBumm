@@ -16,38 +16,34 @@ export default function ProductInfo({ title, creator, price, currency, likes, on
     return (
         <div clases={classNames(styles["product-info"])}>
             <Grid container>
-                <ProductInfoTitle text={title} />
-
-                <Grid container justifyContent='space-between' alignItems="baseline">
-                    <Grid item xs={3} sm={3} md={6} >
-                        <ProductInfoPrice amount={price} currency={currency} />
-
-                    </Grid>
-
-                    <Grid item xs={3} sm={3} md={3} justifyContent='center'>
-                        <ProductInfoStatus isLive={isLive} />
-
-                    </Grid>
-
-                    <Grid item xs={3} sm={3} md={3} justifySelf='flex-end'>
-                        <ProductInfoLikes amount={likes} />
-
-                    </Grid>
-
+                <Grid item xs={11}>
+                    <ProductInfoTitle sx={{ mt: 3 }} text={title} />
                 </Grid>
 
-                <Grid container>
-
-                    <Grid item xs={7} sm={7} md={7}>
-                        <ProductInfoCreator
-                         name={creator?.username} 
-                         avatar={creator?.avatar.url} 
-                         verified={creator?.verified} 
-                         id={creator?.id} />
-
+                <Grid container alignItems="baseline" sx={{paddingTop:1}}>
+                    <Grid item xs={4} sm={6} md={8} >
+                        <ProductInfoPrice amount={price} currency={currency} />
                     </Grid>
 
-                    <Grid item xs={5} sm={5} md={5}>
+                    <Grid item xs={4} sm={6} md={4}
+                        sx={{ display: "flex", justifyContent: "flex-start", gap: "20px", alignItems:"baseline" }}>
+                        {isLive && <ProductInfoStatus isLive={isLive} />}
+                        <ProductInfoLikes amount={likes} />
+                    </Grid>
+                </Grid>
+
+                <Grid container sx={{paddingTop:2}}>
+
+                    <Grid item sx={{pr:1}} xs={7} sm={12} md={7}>
+                        <ProductInfoCreator
+                            name={creator?.username}
+                            avatar={creator?.avatar.url}
+                            verified={creator?.verified}
+                            id={creator?.id}
+                             />
+                    </Grid>
+
+                    <Grid item sx={{pl: '10px', left: "10px"}} xs={4} sm={4} md={4}>
                         <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={"auction ended"} />
 
                     </Grid>

@@ -7,12 +7,13 @@ import { Select } from '@mui/material';
 import { MenuItem } from '@mui/material';
 import _ from 'lodash';
 
-export default function TopCollectors({ collectors = [], filters }) {
+export default function TopCollectors({ collectors = [], filters, setFilters }) {
     
-    const [valueSort, setValueSort] = useState('');
+    const [sortValue, setValueSort] = useState(0);
 
-    function handleSort(e) {
+    function handleSortChange(e) {
         setValueSort(e.target.value);
+        setFilters(e.target.value);
     };
 
     const collectorsData = collectors.sort((a, b) =>  b.nfts.length - a.nfts.length);
@@ -37,13 +38,13 @@ export default function TopCollectors({ collectors = [], filters }) {
             <Grid item xs={7} sm={7} md={7} justifyContent='flex-end' style={{display:'flex', alignSelf:'center'}}>
 
                     <Select
-                        value={0}
-                        onChange={handleSort}
+                        value={sortValue}
+                        onChange={handleSortChange}
                         className={classNames(styles.select)}
                         sx={{ ":hover": { border: 'none' } }}
                     >
                         <MenuItem value={0} style={{ display: 'none' }}>Sort By</MenuItem>
-                        {filters?.map((item, i) => {
+                        {filters && filters?.sort?.map((item, i) => {
                             return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
                         })}
                     </Select>

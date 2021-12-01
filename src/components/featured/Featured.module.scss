@@ -1,1 +1,21 @@
 @use '../../styles/colors';
+
+.featuredImage {
+    border-radius: 10px;
+    transition: 1s;
+    animation: feature-load 1s;
+}
+
+.featuredImage:hover{
+    transform:scale(0.90);
+}
+
+@keyframes feature-load {
+    0% {
+        transform: scale(0)
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

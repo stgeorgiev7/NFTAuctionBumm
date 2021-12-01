@@ -5,23 +5,17 @@
 }
 
 .product-info-likes {
-    
-        background: rgba(36, 242, 94, 0.1);
-        border: 2px solid #24F25E;
-        box-sizing: border-box;
-        border-radius: 10px;
-        justify-content: space-evenly;
-        align-items: baseline;
-        color: #24F25E;
-        margin: 0px;
-        width: 50%;
-        height: 35px;
-        padding: 0 10px;
-        font-family: 'Monsterrat';
-        font-weight: 1000;
-    
+    position: relative;
+    right: 20px;
 }
 
 .likes {
-    margin: 1px;
+    border: 2px solid #24F25E !important;
+    border-radius: 7px !important;
+    padding-left: 20px;
+    justify-content: space-evenly;
+    align-items: baseline;
+    background-color: #013d12 !important; ;
+    font-family: 'Monsterrat';
+    font-weight: 1000;
 }

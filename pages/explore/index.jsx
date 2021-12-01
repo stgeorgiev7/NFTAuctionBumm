@@ -1,46 +1,72 @@
 import React from "react";
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import Header from "../../src/components/header/Header";
 import Footer from "../../src/components/footer/Footer";
 import ExploreTitle from "../../src/components/explore/ExploreTitle";
 import ExploreFilters from "../../src/components/explore/ExploreFilters";
-import { Container } from "@mui/material";
-import { Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import Card from "../../src/components/card/Card";
-import data from "../data/nfts.json";
 
 export default function Explore() {
 
     const [exploreData, setExplore] = useState([]);
-    const [exploreFilters, setFilters] = useState([]);
+    const [exploreFilters, setFilters] = useState();
 
-    useEffect( async() => {
-        const data = await fetch(process.env.apiUrl + "/" + 'explore')
-        .then((response) => response.json());
+    const [sortFilter, setSortFilter] = useState(0);
+    const [priceFilter, setPriceFilter] = useState(0);
 
-        setExplore(data.nfts);
-        setFilters(data.filters);
-        
+    useEffect( () => {
+        getExploreData();
+
+        async function getExploreData() {
+            const res = await fetch(`${process.env.apiUrl}/explore`);
+            if (res.status === 200) {
+                const data = await res.json();
+
+                setExplore(data.nfts);
+                setFilters(data.filters);
+            }
+        }
     }, []);
 
-    console.log(exploreData);
+    useEffect(() => {
+        async function fetchFilters(path) {
+            const response = await fetch(`${process.env.apiUrl}${path}`);
+            if (response.status === 200) {
+                const data = await response.json();
+                setExplore(data.nfts);
+            }
+        };
+
+        if (sortFilter !== 0 && priceFilter !== 0) {
+            fetchFilters(`/explore?sort=${sortFilter}&price=${priceFilter}`);
+        } else if (sortFilter !== 0) {
+            fetchFilters(`/explore?sort=${sortFilter}`);
+        } else if (priceFilter !== 0) {
+            fetchFilters(`/explore?price=${priceFilter}`);
+        };
+    }, [sortFilter, priceFilter]);
+
 
     return (
         <div>
             <Header />
-            <Container maxWidth={"xl"}>
-                <Grid container>
+            <Container>
+                <Grid container sx={{marginTop: "50px"}}>
                     <Grid item xs={3}>
                         <ExploreTitle text={"Explore"} />
                     </Grid>
 
                     <Grid item xs={9}>
-                        <ExploreFilters filters={{ "sort": [{ "label": "Name (Ascending)", "value": 1 }, { "label": "Name (Descending)", "value": 2 }, { "label": "Price (Ascending)", "value": 4 }, { "label": "Price (Descending)", "value": 5 }], "price": [{ "label": "0.3 - 0.5 ETH", "value": 6 }, { "label": "0.5 - 2 ETH", "value": 7 }, { "label": "2- 3 ETH", "value": 8 }] }} />
-
+                        <ExploreFilters filters={exploreFilters} setSort={setSortFilter} setPrice={setPriceFilter} />
                     </Grid>
                 </Grid>
 
-                <Grid container>
+                <Grid container
+                justifyContent="space-between"
+                rowSpacing={2}
+                maxWidth="xl"
+                sx={{margin: "30px 0 30px"}}>
                     {exploreData.map(function (nft, index) {
                         return (
                             <Grid item key={index} xs={3}>

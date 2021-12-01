@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import styles from './ProductInfoTitle.module.scss'
 import classNames from "classnames";
 import { Typography } from "@mui/material";

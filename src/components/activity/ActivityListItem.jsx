@@ -16,10 +16,14 @@ export default function ActivityListItem({ user, created_at, nft, type = "like" 
 
     return (
         <div className={classNames(styles.activityList)}>
-            <Avatar url={user?.avatar?.url} size={user?.avatar?.size} verified={user?.confirmed} />
-            <p>{user?.name} {type === "like" ? "liked" : "bought"} 
-               <Link href={"https://www.google.com/"}>{nft?.name}</Link>  by <Link href={"https://www.google.com/"}>{nft?.owner?.username}</Link>  </p>
-            <p>{formatDate(created_at)} ago</p>
+            <div className={classNames(styles.avatar)}>
+                <Avatar url={user?.avatar?.url} size={55} verified={user?.confirmed} />
+            </div>
+            <div className={classNames(styles.info)}>
+            <p className={classNames(styles["auction-info"])}>{user?.name} {type === "like" ? "liked" : "bought"}
+                <Link href={"https://www.google.com/"}>{nft?.name}</Link>  by <Link href={"https://www.google.com/"}>{nft?.owner?.username}</Link>  </p>
+            <p className={classNames(styles.time)}>{formatDate(created_at)} ago</p>
+            </div>
         </div>
     )
 }

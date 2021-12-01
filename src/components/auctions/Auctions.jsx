@@ -7,8 +7,14 @@ import { Container } from '@mui/material';
 import { Select } from '@mui/material';
 import { MenuItem } from '@mui/material';
 
-export default function Auctions({ cards = [], filters }) {
-    const [data, setData] = useState(cards);
+export default function Auctions({ cards = [], filters, setPrice }) {    
+    const [priceValue, setPriceValue] = useState(0);
+
+    function handlePriceChange(e) {
+        setPriceValue(e.target.value);
+        setPrice(e.target.value);
+    };
+
 
     return (
         <Grid container className={classNames(styles.gridContainer)} className={classNames(styles.main)}>
@@ -20,9 +26,14 @@ export default function Auctions({ cards = [], filters }) {
 
             <Grid item xs={7} sm={7} md={7} justifyContent='flex-end' style={{ display: 'flex', padding: 0, alignSelf: 'center' }}>
 
-                <Select value={0} className={classNames(styles.select)} style={{ border: 'none' }} >
+                <Select
+                 value={priceValue} 
+                 className={classNames(styles.select)} 
+                 style={{ border: 'none'}} 
+                 onChange={handlePriceChange}
+                 >
                     <MenuItem value={0} style={{ display: 'none' }}>Price range</MenuItem>
-                    {filters?.map((item, i) => {
+                    {filters?.price?.map((item, i) => {
                         return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
                     })}
                 </Select>

@@ -6,16 +6,15 @@ import { Grid } from '@mui/material';
 import { Container } from '@mui/material';
 import { Select } from '@mui/material';
 import { MenuItem } from '@mui/material';
-import { InputLabel } from "@mui/material";
-import { FormControl } from "@mui/material";
 
-export default function Trending({ trendingCards = [], trendingFilters }) {
+export default function Trending({ trendingCards = [], trendingFilters, setFilters }) {
 
-    const [valueSort, setValueSort] = useState('');
+    const [sortValues, setSortValue] = useState(0);
 
-    function handleSort(e) {
-        setValueSort(e.target.value);
-    };
+    function handleSortChange(e) {
+        setFilters(e.target.value);
+        setSortValue(e.target.value);
+    }
 
     return (
         <Grid container className={classNames(styles.gridContainer)} className={classNames(styles.main)}>
@@ -26,15 +25,14 @@ export default function Trending({ trendingCards = [], trendingFilters }) {
             </Grid>
 
             <Grid item xs={7} sm={7} md={7} justifyContent='flex-end' style={{ display: 'flex', padding: 0, alignSelf: 'center' }}>
-               
                     <Select
-                        value={0}
-                        onChange={handleSort}
+                        value={sortValues}
+                        onChange={handleSortChange}
                         className={classNames(styles.select)}
                         sx={{ ":hover": { border: 'none' } }}
                     >
                         <MenuItem value={0} style={{ display: 'none' }}>This Week</MenuItem>
-                        {trendingFilters?.map((item, i) => {
+                        {trendingFilters && trendingFilters?.sort?.map((item, i) => {
                             return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
                         })}
                     </Select>
