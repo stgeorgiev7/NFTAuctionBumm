@@ -11,6 +11,7 @@
 
 .card {
     transition: 1s;
+    animation: card-load 1s;
 }
 
 .card:hover {
@@ -20,6 +21,7 @@
 .live {
     transition: transform .2s;
     font-family: 'Monsterrat';
+    animation: card-load 1s;
 }
 
 .live:hover {
@@ -69,3 +71,12 @@
     padding:0px;
 }
 
+@keyframes card-load {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
