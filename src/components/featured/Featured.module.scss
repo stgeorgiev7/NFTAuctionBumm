@@ -1,1 +1,10 @@
 @use '../../styles/colors';
+
+.featuredImage {
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.featuredImage:hover{
+    transform:scale(0.90);
+}

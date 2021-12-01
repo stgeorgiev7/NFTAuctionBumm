@@ -9,8 +9,21 @@
     padding: 10px;
 };
 
+.card {
+    transition: 1s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
 .live {
+    transition: transform .2s;
     font-family: 'Monsterrat';
+}
+
+.live:hover {
+    transform: scale(1.1);
 }
 
 .Card_title{
@@ -36,7 +49,6 @@
     font-family: 'Monsterrat';
     font-weight: 1000;
 }
-
 
 .price {
     flex: 1;

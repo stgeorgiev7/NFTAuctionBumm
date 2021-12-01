@@ -31,7 +31,7 @@ export default function How({ description, title, items = [], link }) {
                         {description}
                     </p>
 
-                    <a href={link} style={{textDecoration:'none'}}>
+                    <a href={"/how"} style={{textDecoration:'none'}}>
                         <Button variant='contained' style={{backgroundColor: 'white', color: '#4e24f2', padding: '10px 35px', marginTop: '20px'}}>
                             LEARN MORE
                         </Button>

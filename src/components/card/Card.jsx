@@ -20,13 +20,12 @@ export default function Card({ name, user, likes = 0, mediaUrl, price, currency,
     const [img, setImage] = useState(mediaUrl ? mediaUrl : mediaImage.src);
     const [millifiedLikes, setLikes] = useState(millify(likes));
     const [countDownTime, setCountDownTimer] = useState(timeLeft !== 0 || timeLeft === undefined ? <Timer time={timeLeft} /> : null);
-    const [currentId, setId] = useState(String(id));
 
     return (
         <CardContainer
-            sx={{ width: 270, height: 420 }}
+            sx={{ width: 270, height: 420, transition: "0.5s" }}
             style={countDownTime ? { backgroundColor: '#1A2E2D', borderRadius: '25px', paddingBottom: '30px' } : { backgroundColor: '#181828', borderRadius: '25px' }}
-            className={timeLeft !== 0 && timeLeft !== undefined? classNames(styles.live) : ''}>
+            className={timeLeft !== 0 && timeLeft !== undefined? classNames(styles.live) : classNames(styles.card) }>
             <Avatar url={user?.avatar?.url} size={40} verified={user?.verified} />
             <Link href={'/product/' + id}>
                 <CardMedia
@@ -52,14 +51,6 @@ export default function Card({ name, user, likes = 0, mediaUrl, price, currency,
                 </p>
 
             </CardContent>
-
-            {/* <div className={classNames(styles.infoContainer)}>
-                <div>
-
-                </div>
-                <p className={classNames(styles.likes)}> <FavoriteIcon fontSize={'small'} />
-                    {millifiedLikes}</p>
-            </div> */}
 
         </CardContainer >
     )

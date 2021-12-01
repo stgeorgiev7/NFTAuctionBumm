@@ -5,7 +5,11 @@
 }
 .container {
     display: flex;
-    
+    transition: 1s;
+}
+
+.container:hover {
+    background-color: rgba(colors.$primary_main, 60%);
 }
 
 .container > p {
