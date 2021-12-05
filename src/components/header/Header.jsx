@@ -39,7 +39,10 @@ export default function Header() {
                 </Input>
             </Grid>
 
-            <Grid item xs={4} sm={4} md={4} style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+            <Grid
+             item xs={4} sm={4} md={4}
+              style={{ display: 'flex', justifyContent: 'space-evenly' }}
+              classNames={styles["btns"]}>
                 <Link href={"/"}>
                     <ButtonBase size='large'
                         color='secondary'

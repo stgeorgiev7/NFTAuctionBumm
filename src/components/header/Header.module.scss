@@ -28,3 +28,18 @@
     font-family: 'Monsterrat';
 } 
 
+@media (max-width: 750px) {
+    .btn {
+        justify-content: center;
+    }
+}
+
+@media(max-width: 420px) {
+    .btn {
+        padding: 5px !important;
+    }
+
+    .whiteButton {
+        padding: 20px !important;
+    }
+}
