@@ -32,14 +32,29 @@
     .btn {
         justify-content: center;
     }
-}
-
-@media(max-width: 420px) {
-    .btn {
-        padding: 5px !important;
-    }
 
     .whiteButton {
         padding: 20px !important;
     }
+
+    
+}
+
+@media(max-width: 550px) {
+    .btn {
+       justify-content: center !important;
+       padding-top: 20px !important;
+    }
+
+    .whiteButton {
+        padding: 20px !important;
+        border: 3px solid red;
+    }
+
+    .logo {
+        justify-content: center !important;
+        
+    }
+
+    
 }

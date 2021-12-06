@@ -20,13 +20,13 @@ export default function Header() {
             style={{ padding: '10px' }}>
 
             <Grid item
-                xs={3} sm={3} md={2}
+                xs={4} sm={3} md={2}
                 className={classNames(styles.logo)}
                 style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <Logo />
             </Grid>
 
-            <Grid item xs={3} sm={4} md={4}>
+            <Grid item xs={8} sm={4} md={4}>
                 <Input fullWidth
                     className={classNames(styles.search)}
                     placeholder='Find items, users and activities'
@@ -40,9 +40,9 @@ export default function Header() {
             </Grid>
 
             <Grid
-             item xs={4} sm={4} md={4}
+             item xs={12} sm={5} md={4}
               style={{ display: 'flex', justifyContent: 'space-evenly' }}
-              classNames={styles["btns"]}>
+              className={classNames(styles["btns"])}>
                 <Link href={"/"}>
                     <ButtonBase size='large'
                         color='secondary'
