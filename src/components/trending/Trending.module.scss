@@ -15,7 +15,7 @@
     font-weight: 1000;
     font-size: 35px;
     display: 'flex';
-    margin: 20px;
+    
 }
 
 .select {
@@ -31,7 +31,33 @@
 }
 
 .gridContainer {
-    justify-content: 'space-even';
+    justify-content: space-evenly;
     padding:10px;
 };
 
+@media (max-width: 900px) {
+    .cardsContainer {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 40px;
+        max-height: 550px;
+        overflow-x: scroll;
+        direction: row !important;
+        min-width: 420px;
+    }
+
+    .card {
+        min-width: 260px;      
+        padding: 20px; 
+    }
+
+    .select {
+        justify-content: center;
+        width: 10rem;
+    }
+
+    .heading {
+        padding-left: 2rem;
+    }
+
+}

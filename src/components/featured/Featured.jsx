@@ -9,13 +9,17 @@ import Link from "next/link";
 
 export default function Featured({ items = [] }) {
     const router = useRouter();
-
     return (
-        <Container className={classNames(styles.FeaturedContainer)}>
+        <Container
+         disableGutters={true} 
+         maxWidth="lg" 
+         className={classNames(styles.FeaturedContainer)}>
             <ImageList
                 variant="quilted"
                 cols={6}
-                gap={10}
+                gap={20}
+                rowHeight={230}
+                className={classNames(styles.featuredList)}
             >
                 {items.map((item, index) => (
                     <Link href={"/product/" + item.id} key={item.id}>

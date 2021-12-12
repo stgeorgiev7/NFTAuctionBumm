@@ -17,32 +17,47 @@ export default function Trending({ trendingCards = [], trendingFilters, setFilte
     }
 
     return (
-        <Grid container className={classNames(styles.gridContainer)} className={classNames(styles.main)}>
+        <Container
+            disableGutters
+            maxWidth="lg"
+        >
+            <Grid container
+                className={classNames(styles.gridContainer)}
+                className={classNames(styles.main)}>
 
-            <Grid item xs={3} sm={3} md={3} justifyContent='flex-end'
-                style={{ display: 'flex', alignSelf: 'flex-end', marginRight: 60 }}>
-                <h1 className={classNames(styles.heading)}>Trending</h1>
-            </Grid>
+                <Grid
+                    item
+                    xs={2}
+                    justifyContent="center">
+                    <h1 className={classNames(styles.heading)}>Trending</h1>
+                </Grid>
 
-            <Grid item xs={7} sm={7} md={7} justifyContent='flex-end' style={{ display: 'flex', padding: 0, alignSelf: 'center' }}>
+                <Grid item xs={10} sm={10} md={10} justifyContent='flex-end' style={{ display: 'flex', padding: 0, alignSelf: 'center' }}>
                     <Select
                         value={sortValues}
                         onChange={handleSortChange}
                         className={classNames(styles.select)}
-                        sx={{ ":hover": { border: 'none' } }}
+
                     >
                         <MenuItem value={0} style={{ display: 'none' }}>This Week</MenuItem>
                         {trendingFilters && trendingFilters?.sort?.map((item, i) => {
                             return <MenuItem key={i} value={item.value}>{item.label}</MenuItem>
                         })}
                     </Select>
-            </Grid>
+                </Grid>
 
-            <Grid container justifyContent='center'>
-                {trendingCards.map(function (nft, index) {
-                    return (
-                        <Grid item key={index} columns={{ xs: 4, sm: 4, md: 4 }}>
-                            <Container style={{ padding: '10px' }}>
+                <Grid container
+                    justifyContent='space-between'
+                    className={classNames(styles.cardsContainer)}
+                >
+                    {trendingCards.map(function (nft, index) {
+                        return (
+                            <Grid item
+                                direction="row"
+                                key={index}
+                                alignItems="center"
+                                className={classNames(styles.card)}
+                            >
                                 <Card
                                     name={nft.name}
                                     user={nft.owner}
@@ -53,14 +68,14 @@ export default function Trending({ trendingCards = [], trendingFilters, setFilte
                                     id={nft.id}
                                 >
                                 </Card>
-                            </Container >
-                        </Grid>
+                            </Grid>
 
-                    );
-                })}
+                        );
+                    })}
+                </Grid>
+
             </Grid>
-
-        </Grid>
+        </Container>
 
     )
 
