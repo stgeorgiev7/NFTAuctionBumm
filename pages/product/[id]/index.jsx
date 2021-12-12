@@ -33,7 +33,6 @@ export default function ProductPage() {
          bids={product?.bids}
          />;
 
-
    console.log(product);
     return (
         <div>

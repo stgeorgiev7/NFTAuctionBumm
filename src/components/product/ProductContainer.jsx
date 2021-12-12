@@ -12,13 +12,16 @@ import { Container } from "@mui/material"
 export default function ProductContainer({ name, owner, price, currency, likes, auction_end, details, bids, source }) {
     return (
         <div className={classNames(styles["product-container"])}>
-            <Grid container spacing={1}>
+            <Grid container 
+            spacing={6} 
+            maxWidth="lg"
+          justifyContent="center">
 
-                <Grid item xs={6} sm={6} >
+                <Grid item xs={6} sm={6} md={6} >
                     <ProductImage url={source} />
                 </Grid>
 
-                <Grid item xs={5}>
+                <Grid item xs={6} sm={6} md={6}>
                     <ProductInfo
                         title={name}
                         price={price}

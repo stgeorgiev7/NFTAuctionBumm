@@ -4,6 +4,14 @@
     src: url('../../styles/Montserrat/Montserrat-Light.ttf');
 }
 
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: colors.$background_paper;
+    
+}
+
 .footContainer {
     background-color: colors.$background_paper;
     font-family: "Monsterrat";
@@ -20,8 +28,24 @@
 
 .whiteButton {
     font-family: 'Monsterrat';
-    text-align: center;
+    text-align: end;
     margin-left: 30px;
+}
+
+@media (max-width: 900px) {
+   
+
+    .logo{
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: center !important;
+        justify-self: center !important;
+        width: 100%;
+    }
+
+    .text, .whiteButton {
+        display: none;
+    }
 }
 
 

@@ -10,39 +10,47 @@ import { Grid } from '@mui/material';
 
 export default function Footer() {
     return (
-        
-            <Grid container className={classNames(styles.footContainer)} style={{ margin: '0px' }}
+        <div className={classNames(styles.container)}>
+            <Grid container className={classNames(styles.footContainer)}
+                maxWidth="lg"
                 flexDirection='row'
                 alignItems="center"
                 justifyContent='center'
             >
                 <Grid item
-                    xs={3} sm={3} md={3}
+                    xs={12} sm={12} md={2}
                     className={classNames(styles.logo)}
-                    style={{ display: 'flex', justifyContent: 'center' }}
-                    >
+                >
                     <Logo type='muted' />
                 </Grid>
 
-                <Grid item xs={3} sm={3} md={5} justifySelf='center' style={{ padding: '0' }}>
-                    <p className={classNames(styles.text)}>Bum All Rights Reserved 2021</p>
+                <Grid item
+                    xs={12} sm={12} md={5}
+                    justifySelf='center'
+                    alignSelf="center"
+                    style={{ padding: '0' }}
+                    className={classNames(styles.text)}>
+                    <p >Bum All Rights Reserved 2021</p>
                 </Grid>
 
-                <Grid item xs={3} sm={3} md={1} >
+                <Grid item
+                    xs={12} sm={12} md={5}
+                    className={classNames(styles.whiteButton)}
+                    justifyContent="flex-end" 
+                    
+                    >
                     <ButtonBase size='large'
                         color='secondary'
-                        className={classNames(styles.whiteButton)}
-                        >Privacy Policy
+                    >Privacy Policy
                     </ButtonBase>
-                </Grid>
-                <Grid item xs={3} sm={3} md={2} alignSelf='center'>
+
                     <ButtonBase size='large'
-                        className={classNames(styles.whiteButton)}
-                        style={{marginLeft: '30px'}}
-                        >Cookie Policy
+
+                        style={{ marginLeft: '30px' }}
+                    >Cookie Policy
                     </ButtonBase>
                 </Grid>
             </Grid>
-            
+        </div>
     )
 };
