@@ -1,3 +1,52 @@
 .explore-container{
     margin-top: 80px;
 }
+
+.explore-grid {
+    margin-top: 30px !important;
+    margin-bottom:30px !important;
+
+}
+
+.explore-hero {
+    display: none;
+}
+
+@media (max-width: 900px) {
+
+    .explore-head {
+        display: grid !important;
+        justify-content: center !important;
+        justify-items: center !important;
+        background-color: #4e24f2;
+        margin: 0px !important;
+    }
+
+
+    .explore-grid {
+        display: grid !important;
+        justify-items: center;
+        align-content: center !important;
+        gap: 20px;
+    };
+
+    .explore-title {
+        display: none;
+    }
+
+    .explore-hero {
+        display: block;
+        width: 100%;
+        margin: 0px;
+        height: 250px;
+    }
+
+    .explore-filters {
+        margin-top: -50px;
+    }
+
+    .card {
+        justify-content: center !important;
+    }
+
+}

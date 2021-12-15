@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Countdown from 'react-countdown';
 import styles from './Timer.module.scss';
 import classNames from 'classnames';
@@ -9,7 +9,7 @@ export default function Timer({ time }) {
     const [date, setDate] = useState( time? time.split('T') : null);
 
     const liveIcon = <p className={classNames(styles.liveIcon)}>
-        <span>•</span> LIVE
+        <span>⬤</span> LIVE
     </p>;
 
     const renderer = ({ hours, minutes, seconds, completed }) => {

@@ -18,3 +18,10 @@
    align-self: center;
    
 }
+
+@media (max-width: 900px) {
+    .image {
+        width: 20rem;
+        height: 25rem;
+    }
+}

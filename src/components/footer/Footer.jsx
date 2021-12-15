@@ -20,6 +20,7 @@ export default function Footer() {
                 <Grid item
                     xs={12} sm={12} md={2}
                     className={classNames(styles.logo)}
+                    justifyContent="flex-start"
                 >
                     <Logo type='muted' />
                 </Grid>

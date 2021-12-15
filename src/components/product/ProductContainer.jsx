@@ -15,13 +15,18 @@ export default function ProductContainer({ name, owner, price, currency, likes, 
             <Grid container 
             spacing={6} 
             maxWidth="lg"
-          justifyContent="center">
+            justifyContent="center"
+            className={classNames(styles["product-grd"])}>
 
-                <Grid item xs={6} sm={6} md={6} >
+                <Grid item 
+                xs={6} sm={6} md={6} 
+                className={classNames(styles["product-image"])}>
                     <ProductImage url={source} />
                 </Grid>
 
-                <Grid item xs={6} sm={6} md={6}>
+                <Grid item
+                 xs={6} sm={6} md={6}
+                 className={classNames(styles["product-details"])}>
                     <ProductInfo
                         title={name}
                         price={price}
@@ -35,7 +40,11 @@ export default function ProductContainer({ name, owner, price, currency, likes, 
                         
                     />
 
-                    <ProductTabs text={details} bids={bids} />
+                    <ProductTabs 
+                    text={details} 
+                    bids={bids} 
+                    className={classNames(styles["product-tabs"])}
+                    />
                     <ProductActions
                         isLive={auction_end ? true : false}
                         currency={currency}
