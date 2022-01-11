@@ -15,6 +15,7 @@ export default function Collector({ name, nftsCount, avatar, verified, id, type 
                 info={`${nftsCount} items`}
                 avatar={avatar}
                 verified={verified}
+                className={classNames(styles.user)}
             />
 
         </div>

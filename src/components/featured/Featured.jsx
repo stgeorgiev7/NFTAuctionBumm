@@ -11,14 +11,14 @@ export default function Featured({ items = [] }) {
     const router = useRouter();
     return (
         <Container
-         disableGutters={true} 
+         disableGutters 
          maxWidth="lg" 
-         className={classNames(styles.FeaturedContainer)}>
+         className={classNames(styles.featuredContainer)}>
             <ImageList
                 variant="quilted"
                 cols={6}
                 gap={20}
-                rowHeight={230}
+                rowHeight={200}
                 className={classNames(styles.featuredList)}
             >
                 {items.map((item, index) => (

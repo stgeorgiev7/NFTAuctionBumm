@@ -4,7 +4,7 @@ import styles from './User.module.scss';
 import classNames from 'classnames';
 import Link from 'next/link';
 
-export default function User({ name, info, avatar = '', size = 55, verified = false, id }) {
+export default function User({ name, info, avatar = '', size = 45, verified = false, id }) {
 
     return (
         <Link href={"/profile" + "/" + id}>

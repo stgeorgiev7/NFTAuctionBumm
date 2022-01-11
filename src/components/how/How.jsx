@@ -16,19 +16,19 @@ export default function How({ description, title, items = [], link }) {
                 columns={{ xs: 12, sm: 12, md: 12 }}
                 justifyContent='center'
                 className={classNames(styles.howContainer)}
-                spacing={3}
+                spacing={4}
             >
 
-                <Grid item xs={6} sm={6} md={6}
+                <Grid item xs={7} sm={7} md={7}
                     className={classNames(styles.textContainer)}
                     alignContent='center'
                 >
                   
-                    <h1 className={classNames(styles.CardTitle)}>
+                    <h1 className={classNames(styles.cardTitle)}>
                         {title}
                     </h1>
 
-                    <p className={classNames(styles.CardDescription)}>
+                    <p className={classNames(styles.cardDescription)}>
                         {description}
                     </p>
 
@@ -41,7 +41,7 @@ export default function How({ description, title, items = [], link }) {
                     </a>
                 </Grid>
 
-                <Grid item xs={6} sm={6} md={6}
+                <Grid item xs={5} sm={5} md={5}
                     className={classNames(styles.cards)}
                     style={{ padding: 0 }} >
                     {items.map((item, crrnumber) =>

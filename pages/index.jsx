@@ -122,7 +122,6 @@ export default function Index() {
       <Featured items={featuredCards?.nfts} />
       <Trending trendingCards={trendingCards} trendingFilters={trendingFilters} setFilters={setTrendingFilter} />
       <TopCollectors collectors={usersData} filters={usersFilters} setFilters={setUsersSort} />
-      <div style={{ backgroundColor: '#4E24F2', paddingTop: 10 }}>
         <How
           description='Discover, collect and sell extraoridanry NFTs on the world`s first and largest NFT marketplace. There are three things you`ll need in place to open your account and start buying or selling NFTs on BUM.'
           title='HOW IT WORKS'
@@ -142,7 +141,6 @@ export default function Index() {
           ]}
           link='https://google.com/'
         />
-      </div>
 
       <Auctions cards={auctionData} filters={auctionFilters} setPrice={setPriceFilter}/>
       <Footer />

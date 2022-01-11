@@ -27,20 +27,19 @@ export default function TopCollectors({ collectors = [], filters, setFilters }) 
 
     return (
         <div className={classNames(styles.collectorsWrapper)}>
-        <Container maxWidth="lg" disableGutters>
+        <Container  disableGutters className={classNames(styles.collectorContaner)}>
             <Grid container
                 alignItems="center"
-                className={classNames(styles.gridContainer)}
                 className={classNames(styles.main)}
                 direction="row"
                 justifyContent="center"
             >
 
-                <Grid item xs={2}>
-                    <h1 className={classNames(styles.heading)}>Top collectors</h1>
+                <Grid item xs={6}>
+                    <h1 className={classNames(styles.heading)}>Top Collectors</h1>
                 </Grid>
 
-                <Grid item xs={10} sm={10} md={10}
+                <Grid item xs={6} sm={6} md={6}
                         justifyContent='flex-end' style={{ display: 'flex', padding: 0, alignSelf: 'center' }}
                         >
 
@@ -57,9 +56,11 @@ export default function TopCollectors({ collectors = [], filters, setFilters }) 
                 </Grid>
 
                 <Grid container
-                    className={classNames(styles.collectorContainer)}
-                    justifyContent='center'
+                    className={classNames(styles.gridContainer)}
+                    justifyContent='space-between'
                     direction="row"
+                    gap={1}
+                    
                     style={{ borderRadius: '50px' }}>
 
                     {chunkedArray.map((list, index) => {

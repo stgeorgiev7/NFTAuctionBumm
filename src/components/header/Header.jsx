@@ -15,26 +15,29 @@ export default function Header() {
 
             <Grid container
                 className={classNames(styles["gridContainer"])}
-                maxWidth="lg"
                 alignItems="center"
                 direction="row"
                 justifyContent="space-between">
                 <Grid item
                     xs={12} sm={12} md={2}
-                    className={classNames(styles.logo)}>
+                    className={classNames(styles.logo)}
+                    justifyItems="flex-end"
+                >
                     <Link href={"/"}>
                         <Logo />
                     </Link>
 
                 </Grid>
                 <Grid item
-                    xs={12} sm={12} md={5}
+                    xs={12} sm={12} md={6}
                     className={classNames(styles.search)} >
 
                     <TextField
                         fullWidth
                         variant="outlined"
+                        margin="none"
                         placeholder="Find items, users and activities"
+                        size="small"
                         InputProps={{
                             startAdornment: (
 
@@ -47,17 +50,24 @@ export default function Header() {
                 </Grid>
 
                 <Grid item container
-                    xs={12} sm={12} md={5}
+                    xs={12} sm={12} md={4}
                     className={classNames(styles.btns)}
                     justifyContent="flex-end"
                     direction="row"
                     alignItems="center">
                     <Link href={"/"}>
-                        <Button variant='text' sx={{ color: "#ffff" }}>Home</Button>
+                        <Button variant='text'
+                            className={classNames(styles.button)}
+                            className={classNames(styles.homeBtn)}
+                        >Home
+                        </Button>
                     </Link>
 
                     <Link href={"/activity"}>
-                        <Button variant='text' sx={{ color: "#ffff" }}>Activity</Button>
+                        <Button variant='text'
+                            className={classNames(styles.button)}
+                        >Activity
+                        </Button>
                     </Link>
 
                     <Link href={"/explore"}>
