@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './ExploreFilters.module.scss'
-import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdornment } from '@mui/material'
+import classNames from "classnames"
+import { FormControl, Select, MenuItem, Stack, TextField, InputAdornment } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 
 export default function ExploreFilters({ filters, setSort, setPrice }) {
@@ -18,13 +19,14 @@ export default function ExploreFilters({ filters, setSort, setPrice }) {
     };
 
     return (
-        <div className={styles['explore-filters']}>
+        <div className={classNames(styles['explore-filters'])}>
             <Stack 
             direction="row" 
             spacing={2} 
             justifyContent="flex-end"
-            alignItems="center">
-                <FormControl sx={{ width: "220px" }}>
+            alignItems="center"
+            className={classNames(styles["explore-stack"])}>
+                <FormControl sx={{ minWidth: 220 }}>
                     <Select
                         className={styles.select}
                         labelId="sort-select"

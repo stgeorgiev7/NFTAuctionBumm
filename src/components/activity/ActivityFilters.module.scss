@@ -4,7 +4,6 @@
     src: url('../../styles/Montserrat/Montserrat-Black.ttf');
 }
 
-
 .activity-filters {
     display: flex;
     justify-content: center;
@@ -22,4 +21,22 @@
 .title {
     font-family: 'Monsterrat';
     font-size: 36px;
+}
+
+@media (max-width: 900px) {
+    .activity-filters {
+        display: flex !important;
+       flex-direction: column !important;
+       align-self: center;
+       align-items: center;
+    }
+
+    .activity-stack {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px;
+        background-color: colors.$primary_main;
+        width: 100%;
+        padding: 10px;
+    }
 }

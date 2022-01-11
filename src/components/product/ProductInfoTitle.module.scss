@@ -13,5 +13,18 @@
 .title {
     font-size: 50px;
     font-family: 'Monsterrat';
+}
+
+@media (max-width: 900px) {
+    .product-info-title {
+        display: flex !important;
+        justify-content: center;
+        align-self: center;
+    }
     
+   .title {
+       display: flex !important;
+       justify-content: center;
+       align-self: center;
+   }
 }

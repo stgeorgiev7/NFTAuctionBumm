@@ -14,8 +14,8 @@ import ProductInfoTimer from "./ProductInfoTimer";
 export default function ProductInfo({ title, creator, price, currency, likes, onTimeEnd, timeEnd, isLive }) {
     console.log(creator)
     return (
-        <div clases={classNames(styles["product-info"])}>
-            <Grid container>
+        <div className={classNames(styles["product-info"])}>
+            <Grid container className={classNames(styles["info-grid"])}>
                 <Grid item xs={11}>
                     <ProductInfoTitle sx={{ mt: 3 }} text={title} />
                 </Grid>
@@ -43,7 +43,7 @@ export default function ProductInfo({ title, creator, price, currency, likes, on
                              />
                     </Grid>
 
-                    <Grid item sx={{pl: '10px', left: "10px"}} xs={4} sm={4} md={4}>
+                    <Grid item sx={{pl: '10px', left: "10px"}} xs={4} sm={4} md={4} className={classNames(styles.timer)}>
                         <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={"auction ended"} />
 
                     </Grid>

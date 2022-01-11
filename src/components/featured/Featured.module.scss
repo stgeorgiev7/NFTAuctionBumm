@@ -4,10 +4,20 @@
     border-radius: 10px;
     transition: 1s;
     animation: feature-load 1s;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+.featuredContainer {
+    padding-top: 60px !important;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    max-width: 1280px !important;
 }
 
 .featuredImage:hover{
-    transform:scale(0.90);
+    transform:scale(0.96);
 }
 
 @keyframes feature-load {
@@ -17,5 +27,14 @@
 
     100% {
         transform: scale(1);
+    }
+}
+
+@media (max-width: 900px) {
+    .featuredList  {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        min-height: 150px;
+        margin: 1rem;
     }
 }

@@ -4,24 +4,56 @@
     src: url('../../styles/Montserrat/Montserrat-Light.ttf');
 }
 
+.logo {
+    cursor: pointer;
+
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: colors.$background_paper;
+    
+}
+
 .footContainer {
+    max-width: 1280px !important;
     background-color: colors.$background_paper;
     font-family: "Monsterrat";
     font-weight: 500;
-    padding: 30px
+    padding: 10px
 };
 
 .text {
     color: colors.$text_disabled;
     text-align: center;
     padding: 0px;
-    font-weight: 200
+    font-weight: 200;
+
 };
 
 .whiteButton {
     font-family: 'Monsterrat';
-    text-align: center;
+    text-align: end;
     margin-left: 30px;
+
+}
+
+@media (max-width: 900px) {
+   
+
+    .logo{
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: center !important;
+        justify-self: center !important;
+        width: 100%;
+    }
+
+    .text, .whiteButton {
+        display: none;
+    }
 }
 
 

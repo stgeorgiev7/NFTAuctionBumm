@@ -7,15 +7,29 @@
 
 .explore-filters {
     font-family: 'Monsterrat';
-
 }
 
 .stack {
-    font-family: 'Monsterrat';
-    
+    font-family: 'Monsterrat'; 
 }
 
-.title {
-    font-family: 'Monsterrat';
-    font-size: 36px;
+
+@media (max-width: 900px) {
+    .explore-filters {
+        display: flex !important;
+       flex-direction: column !important;
+       align-self: center;
+       align-items: center;
+       width: 100%;
+    }
+
+    .explore-stack {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px;
+        width: 100%;
+        padding: 10px;
+        justify-content: center !important;
+        
+    }
 }

@@ -29,6 +29,7 @@ export default function ProfileCollection({ user, filters, items, setSort, setPr
 
                 <Grid
                  container 
+                 className={classNames(styles.cardsContainer)}
                  justifyContent='center'
                  alignItems="center"
                  direction="row"
@@ -37,7 +38,7 @@ export default function ProfileCollection({ user, filters, items, setSort, setPr
                     {items.map(function (nft, index) {
                         if (index <= 3) {
                             return (
-                                <Grid item key={index} xs={3}>
+                                <Grid item key={index} className={classNames(styles['card'])}>
                                     <Card
                                         name={nft.name}
                                         user={user}

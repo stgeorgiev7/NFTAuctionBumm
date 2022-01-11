@@ -6,8 +6,7 @@
 
 .activityList {
     display: flex;
-    width: 950px;
-    height: 110px;
+    width: 100%;
     background-color: colors.$background_paper;
     border-radius: 15px;
     margin-top: -20px;
@@ -35,4 +34,10 @@
     margin-top: 0;
     margin-bottom: 20px;
     font-weight: 200;
+}
+
+@media (max-width: 900px) {
+    .activityList {
+       width: 28rem;
+    }
 }

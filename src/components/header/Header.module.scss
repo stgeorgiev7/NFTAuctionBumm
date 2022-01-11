@@ -5,12 +5,23 @@
 }
 
 .gridContainer {
+    max-width: 1280px;
+}
+
+.logo {
+    cursor: pointer;
+    padding: 3px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     background-color: colors.$background_paper;
-};
+}
 
 .search {
     background-color: colors.$background_default;
-    padding-left: 10px;
     color: colors.$text_secondary;
     border-radius: 20px;
     font-family: 'Monsterrat';
@@ -24,7 +35,42 @@
     color: colors.$text_primary;
 };
 
-.whiteButton {
-    font-family: 'Monsterrat';
+.btns {
+    font-family: 'Monsterrat';  
 } 
+
+.button, .homeBtn {
+    color: #fff !important;
+    text-transform: capitalize !important;
+    font-weight: 100 !important;  
+}
+
+.homeBtn {
+    display: flex !important;
+    justify-content: flex-end !important;
+    padding: 1rem !important;
+}
+
+@media (max-width: 900px) {
+    .logo{
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: center !important;
+        justify-self: center !important;
+        background-color: colors.$primary_main;
+        width: 100%;
+    }
+
+    .search {
+        margin: 1rem;
+    }
+
+    .btns {
+        justify-content: center !important;
+        padding: 1em;
+    }
+
+
+}
+
 

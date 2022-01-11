@@ -5,14 +5,13 @@
 }
 
 .counterContainer {
-    padding: 0;
+    padding: 1px;
     height: 0px;
 }
 
 
 .liveIcon {
-    width: 25%;
-    height: 20%;
+    width: 21%;
     font-family:'Monsterrat';
     text-align: center;
     border-radius: 5px;
@@ -21,7 +20,11 @@
     background-color: colors.$secondary_main;
     position: relative;
     bottom: 270px;
-    left: 20px;
+    left: 25px;
+}
+
+.liveIcon > span {
+    animation:blink 1s linear infinite;
 }
 
 .counter {
@@ -32,7 +35,16 @@
     border-radius: 0 0 10px 10px;
     text-align: center;
     position: relative;
-    bottom: 85px;
-    width: 93%;
-    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    bottom: 110px;
+    width: 90%;
+    left: 16px;
+}
+
+@keyframes blink {
+    0%{opacity:0}
+    100%{opacity: 1}
 }

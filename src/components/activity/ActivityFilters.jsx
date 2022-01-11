@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import styles from './ActivityFilters.module.scss'
+import styles from './ActivityFilters.module.scss';
+import classNames from "classnames";
 import { FormControl, Select, InputLabel, MenuItem, Stack, TextField, InputAdornment } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -20,7 +21,10 @@ export default function ActivityFilters({ filters, setSort, setType }) {
 
     return (
         <div className={styles['activity-filters']}>
-            <Stack direction="row" spacing={2} alignItems="center">
+            <Stack direction="row" 
+            spacing={2} 
+            alignItems="center"
+            className={classNames(styles["activity-stack"])}>
                 <FormControl sx={{ minWidth: 220 }}>
                     <Select
                         className={styles.select}

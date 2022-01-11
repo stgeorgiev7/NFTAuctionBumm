@@ -57,3 +57,14 @@
     font-size: 30px;
     font-weight: bold;
 }
+
+@media (max-width: 900px) {
+
+    
+    .product-info-timer {
+        width: 27rem;
+        display: flex !important;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}

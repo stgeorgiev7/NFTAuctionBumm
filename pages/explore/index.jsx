@@ -1,7 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import styles from "./index.module.scss";
+import classNames from "classnames";
 import Header from "../../src/components/header/Header";
 import Footer from "../../src/components/footer/Footer";
+import Hero from "../../src/components/hero/Hero";
 import ExploreTitle from "../../src/components/explore/ExploreTitle";
 import ExploreFilters from "../../src/components/explore/ExploreFilters";
 import { Container, Grid } from "@mui/material";
@@ -51,25 +54,32 @@ export default function Explore() {
     return (
         <div>
             <Header />
-            <Container>
-                <Grid container sx={{marginTop: "50px"}}>
-                    <Grid item xs={3}>
+            <Container disableGutters >
+                <Grid container sx={{marginTop: "50px"}} maxWidth='lg' className={classNames(styles["explore-head"])}>
+                    <Grid item xs={3} className={classNames(styles["explore-title"])}>
                         <ExploreTitle text={"Explore"} />
                     </Grid>
 
-                    <Grid item xs={9}>
+                    <Grid item xs={12} className={classNames(styles["explore-hero"])}>
+                        <Hero text={"Explore"} />
+                    </Grid>
+
+                    <Grid item xs={9} className={classNames(styles["explore-filters"])}>
                         <ExploreFilters filters={exploreFilters} setSort={setSortFilter} setPrice={setPriceFilter} />
                     </Grid>
-                </Grid>
+                
 
-                <Grid container
+                <Grid  item container
                 justifyContent="space-between"
-                rowSpacing={2}
-                maxWidth="xl"
-                sx={{margin: "30px 0 30px"}}>
+                spacing={2}
+        
+                className={classNames(styles["explore-grid"])}>
                     {exploreData.map(function (nft, index) {
                         return (
-                            <Grid item key={index} xs={3}>
+                            <Grid item 
+                            key={index} 
+                            xs={3} 
+                            className={classNames(styles["explore-card"])}>
                                 <Card
                                     name={nft.name}
                                     user={nft.owner}
@@ -79,12 +89,14 @@ export default function Explore() {
                                     currency={nft.currency}
                                     timeLeft={nft.auction_end}
                                     id={nft.id}
+                                    className={classNames(styles["card"])}
                                 >
                                 </Card>
                             </Grid>
                         )
                     }
                     )}
+                </Grid>
                 </Grid>
             </Container>
             <Footer />

@@ -12,7 +12,7 @@ export default function CollectorColumn({ items=[] }) {
             {items.map((crritem, crrIndex) => {
                 
                 return (
-                    <div key={`${crrIndex + 1}_${crritem.name}`}>
+                   
                         <Collector
                             name={crritem.username}
                             nftsCount={crritem.nfts.length}
@@ -22,7 +22,7 @@ export default function CollectorColumn({ items=[] }) {
                             type={crrIndex === 1 ? 'light' : ''}
                             key={crritem.name}
                         ></Collector>
-                    </div>
+                    
                 );
 
             })}
