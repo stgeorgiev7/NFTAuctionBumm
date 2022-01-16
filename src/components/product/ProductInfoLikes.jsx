@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import styles from './ProductInfoLikes.module.scss';
 import classNames from "classnames";
 import millify from "millify";

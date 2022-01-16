@@ -10,53 +10,61 @@ import ProductInfoCreator from "./ProductInfoCreator";
 import ProductInfoLikes from "./ProductInfoLikes";
 import ProductInfoTimer from "./ProductInfoTimer";
 
+export default function ProductInfo({
+  title,
+  creator,
+  price,
+  currency,
+  likes,
+  onTimeEnd,
+  timeEnd,
+  isLive,
+}) {
+  return (
+    <div className={classNames(styles["product-info"])}>
+      <Grid container className={classNames(styles["info-grid"])}>
+        <Grid item className={classNames(styles["title"])}>
+          <ProductInfoTitle text={title} />
+        </Grid>
 
-export default function ProductInfo({ title, creator, price, currency, likes, onTimeEnd, timeEnd, isLive }) {
-    console.log(creator)
-    return (
-        <div className={classNames(styles["product-info"])}>
-            <Grid container className={classNames(styles["info-grid"])}>
-                <Grid item xs={11}>
-                    <ProductInfoTitle sx={{ mt: 3 }} text={title} />
-                </Grid>
+        <Grid container>
+          <Grid item xs={4} sm={6} md={8}>
+            <ProductInfoPrice amount={price} currency={currency} />
+          </Grid>
 
-                <Grid container alignItems="baseline" sx={{paddingTop:1}}>
-                    <Grid item xs={4} sm={6} md={8} >
-                        <ProductInfoPrice amount={price} currency={currency} />
-                    </Grid>
+          <Grid
+            item
+            xs={4}
+            sm={6}
+            md={4}
+            className={classNames(styles["badges"])}
+          >
+            {isLive && <ProductInfoStatus isLive={isLive} />}
+            <ProductInfoLikes amount={likes} />
+          </Grid>
+        </Grid>
 
-                    <Grid item xs={4} sm={6} md={4}
-                        sx={{ display: "flex", justifyContent: "flex-start", gap: "20px", alignItems:"baseline" }}>
-                        {isLive && <ProductInfoStatus isLive={isLive} />}
-                        <ProductInfoLikes amount={likes} />
-                    </Grid>
-                </Grid>
+        <Grid container sx={{ paddingTop: 1 }} justifyContent="space-between">
+          <Grid item  xs={7} sm={12} md={7}>
+            <ProductInfoCreator
+              name={creator?.username}
+              avatar={creator?.avatar.url}
+              verified={creator?.verified}
+              id={creator?.id}
+            />
+          </Grid>
 
-                <Grid container sx={{paddingTop:2}}>
-
-                    <Grid item sx={{pr:1}} xs={7} sm={12} md={7}>
-                        <ProductInfoCreator
-                            name={creator?.username}
-                            avatar={creator?.avatar.url}
-                            verified={creator?.verified}
-                            id={creator?.id}
-                             />
-                    </Grid>
-
-                    <Grid item sx={{pl: '10px', left: "10px"}} xs={4} sm={4} md={4} className={classNames(styles.timer)}>
-                        <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={"auction ended"} />
-
-                    </Grid>
-
-                </Grid>
-
-
-
-            </Grid>
-            <Stack className={classNames(styles["stats"])}>
-
-            </Stack>
-
-        </div>
-    )
-};
+          <Grid
+            item
+            xs={4}
+            sm={4}
+            md={5}
+            className={classNames(styles.timer)}
+          >
+            <ProductInfoTimer timeEnd={timeEnd} onTimeEnd={"auction ended"} />
+          </Grid>
+        </Grid>
+      </Grid>
+    </div>
+  );
+}

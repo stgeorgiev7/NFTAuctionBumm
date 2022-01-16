@@ -4,6 +4,21 @@
     src: url('../../styles/Montserrat/Montserrat-Black.ttf');
 }
 
+.title {
+    width: 100%;
+}
+
+.timer {
+    padding-left: 20px;
+}
+
+.badges {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    padding-top: 5px;
+}
+
 .product-info {
     text-align: center;
 }

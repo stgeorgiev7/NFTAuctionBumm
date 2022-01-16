@@ -8,37 +8,32 @@
     background-color: colors.$background_paper;
     position: relative;
     width: 100%;
-    height:120px;
     font-family: 'Monsterrat';
     border-radius: 15px;
 }
 
 .title {
     background-color: colors.$primary_main;
-    padding-left: 20px;
+    padding: 10px 15px 5px;
     font-family: 'Monsterrat';
-    position: relative;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 22px;
     display: flex;
-    align-items: center;
     width: 100%;
-    height: 25%;
     border-radius: 15px 15px 0 0;
     
 }
 
 .user-container {
-    padding-left: 20px;
     background-color: colors.$background_paper;
     font-family: 'Monsterrat';
     font-weight: 800;
     display:flex;
     position: relative;
-    height: 65%;
     align-items: center;
     font-style: normal;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 30px;
+    border-radius: 0 15px 15px;
 }
